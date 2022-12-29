@@ -1,0 +1,155 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+#contenedor {
+    height: 720px;
+    width: 1200px;
+    background: rgb(228, 223, 214);
+    margin: auto;
+}
+header{
+    height: 140px;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+#logo{
+    height: 140px;
+    width: 140px;
+    float: left;
+}
+.search{
+    float:right;
+    margin: 20px;
+   
+   
+}
+.search button{
+    background-color:orange;
+    color: aliceblue;
+    float: right;
+    padding: 1px 2px;
+    margin-right: 16px;
+    font-size: 10;
+    border: none;
+    cursor: pointer;
+    }
+.search button img{
+    filter: invert(100%);  
+    }
+
+.iniciar-sesion{
+    float:right;
+    margin: 20px;
+   
+}
+.iniciar-sesion button{
+    background-color:orange;
+    color: aliceblue;
+    float: right;
+    padding: 1px 2px;
+    margin-right: 16px;
+    font-size: 10;
+    border: none;
+    cursor: pointer; 
+}
+.iniciar-sesion button img{
+    filter: invert(100%);  
+    }
+.carrito button{
+    background-color:black;
+    color: aliceblue;
+    float: right;
+    padding: 1px 2px;
+    margin-right: 16px;
+    font-size: 10;
+    border: none;
+    cursor: pointer; 
+}
+.carrito button img{
+    filter: invert(100%);
+    }
+
+.nav{
+    display: flex;
+    justify-content:center;
+    height: 30px;
+    background: rgb(238, 165, 70);
+  
+}
+.nav_link{
+    color: white;
+    text-decoration: none;
+   font-weight: bold;
+}
+.nav_menu{
+    display: flex;
+    margin-right: 40px;
+    list-style: none;
+
+}
+.nav_menu_item{
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 100px;   
+}
+
+main{
+    height: 650px;
+    background: rgb(217, 216, 226);
+    
+}
+footer{
+    height: 200px;
+    width: 100%;
+    
+    background: rgb(238, 165, 70);
+}
+footer .grupo_1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:50px;
+    padding: 45px 0px;
+   
+}
+footer h2{
+    color: white;
+    text-decoration: none;
+   font-weight: 700;
+   font-size: 22px;
+   padding-left: 10px;
+
+}
+
+.grupo_1 ul li{
+    list-style: none;
+   
+}
+.grupo_1 ul li a{
+    font-size: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: lowercase;
+    color: aliceblue;
+    padding: 10px;
+    transition: 0,5s  ease;
+}
+ul:hover li a {
+    color: blue;
+}
+ul :hover li a:not(:hover){
+    color: aliceblue;
+    opacity: 0.3;
+    filter: blur(1px);
+}
+.red_social{
+filter: invert(100%);
+}
