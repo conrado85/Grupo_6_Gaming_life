@@ -3,34 +3,42 @@
     margin: 0px;
 }
 
+body {
+    height: 375px;
+    width: 842px;
+}
 
 #contenedor {
-    height: 720px;
-    width: 1200px;
+    height: 375px;
+    width: 842px;
     background: rgb(228, 223, 214);
     margin: auto;
 }
-header{
+
+header {
     height: 140px;
     background: black;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+
 }
-#logo{
+
+#logo {
     height: 140px;
     width: 140px;
     float: left;
 }
-.search{
-    float:right;
+
+.search {
+    float: right;
     margin: 20px;
-   
-   
+
+
 }
-.search button{
-    background-color:orange;
+
+.search button {
+    background-color: orange;
     color: aliceblue;
     float: right;
     padding: 1px 2px;
@@ -38,118 +46,258 @@ header{
     font-size: 10;
     border: none;
     cursor: pointer;
-    }
-.search button img{
-    filter: invert(100%);  
-    }
+}
 
-.iniciar-sesion{
-    float:right;
-    margin: 20px;
-   
-}
-.iniciar-sesion button{
-    background-color:orange;
-    color: aliceblue;
-    float: right;
-    padding: 1px 2px;
-    margin-right: 16px;
-    font-size: 10;
-    border: none;
-    cursor: pointer; 
-}
-.iniciar-sesion button img{
-    filter: invert(100%);  
-    }
-.carrito button{
-    background-color:black;
-    color: aliceblue;
-    float: right;
-    padding: 1px 2px;
-    margin-right: 16px;
-    font-size: 10;
-    border: none;
-    cursor: pointer; 
-}
-.carrito button img{
+.search button img {
     filter: invert(100%);
-    }
+}
 
-.nav{
+.iniciar-sesion {
+    float: right;
+    margin: 20px;
+
+}
+
+.iniciar-sesion button {
+    background-color: orange;
+    color: aliceblue;
+    float: right;
+    padding: 1px 2px;
+    margin-right: 16px;
+    font-size: 10;
+    border: none;
+    cursor: pointer;
+}
+
+.iniciar-sesion button img {
+    filter: invert(100%);
+}
+
+.carrito button {
+    background-color: black;
+    color: aliceblue;
+    float: right;
+    padding: 1px 2px;
+    margin-right: 16px;
+    font-size: 10;
+    border: none;
+    cursor: pointer;
+}
+
+.carrito button img {
+    filter: invert(100%);
+}
+
+.nav {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     height: 30px;
     background: rgb(238, 165, 70);
-  
+
 }
-.nav_link{
+
+.nav_link {
     color: white;
     text-decoration: none;
-   font-weight: bold;
+    font-weight: bold;
 }
-.nav_menu{
+
+.nav_menu {
     display: flex;
     margin-right: 40px;
     list-style: none;
 
 }
-.nav_menu_item{
+
+.nav_menu_item {
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
-    margin: 0 100px;   
+    margin: 0 100px;
 }
 
-main{
+.login {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: rgba(9, 8, 8, 0.8);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.login h2 {
+    text-align: center;
+    padding: 0 0 20px 0;
+    margin-top: 15px;
+    color: #fff;
+}
+.login p{
+    text-align: center;
+    color: #FFA52E;
+}
+.login form {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+form .username {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.username input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.username label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(20%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.1s ease;
+}
+
+.username span::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #fff;
+    transition: all 0.1s ease;
+}
+
+.username input:focus~label,
+.username input:focus~label {
+    top: -10px;
+    color: rgb(217, 216, 226);
+}
+
+.username input:focus~span::before,
+.username input:focus~span::before {
+    width: 100%;
+}
+
+.username input:not(:focus):valid~label{
+    top: -10px;
+    color: rgb(217, 216, 226);
+}
+.recording {
+    margin: -5px 0 20px 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.recording:hover {
+    text-decoration: underline;
+}
+
+input[type="sumbit"] {
+    width: 100%;
+    height: 50px;
+    background:  #FFA52E;;
+    border-radius: 10px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+input[type="submit"]:hover {
+    border-color: #FFA52E;
+    transition: .5s;
+}
+
+.register {
+    margin: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+}
+
+.register a {
+    color: white;
+    text-decoration: none;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}
+
+main {
     height: 650px;
     background: rgb(217, 216, 226);
-    
+
 }
-footer{
+
+footer {
     height: 200px;
     width: 100%;
-    
+
     background: rgb(238, 165, 70);
 }
-footer .grupo_1{
+
+footer .grupo_1 {
     width: 100%;
     max-width: 1200px;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-gap:50px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 50px;
     padding: 45px 0px;
-   
+
 }
-footer h2{
+
+footer h2 {
     color: white;
     text-decoration: none;
-   font-weight: 700;
-   font-size: 22px;
-   padding-left: 10px;
+    font-weight: 700;
+    font-size: 22px;
+    padding-left: 10px;
 
 }
 
-.grupo_1 ul li{
+.grupo_1 ul li {
     list-style: none;
-   
+
 }
-.grupo_1 ul li a{
+
+.grupo_1 ul li a {
     font-size: 10px;
     font-weight: 700;
     text-decoration: none;
     text-transform: lowercase;
     color: aliceblue;
     padding: 10px;
-    transition: 0,5s  ease;
+    transition: 0, 5s ease;
 }
+
 ul:hover li a {
     color: blue;
 }
-ul :hover li a:not(:hover){
+
+ul :hover li a:not(:hover) {
     color: aliceblue;
     opacity: 0.3;
     filter: blur(1px);
 }
-.red_social{
-filter: invert(100%);
+
+.red_social {
+    filter: invert(100%);
 }
