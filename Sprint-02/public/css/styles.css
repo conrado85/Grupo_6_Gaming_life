@@ -354,13 +354,12 @@ main {
 
 
 
-
+         
 footer {
 
-    height: 200px;
-    width: 100%;
-
-    background: rgb(238, 165, 70);
+    height:200px;
+    width:100%;
+    background:rgb(238, 165, 70);
 }
 
 footer .grupo_1 {
