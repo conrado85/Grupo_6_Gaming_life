@@ -155,6 +155,7 @@ form .username {
     border: none;
     background: none;
     outline: none;
+    color: #fff;
 }
 
 .username label {
