@@ -351,7 +351,7 @@ main {
     z-index: 9999;
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), 
          -1px 0px 2px rgba(255, 255, 255, 0);
-
+}
 
 
          
@@ -409,4 +409,112 @@ ul :hover li a:not(:hover) {
 
 .red_social {
     filter: invert(100%);
+}
+
+/* agregados Pablo */
+
+main.contenido{
+    display: flex;
+    max-width: 1100px;
+    width: 100%;
+    margin: 40px auto;
+}
+
+#sidebar{
+    position: relative;
+    border-radius: 3%;
+
+    margin: 10px 10px;
+
+    width: 200px;
+    height: 60%;
+    background-color: #e2af7d;
+
+}
+
+#sidebar h2{
+    color: #f7ede2;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+#sidebar ul li{
+    text-align: center;
+    color: #f7ede2;
+    list-style:none;
+    padding: 10px 10px;
+    
+}
+
+#sidebar ul li a{
+    text-decoration: none;
+    color: #f7ede2;
+}
+
+.catalogo{
+    width: 100%;
+}
+
+.mostrador{
+    width: 100%;
+    transition: .5s ease;
+    padding-top: 10px;
+}
+.mostrador .fila{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.mostrador .fila .item{
+    max-width: 100%;
+    margin: 10px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: .3s;
+    background-color: #e2af7d;
+}
+
+.mostrador .fila .item:hover{
+    background-color: #FFA52E;
+}
+
+.mostrador .fila .item .contenedor-item{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    bottom: 170%;
+    text-align: center;
+}
+
+.mostrador .fila .item img{
+    width: 3rem;
+    height: 3rem;
+    padding-bottom: 10px;
+}
+
+.mostrador .fila .item .contenedor-item .texto{
+align-items: center;
+}
+
+.mostrador .fila .item .contenedor-item .boton{
+    background-color: #FFA52E;
+    border-radius: 10%;
+    align-items: center;
+}
+
+.mostrador .fila .item .contenedor-item .boton a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.mostrador .fila .item .descripcion{
+    color: #707070;
+    font-weight: bold;
+}
+.mostrador .fila .item .precio{
+    color: #f85151;
+    font-weight: bold;
+    font-size: 20px;
 }
