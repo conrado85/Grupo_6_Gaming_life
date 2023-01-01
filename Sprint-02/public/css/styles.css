@@ -11,7 +11,7 @@ body {
 #contenedor {
     height: 375px;
     width: 842px;
-    background: rgb(228, 223, 214);
+    background: white;
     margin: auto;
 }
 
@@ -242,7 +242,7 @@ input[type="submit"]:hover {
 }
 
 main {
-    height: 650px;
+    height: 100%;
     background: rgb(217, 216, 226);
 
 }
@@ -411,13 +411,14 @@ ul :hover li a:not(:hover) {
     filter: invert(100%);
 }
 
-/* agregados Pablo */
+/* Catalogo*/
 
 main.contenido{
     display: flex;
     max-width: 1100px;
     width: 100%;
     margin: 40px auto;
+    background-color: white;
 }
 
 #sidebar{
@@ -427,7 +428,7 @@ main.contenido{
     margin: 10px 10px;
 
     width: 200px;
-    height: 60%;
+    height: 100%;
     background-color: #e2af7d;
 
 }
@@ -517,4 +518,109 @@ align-items: center;
     color: #f85151;
     font-weight: bold;
     font-size: 20px;
+}
+
+/* Detalle del producto */
+
+section.producto{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.contenido .producto img{
+    width: 10rem;
+    position: relative;
+    left: 62%;
+    top: 10%;
+}
+
+.contenido .producto .descripcion-general{
+padding-right: 5%;
+}
+
+.contenido .producto .descripcion-general .contenedor-info h3{
+    color: #FFA52E;
+    font-size: bold;
+}
+
+.contenido .producto .descripcion-general .contenedor-info .destacado{
+    color: #FFA52E;
+    font-size: bold;
+}
+
+.contenido .producto .descripcion-general .contenedor-info{
+    border-bottom: #000000 1px solid;
+    margin: 10px;
+    padding: 5px;
+}
+
+.contenido .producto .descripcion-general .contenedor-info li{
+   list-style: none;
+}
+
+.contenido .producto .descripcion-general .contenedor-info2{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: #000000 1px solid;
+    margin: 10px;
+}
+
+.contenido .producto .descripcion-general .contenedor-info2 a{
+    text-decoration: none;
+    color: black;
+}
+
+.contenido .producto .descripcion-general .contenedor-info2 .contenedor-precio{
+    background-color: #FFA52E;
+    border-radius: 5%;
+    color: white;
+
+    position: relative;
+    bottom: 5px;
+
+    padding: 5px;
+}
+
+/* Detalle del producto: recomendados */
+
+.recomendados{
+    display: flex;
+    justify-content: center;
+}
+
+.recomendados .tarjeta{
+    background-color: #e2af7d;
+    border-radius: 5%;
+    width: 15%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 5%;
+    
+}
+
+.recomendados .tarjeta img{
+    width: 6rem;
+    margin-left: 2px;
+    margin-top: 3px;
+}
+
+.recomendados .tarjeta .descripcion p{
+    color: white;
+}
+
+.recomendados .tarjeta .precio{
+    color: white;
+}
+
+.recomendados .tarjeta .ver-mas{
+    color: white;
+    background-color: #FFA52E;
+    border-radius: 5%;
+    width: 80%;
+    position: relative;
+    left: 10%;
+    margin-bottom: 10px;
 }
