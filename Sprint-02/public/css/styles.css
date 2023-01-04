@@ -11,15 +11,15 @@ body {
 }
 
 #contenedor {
-    height: 375px;
-    width: 842px;
+    height: 800px;
+    width: 1200px;
     background: white;
     margin: auto;
 }
 
 header {
     height: 140px;
-    background: black;
+    background: #090808;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -40,7 +40,7 @@ header {
 }
 
 .search button {
-    background-color: orange;
+    background-color: #FFA52E;
     color: aliceblue;
     float: right;
     padding: 1px 2px;
@@ -62,7 +62,7 @@ header {
 }
 
 .iniciar-sesion button {
-    background-color: orange;
+    background-color: #FFA52E;
     color: aliceblue;
     float: right;
     padding: 1px 2px;
@@ -77,7 +77,7 @@ header {
 }
 
 .carrito button {
-    background-color: black;
+    background-color: #090808;
     color: aliceblue;
     float: right;
     padding: 1px 2px;
@@ -95,12 +95,12 @@ header {
     display: flex;
     justify-content: center;
     height: 30px;
-    background: rgb(238, 165, 70);
+    background-color:#E2AF7D;
 
 }
 
 .nav_link {
-    color: white;
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
 }
@@ -120,9 +120,9 @@ header {
 }
 
 .login {
-    position: absolute;
-    top: 50%;
-    left: 100%;
+    position: relative;
+    top: 400px;
+    left: 600px;
     transform: translate(-50%, -50%);
     width: 400px;
     background: rgba(9, 8, 8, 0.8);
@@ -201,7 +201,7 @@ form .username {
 }
 .recording {
     margin: -5px 0 20px 5px;
-    color: white;
+    color: #FFFFFF;
     cursor: pointer;
 }
 
@@ -224,7 +224,7 @@ form .username {
     background:  #FFA52E;;
     border-radius: 10px;
     font-size: 18px;
-    color: white;
+    color: #fff;
     cursor: pointer;
     outline: none;
     text-align: center;
@@ -246,7 +246,7 @@ form .username {
 }
 
 .register a {
-    color: white;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -372,7 +372,7 @@ footer {
 
     height:200px;
     width:100%;
-    background:rgb(238, 165, 70);
+    background-color: #E2AF7D;
 }
 
 footer .grupo_1 {
@@ -411,7 +411,7 @@ footer h2 {
 }
 
 ul:hover li a {
-    color: blue;
+    color: #fff;
 }
 
 ul :hover li a:not(:hover) {
