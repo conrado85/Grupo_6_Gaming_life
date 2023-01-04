@@ -257,7 +257,6 @@ form .username {
 main {
     height: 100%;
     background: rgb(217, 216, 226);
-
 }
 
 .slide {
@@ -411,7 +410,7 @@ footer h2 {
 }
 
 ul:hover li a {
-    color: #fff;
+    color: #FFA52E;
 }
 
 ul :hover li a:not(:hover) {
