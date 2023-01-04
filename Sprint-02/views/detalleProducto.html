@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,108 +8,191 @@
     <title>Detalle</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <div id="contenedor">
-        <header>
-        
-             <section id="logo"><img src="imagin/logo game live SF.png" width="160" height="140" alt="logo de game live"></section>
-             
-             <div class="search">
-                <form action="#">
-                    <input type="text" placeholder="Buscar producto " name="search">
-                    <button>
-                       <img src="imagin/bx-search-alt-2.svg" width="20" height="20" alt="lupa">
-                    </button>
 
-                </form>
+<body id="contenedor" id="secrec">
 
-            </div>
-            <div class="iniciar-sesion">
-               <form action="#">
-                <button>inicio de sesion
-                    <img src="imagin/bx-user-circle.svg" width="20" height="20"  alt="inicio de sesion">
+
+    <header>
+
+        <a id="logo" href="/">
+            <img src="imagin/logo game live SF.png" width="160" height="140" alt="logo de game live">
+        </a>
+        <div class="search">
+            <form action="#">
+                <input type="text" placeholder="Buscar producto " name="search">
+                <button>
+                    <img src="imagin/bx-search-alt-2.svg" width="20" height="20" alt="lupa">
                 </button>
-               </form>
+
+            </form>
+
+        </div>
+        <div class="iniciar-sesion">
+            <form action="#">
+                <button>inicio de sesion
+                    <img src="imagin/bx-user-circle.svg" width="20" height="20" alt="inicio de sesion">
+                </button>
+            </form>
+
+        </div>
+        <div class="carrito">
+            <form action="#">
+                <button>
+                    <img src="imagin/bx-cart.svg" width="20" height="20" alt="Carrito de compra">
+                </button>
+            </form>
+
+        </div>
+
+    </header>
+    <nav class="nav">
+
+        <ul class="nav_menu">
+
+            <li class="nav_menu_item"><a href="/productos" class="nav_menu_link nav_link">Producto</a></li>
+            <li class="nav_menu_item"><a href="#" class="nav_menu_link nav_link">Ayuda</a></li>
+
+
+        </ul>
+
+    </nav>
+
+    <main class="contenido">
+
+        <div id="sidebar">
+            <h2>Categorias</h2>
+            <ul>
+                <li><a href="">Placas madre</a>➤</li>
+                <li><a href="">Procesadores</a>➤</li>
+                <li><a href="">Placas de video</a>➤</li>
+                <li><a href="">Memorias Ram</a>➤</li>
+                <li><a href="">Almacenamiento</a>➤</li>
+                <li><a href="">Funtes de alimentacion</a>➤</li>
+                <li><a href="">Refrigeracion</a>➤</li>
+            </ul>
+        </div>
+
+        <section class="producto">
+            <div class="imagen-prodcuto">
+                <img src="imagin/productos/mouse-m607/1.webp" width="100%" alt="">
+            </div>
+            <div class="descripcion-general">
+                <div class="contenedor-info">
+                    <h2>Mouse Griffin M607</h2>
+                </div>
+                <div class="contenedor-info2">
+                    <h3>Codigo:MOU107</h3>
+                    <a href="#">Categoria: Perifericos</a>
+                </div>
+                <div class="contenedor-info2">
+                    <h3>Precio Web</h3>
+                    <div class="contenedor-precio">$4.280</div>
+                </div>
+                <div class="contenedor-info">
+                    <ul>
+                        <li class="destacado">Garantia</li>
+                        <li class="destacado">Stock disponible</li>
+                        <li class="destacado">Envios a todo el pais</li>
+                    </ul>
+                </div>
+                <div class="contenedor-info">
+                    <h3>Descripcion</h3>
+                    <ul>
+                        <li>Utiliza cable.</li>
+                        <li>Posee rueda de desplazamiento</li>
+                        <li>Con luces para mejorar la experiencia de uso.</li>
+                        <li>Con sensor óptico.</li>
+                        <li>Resolución de 7200dpi.</li>
+                        <li>Creado para llevar a todas partes.</li>
+                        <li>Control inteligente y navegación fácil.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="recomendados">
+        <div class="tarjeta">
+            <div class="imagen">
+                <img src="imagin/productos/teclado-k552/1.webp" alt="">
+            </div>
+            <div class="descripcion">
+                <p>Teclado Redragon k552</p>
+            </div>
+            <div class="precio">$13.280</div>
+            <div class="ver-mas">Ver mas</div>
+        </div>
+        <div class="tarjeta">
+            <div class="imagen">
+                <img src="imagin/productos/teclado-k552/1.webp" alt="">
+            </div>
+            <div class="descripcion">
+                <p>Teclado Redragon k552</p>
+            </div>
+            <div class="precio">$13.280</div>
+            <div class="ver-mas">Ver mas</div>
+        </div>
+        
+        <div class="tarjeta">
+            <div class="imagen">
+                <img src="imagin/productos/teclado-k552/1.webp" alt="">
+            </div>
+            <div class="descripcion">
+                <p>Teclado Redragon k552</p>
+            </div>
+            <div class="precio">$13.280</div>
+            <div class="ver-mas">Ver mas</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="grupo_1">
+            <div class="box">
+                <h2>Categoria</h2>
+
+                <ul>
+
+                    <li><a href="#">Placas de video</a></li>
+                    <li><a href="#">Procesadores</a></li>
+                    <li><a href="#">Memoria</a></li>
+                    <li><a href="#">Almacenamiento</a></li>
+                    <li><a href="#">Refrigeracion</a></li>
+                </ul>
 
             </div>
-            <div class="carrito">
-                <form action="#">
-                 <button>
-                     <img src="imagin/bx-cart.svg" width="20" height="20"  alt="Carrito de compra">
-                 </button>
-                </form>
+            <div class="box">
+                <h2> Marcas</h2>
+                <ul>
+                    <li><a href="#">Intel</a></li>
+                    <li><a href="#">Amd</a></li>
+                    <li><a href="#">Asus</a></li>
+                    <li><a href="#">Nvidia</a></li>
+                    <li><a href="#">Asrock</a></li>
+                </ul>
 
-             </div>
-         </header>
-         <nav class="nav">
-         
-             <ul class="nav_menu">
- 
-                 <li class="nav_menu_item"><a href="#" class="nav_menu_link nav_link">Producto</a></li>
-                 <li class="nav_menu_item"><a href="#" class="nav_menu_link nav_link">Ayuda</a></li>
- 
- 
-             </ul>
- 
-            </nav>
-        
-        <main>
-         <article id="carrusel"></article>
-         <article id="productos_destacados"></article>
-         <p>hoja de detalle de producto</p>
-
-        </main>
-        <footer >
-         <div class="grupo_1">
-             <div class="box">
-                 <h2 >Categoria</h2>
-                 
-             <ul >
- 
-                 <li ><a href="#" >Placas de video</a></li>
-                 <li ><a href="#" >Procesadores</a></li>
-                 <li ><a href="#" >Memoria</a></li>
-                 <li ><a href="#" >Almacenamiento</a></li>
-                 <li ><a href="#" >Refrigeracion</a></li>
-             </ul>
-                 
-             </div>
-             <div class="box">
-                 <h2 > Marcas</h2>
-                 <ul >
-                     <li><a href="#" >Intel</a></li>
-                     <li><a href="#" >Amd</a></li>
-                     <li><a href="#" >Asus</a></li>
-                     <li><a href="#" >Nvidia</a></li>
-                     <li><a href="#" >Asrock</a></li>
-                 </ul>    
-                
-             </div>
-             <div class="box">
-                 <h2 > Ayuda</h2>
-                 <ul >
-                     <li ><a href="#" >Whatsapp</a></li>
-                     <li ><a href="#" >FAQ</a></li>
-                     <li ><a href="#" >Botón de arrepentimiento</a></li>
-                 </ul>    
-             </div>
-             <div class="box">
+            </div>
+            <div class="box">
+                <h2> Ayuda</h2>
+                <ul>
+                    <li><a href="#">Whatsapp</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Botón de arrepentimiento</a></li>
+                </ul>
+            </div>
+            <div class="box">
                 <h2>Seguinos en nuestras redes</h2>
                 <div class="red_social">
-                 <img src="imagin/bxl-instagram.svg"  width="50" height="50" alt="instagram">
-                 <img src="imagin/bxl-whatsapp.svg"  width="50" height="50"alt="whatsapp">
-                 <img src="imagin/bxl-facebook.svg"  width="50" height="50"alt="facebook">
-                 
+                    <img src="imagin/bxl-instagram.svg" width="50" height="50" alt="instagram">
+                    <img src="imagin/bxl-whatsapp.svg" width="50" height="50" alt="whatsapp">
+                    <img src="imagin/bxl-facebook.svg" width="50" height="50" alt="facebook">
+
                 </div>
-             </div>
-         </div>
-         <div class="grupo_2"></div>
+            </div>
+        </div>
+        <div class="grupo_2"></div>
 
 
-        </footer>
-
-
- </div>
- 
+    </footer>
 </body>
+
 </html>
