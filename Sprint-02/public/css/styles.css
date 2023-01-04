@@ -1,11 +1,13 @@
 * {
     padding: 0px;
     margin: 0px;
+    box-sizing: border-box;
 }
 
 body {
     height: 375px;
     width: 842px;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
 #contenedor {
@@ -55,6 +57,7 @@ header {
 .iniciar-sesion {
     float: right;
     margin: 20px;
+    padding-top: 10px;
 
 }
 
@@ -113,6 +116,7 @@ header {
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0 100px;
+    padding-top: 5px;
 }
 
 .login {
@@ -203,6 +207,15 @@ form .username {
 
 .recording:hover {
     text-decoration: underline;
+}
+
+.tel{
+    
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
 }
 
 .sumbit {
