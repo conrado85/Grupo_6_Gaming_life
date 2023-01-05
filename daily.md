@@ -14,12 +14,12 @@
 
 Sprint_2
 
-1. Comenzar a hacer:
+1. Comenzar a hacer: Tener mas reuniones
 
-2. Hacer más:
+2. Hacer más: Hacer nuestras tareas en tiempo y forma
 
-3. Continuar haciendo:
+3. Continuar haciendo: Terminar las tareas pendientes
 
-4. Hacer menos:
+4. Hacer menos: No comunicarnos bien
 
-5. Dejar de hacer:
+5. Dejar de hacer: Dejar de hacer todo a ultimo momento

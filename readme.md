@@ -26,6 +26,10 @@ nuestros servicios al mundo del Gaming. Teniendo productos de mayor calidad al m
 
 - Ruíz Pablo: Tengo 20 años, vivo en San Miguel, soy desarrollador junior que esta aprendiendo sobre el desarrollo web full stack y tengo muchas ganas de desarrollarme mas
 
+ **Tablero de Trello:**
+
+    -https://trello.com/b/BHbIy5zK/sprint-2
+
  **Referencias:**
 - https://www.maximus.com.ar/   (nos agrado el footer )
 - https://www.xgaming.com.ar/   (de esta pagina tomamos el cuerpo )
