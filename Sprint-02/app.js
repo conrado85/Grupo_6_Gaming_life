@@ -17,8 +17,8 @@ app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, '/views/login.html'));
 });
 
-app.get('/administrador', (req, res) => {
-    res.sendFile(path.join(__dirname, '/views/administrador.html'));
+app.get('/ayuda', (req, res) => {
+    res.sendFile(path.join(__dirname, '/views/ayuda.html'));
 });
 
 app.get('/compras', (req, res) => {
