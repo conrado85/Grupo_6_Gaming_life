@@ -5,6 +5,15 @@ const publicPath =path.resolve(__dirname,'./public');
 
 app.use(express.static(publicPath) );
 
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, './views'));
+
+const rutasAyuda = require('./routes/ayuda')
+
+app.use('/ayuda', rutasAyuda)
+
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/home.html'));
 });
@@ -18,7 +27,7 @@ app.get('/login', (req, res) => {
 });
 
 app.get('/ayuda', (req, res) => {
-    res.sendFile(path.join(__dirname, '/views/ayuda.html'));
+    res.sendFile(path.join(__dirname, '/views/ayuda.ejs'));
 });
 
 app.get('/compras', (req, res) => {
