@@ -6,13 +6,8 @@ const listMenu = JSON.parse(menuFile);
 
 const controller = {
     index: (req, res) => {
-        res.render('index', { menu: listMenu });
+        res.render('home');
     },
-    detail: (req, res) => {
-        const { id } = req.params;
-        const plato = listMenu.find((element) => element.id == id);
-        res.render('detalleMenu', { plato: plato });
-    }
 };
 
 module.exports = controller;

@@ -23,3 +23,15 @@ Sprint_2
 4. Hacer menos: No comunicarnos bien
 
 5. Dejar de hacer: Dejar de hacer todo a ultimo momento
+
+Sprint_3
+
+1. Comenzar a hacer.
+
+2. Hacer más.
+
+3. Continuar haciendo.
+
+4. Hacer menos.
+
+5. Dejar de hacer.
