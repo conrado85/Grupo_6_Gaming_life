@@ -3,15 +3,11 @@ const path = require('path');
 
 const app = express();
 
+const mainRouter = require('./routers/main')
+
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/views/home.html'));
-});
-
-app.get('/productos', (req, res) => {
-    res.sendFile(path.join(__dirname, '/views/productos.html'));
-});
+app.use('/', mainRouter)
 
 app.listen(3030, () => {
     console.log('Servidor iniciado en http://localhost:3030');
