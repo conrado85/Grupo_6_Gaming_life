@@ -3,11 +3,6 @@ const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override')
 
-//Rutas
-const mainRouter = require('./routers/main')
-const userRouter = require('./routers/user')
-const productRouter = require('./routers/products')
-
 //configuracion del 'app'
 const app = express();
 app.use(methodOverride('_method'))
@@ -18,6 +13,10 @@ app.use(express.urlencoded({ extended:false}))
 app.use(express.json())
 
 //Sistema de rutas
+
+const mainRouter = require('./routers/main')
+const userRouter = require('./routers/user')
+const productRouter = require('./routers/products')
 
 app.use('/gaminglife', mainRouter)
 app.use('/gaminglife/usuario', userRouter)
