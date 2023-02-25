@@ -14,15 +14,13 @@ nuestros servicios al mundo del Gaming. Teniendo productos de mayor calidad al m
  ¿Como ajustaremos nuestra oferta al publico? Ofreciendo productos de calidad junto a un servicio tecnico capacitado en las ultimas tecnologias
 
  **Integrantes:**
-- Córdoba Nicolás: (Desarrollador) **No pudimos contactar con el**
-
 - González Conrado: Tengo 38 Años,Soy de San Miguel.Trabajo de Operario en una fabrica, y en mis tiempos libres me dedico a aprender a programar , me gustaria ser un desarrolador frontEnd
 
 - Lacourlig Candela: Soy DJ y community manager con estudios en artes visuales, diseño gráfico, imagen y sonido aplicados.
 
 - Medina Maximiliano: Tengo 19 años, Vivo en San Miguel. Soy un Desarrollador FrontEnd junior que quiere aprender más sobre BackEnd y tener la posibilidad de poder hacer las dos
 
-- Romano Nazarena: (Desarrollador) **Ya no cursa**
+-Emiliano Rodriguez: (agregar descripcion)
 
 - Ruíz Pablo: Tengo 20 años, vivo en San Miguel, soy desarrollador junior que esta aprendiendo sobre el desarrollo web full stack y tengo muchas ganas de desarrollarme mas
 
@@ -36,3 +34,8 @@ nuestros servicios al mundo del Gaming. Teniendo productos de mayor calidad al m
 - https://compragamer.com/armatupc  (nos agrado el header)
 - https://www.fullh4rd.com.ar/  (la parte de destacados)
 - https://www.gezatek.com.ar/
+
+**Importante:**
+- En la carpeta Designs, se encuentra los modelos que seguimos en un principio a la hora de crear la pagina.
+- En la carpeta Project, se encuentra el proyecto en su version completamente funcional.
+- En la carpeta Sprints, se encuentran, las distintas estapas de desarrollo.
