@@ -1,0 +1,63 @@
+<%- include('partials/head') %>
+    <title>Inicio</title>
+    <link rel="stylesheet" href="/css/styles-productdetail.css">
+    </head>
+
+    <body>
+        <header class="main-header">
+            <%- include('partials/navbar') %>
+                <!--Completar con los distintos items del navbar-->
+                <div class="nav-menu">
+                    <a href="/user/login" class="nav-item">Iniciar sesion</a>
+                    <a href="/productos" class="nav-item">Lista de productos</a>
+                    <a href="" class="nav-item">Quienes somos</a>
+                    <a href="" class="nav-item">
+                        <img src="/images/iconos/bx-cart.svg" alt="Carrito">
+                    </a>
+                </div>
+                </div>
+                </nav>
+        </header>
+
+        <div id="container">
+            <!-- detalles del producto -->
+            <div class="product-details">
+                <h1><%= producto.name %> </h1>
+                <span class="hint-star star">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </span>
+                <!-- informacion importante-->
+                <p class="information">" <%= producto.description %>  "</p>
+                <!-- Control -->
+                <div class="control">
+                    <button class="btn">
+                        <span class="price"><%= producto.price %> ></span>
+                        <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                        <span class="buy">Comprar</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-image">
+
+                <img src="images/imgProductos/<%= producto.img %>/" alt="imagen producto">
+
+                <!-- informacion extra-->
+                <div class="info">
+                    <h2> Descripcion</h2>
+                    <ul>
+                        <li><strong>fracuencia: </strong>2.52</li>
+                        <li><strong>Memoria: </strong>24 GB</li>
+                        <li><strong>Tipo memoria: </strong>GDDR6X</li>
+                        <li><strong>Resolucion pantalla: </strong>4K a 240HZ</li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>
