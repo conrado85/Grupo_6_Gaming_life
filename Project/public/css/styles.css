@@ -252,6 +252,16 @@ main {
     height: 100%;
     background: rgb(217, 216, 226);
 }
+
+.register-error-message {
+    border: 1px solid #fe0000;
+    padding: 5px 5px;
+    background-color: #ff0000;
+    color: #ffffff;
+    border-radius: 50px;
+    text-align: center;
+}
+
 /* valores del carrucel */
 .slide {
     position: relative;
