@@ -1,7 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 
-const menuFile = fs.readFileSync(path.join(__dirname, '../models/productos.json'),'utf-8')
+const menuFile = fs.readFileSync(path.join(__dirname, '../productos.json'),'utf-8')
 const listaProductos = JSON.parse(menuFile)
 
 const controller = {
@@ -11,10 +11,10 @@ const controller = {
     detalleProducto:(req,res) =>{
         const {id} = req.params
         const producto = listaProductos.find((producto)=>producto.id == id)
-        res.render('detalleProducto',{producto})
+        res.render('detail',{producto})
     },
     crear:(req,res) =>{
-        res.render('crearProducto')
+        res.render('product-create')
     },
     productoNuevo:(req,res) => {
         
@@ -24,15 +24,12 @@ const controller = {
             idCounter ++
         });
 
-        producto={
+        producto = {
             id: idCounter + 1,
-            name: req.body.name,
-            description: req.body.description,
-            price: req.body.price,
-            payments: req.body.payments,
-            img:""
+            img: 'default-image.png',
+            ...req.body
         }
-
+        console.log(producto)
         listaProductos.push(producto)
 
         listaProductosJSON = JSON.stringify(listaProductos)
