@@ -1,1 +1,0 @@
-let  palabras = "hola mundo";
