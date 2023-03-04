@@ -12,6 +12,10 @@
 
  /*seccion del nav*/
 
+.nav-link {
+    color: #000;
+    text-decoration: none;
+}
 .logo {
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif;
