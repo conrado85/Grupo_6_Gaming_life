@@ -1,0 +1,42 @@
+<%- include('partials/head') %>
+    <title><%= producto.name%></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/products.css">
+    <link rel="stylesheet" href="/css/nav-bar.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    </head>
+
+    <body>
+        <header>
+            <%- include('partials/navbar') %>
+                <!--Completar con los distintos items del navbar-->
+                <div class="nav-menu">
+                    <a href="/gaminglife/usuario/login" class="nav-item">Iniciar sesion</a>
+                    <a href="/gaminglife/productos/lista" class="nav-item">Lista de productos</a>
+                    <a href="" class="nav-item">Quienes somos</a>
+                    <a href="" class="nav-item">
+                        <img src="/images/iconos/bx-cart.svg" alt="Carrito">
+                    </a>
+                </div>
+                </div>
+                </nav>
+        </header>
+        <main class="main-conteiner">
+            <section class="product-box">
+                <div class="img-conteiner">
+                    <img src="/images/imgProductos/<%= producto.img%>" class="product-img-detail" alt="">
+                </div>
+
+                <div class="features">
+                    <h1 class="p-name"><%= producto.name%></h1>
+                    <h2 class="p-price"><%= producto.price%></h2>
+                    <p class="p-description"><%= producto.description%></p>
+                </div>
+            </section>
+        </main>
+        
+    </body>
+
+    </html>
