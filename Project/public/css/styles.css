@@ -9,6 +9,7 @@
 body {
     background-image: url(../images/background.png);
     background-repeat: repeat;
+    font-family: "Montserrat", sans-serif, Arial,;
 }
 
 /* main */
@@ -100,7 +101,8 @@ header {
 .search button {
     height: 65%;
     background-color: darkorange;
-    border-radius: 5%;
+    border-radius: 15%;
+    margin: auto 0;
 }
 
 .search button img {
@@ -215,7 +217,7 @@ form .username {
 .sumbit {
     width: 100%;
     height: 50px;
-    background:  #FFA52E;;
+    background:  #FFA52E;
     border-radius: 10px;
     font-size: 18px;
     color: #fff;
@@ -254,11 +256,8 @@ main {
 }
 
 .register-error-message {
-    border: 1px solid #fe0000;
     padding: 5px 5px;
-    background-color: #ff0000;
-    color: #ffffff;
-    border-radius: 50px;
+    color: #ff0000;
     text-align: center;
 }
 

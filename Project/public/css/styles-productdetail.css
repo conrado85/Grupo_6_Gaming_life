@@ -10,8 +10,8 @@
 body {
 	background-image: url(../images/background.png);
     background-repeat: repeat;
-	}
-
+    font-family: "Montserrat", sans-serif, Arial;
+}
 /* main */
 
 header {
