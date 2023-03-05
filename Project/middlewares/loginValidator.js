@@ -1,13 +1,8 @@
 const {body} = require ('express-validator')
 
 const loginValidator = [
-    body ('email')
-    .isEmail().withMessage('Ingrese una casilla de E-Mail valida')
-    .notEmpty().withMessage('Campo obligatorio, ingrese su E-Mail'),
-
-    body ('password')
-    .notEmpty().withMessage('Ingresa tu contraseña para continuar')
-    .isLength({ min: 6 }).withMessage('Completa correctamente tu contraseña')
+    body ('username').notEmpty().withMessage('Por favor, ingrese su nombre de usuario'), 
+    body ('password').notEmpty().withMessage('Ingresa tu contraseña para continuar').isLength({ min: 6 }).withMessage('Contraseña erronea. Su contraseña se conforma con 6 o mas caracteres')
 ]
 
 module.exports = loginValidator

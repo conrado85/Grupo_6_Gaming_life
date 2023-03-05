@@ -14,9 +14,11 @@ let userController = {
         if (!errors.isEmpty()){
           return res.render('registro', { session: req.session, errors:errors.mapped() })
         }
-        const {username, email, password, confirmPassword} = req.body
+        const {fullname, username, email, birthday, password, confirmPassword} = req.body
+        req.session.fullname = fullname
         req.session.username = username
         req.session.email = email
+        req.session.birthday = birthday
         req.session.password = password
         req.session.confirmPassword = confirmPassword
         res.render('registro', { session: req.session })
