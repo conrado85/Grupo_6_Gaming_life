@@ -10,60 +10,10 @@
     font-family: "Montserrat", sans-serif, Arial;
 }
 
- /*seccion del nav*/
-
-.nav-link {
-    color: #000;
-    text-decoration: none;
-}
-.logo {
-    font-size: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    padding: 0 40px;
-    line-height: 70px;
-}
-
-.nav-menu {
-    display: flex;
-    margin-right: 40px;
-    list-style: none;
-
-}
-
-.nav-menu-item {
-    font-size: 15px;
-    margin: 0 10px;
-    line-height: 70px;
-    text-transform: uppercase;
-    width: max-content;
-    font-weight: bold;
-}
-
-.nav-menu-link {
-    padding: 8px 12px;
-    border-radius: 50px;
-}
-
-.nav-menu-link:hover {
-    background-color: #F2921D;
-    transition: 0.5;
-}
-
-.menu-barras {
-    color: #A61F69;
-    background: none;
-    border: none;
-    font-size: 30px;
-    padding: 0 20px;
-    line-height: 50px;
-    display: none;
-    cursor: pointer;
-}
  
  /*seccion de header*/
- .header {
-    background: url('/images/pcarmadas23-mov.webp');
+ .section-header {
+    background: url('/images/productos/pcarmadas23-mov.webp');
     height: 600px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -73,7 +23,7 @@
   }
   
   .section-header {
-    max-width: 1000px;
+    max-width: 100%;
     margin: auto;
     padding: 30px 0;
   }
@@ -127,6 +77,7 @@
     /* width: 60%; */
     width: 100%;
     transition: .3s;
+    /* Configuracion de las tarjetas*/
 }
 .contenedor .contenedor-items .item{
     background:#f3f3f3;
@@ -146,14 +97,31 @@
 .contenedor .contenedor-items .item .titulo-item{
     display: block;
     font-weight: bold;
+    font-size: 15px;
     text-align: center;
     text-transform: uppercase;
+    margin:10px ;
 }
 .contenedor .contenedor-items .item .precio-item{
     display: block;
     text-align: center;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 12px;
+    margin: 8px;
+}
+.contenedor .contenedor-items .item .detalle-item{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 8px;
+}
+.contenedor .contenedor-items .item .nombre-item{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    margin: 10px;
 }
 
 .contenedor .contenedor-items .item .boton-item{
@@ -308,7 +276,7 @@
     }
     .contenedor-nav {
         
-        height: 50px;
+        height: 65px;
        
     
     }
@@ -358,7 +326,7 @@
       left: 0;  
 
     }
-    .header{
+    .section-header{
         background: #000;
     }
 
