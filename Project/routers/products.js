@@ -25,4 +25,6 @@ router.get('/crear' ,upload.single('imgF') ,productController.crear)
 
 router.post('/productoNuevo',productController.productoNuevo)
 
+router.get('/:id/editar',productController.editarProducto)
+
 module.exports = router

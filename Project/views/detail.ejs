@@ -32,11 +32,31 @@
                 <div class="features">
                     <h1 class="p-name"><%= producto.name%></h1>
                     <h2 class="p-price"><%= producto.price%></h2>
-                    <p class="p-description"><%= producto.description%></p>
+                    <div class="button-conteiner">
+
+                    <button class="buttonP" type="submit">Agregar al carrito</button>
+                    <a href="/gaminglife/productos/<%= producto.id %>/editar"><button class="buttonP" type="submit">Editar</button></a>
+                    
+                    <button class="buttonComprar" type="submit">Comprar</button>
+
+                    </div>    
                 </div>
+            </section>
+            <section class="description-box">
+                <div class="category_splash">
+                    <h3> Categoria:</h3>
+                    <p><%= producto.category%></p>
+                </div>
+                <h2>Descripcion del producto:</h2>
+                <p class="p-description"><%= producto.description%></p>
+                
+            </section>
+
+            <section class="relation-box">
+                <h2>Productos relacionados</h2>
             </section>
         </main>
         
     </body>
-
+    <%- include('partials/footer') %>
     </html>

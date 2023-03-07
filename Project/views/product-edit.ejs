@@ -26,7 +26,7 @@
                 </nav>
         </header>
         <main class="main-conteiner">
-
+            <h2>Estas editando <%=productToEdit.name%></h2>
             <form action="/gaminglife/productos/productoNuevo" class="product-box" autocomplete="off" method="POST">
                 <div class="img-conteiner">
                     <img src="/images/imgProductos/default-image.png" class="product-img-detail" alt="">
@@ -35,13 +35,13 @@
 
                 <div class="create-form">
                     <label for="name">Nombre del producto</label>
-                    <input type="text" name="name" placeholder="Ingrese el nombre" required>
+                    <input value="<%=productToEdit.name%>" type="text" name="name" placeholder="Ingrese el nombre" required>
                     
                     <label for="price">Precio del producto</label>
-                    <input type="number" name="price" placeholder="Ingrese el precio" required>
+                    <input value="<%=productToEdit.price%>" type="number" name="price" placeholder="Ingrese el precio" required>
                     
                     <label for="description">Descripcion del producto</label>
-                    <textarea name="description" cols="30" rows="10" required>Completar con la información del producto</textarea>
+                    <textarea value="<%=productToEdit.description%>" name="description" cols="30" rows="10" required>Completar con la información del producto</textarea>
                     
                     <select name="categoria" name="category" required>
                         <option selected>Selecciona la categoria</option>
@@ -51,6 +51,7 @@
                     </select>
 
                     <button type="submit">Enviar</button>
+                    <button>Eliminar</button>
                 </div>
             </form>
 
