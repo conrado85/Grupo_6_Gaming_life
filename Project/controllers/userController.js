@@ -2,6 +2,9 @@ const { validationResult } = require('express-validator');
 const path = require('path');
 const fs = require ('fs')
 
+const userFile = fs.readFileSync(path.join(__dirname,"../data/userData.json"),'utf-8')
+const userList = JSON.parse(userFile)
+
 let userController = {
     register: function(req, res){
         return res.render('registro')
@@ -14,14 +17,25 @@ let userController = {
         if (!errors.isEmpty()){
           return res.render('registro', { session: req.session, errors:errors.mapped() })
         }
-        const {fullname, username, email, birthday, password, confirmPassword} = req.body
-        req.session.fullname = fullname
-        req.session.username = username
-        req.session.email = email
-        req.session.birthday = birthday
-        req.session.password = password
-        req.session.confirmPassword = confirmPassword
-        res.render('registro', { session: req.session })
+        idCounter = 0
+        newUser = userList.forEach( user => {
+            idCounter ++
+        });
+
+        user ={
+            id: idCounter + 1,
+            fullname: req.body.fullname,
+            username: req.body.username,
+            email: req.body.email,
+            password: req.body.password
+        }
+
+        userList.push(user)
+
+        userListJSON = JSON.stringify(userList)
+        fs.writeFileSync('userData.json', userListJSON)
+
+        res.redirect('/gaminglife/usuario/login')
       },
       userLogin: (req,res) => {
         const errors = validationResult(req)
