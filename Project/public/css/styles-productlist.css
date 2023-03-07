@@ -196,63 +196,7 @@ header {
     margin: 3px;
 }
 
-/* footer */
 
-footer {
-
-    height:200px;
-    width:100%;
-    background-color: #E2AF7D;
-}
-
-footer .grupo_1 {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 50px;
-    padding: 45px 0px;
-
-}
-
-footer h2 {
-    color: white;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 22px;
-    padding-left: 10px;
-
-}
-
-.grupo_1 ul li {
-    list-style: none;
-
-}
-
-.grupo_1 ul li a {
-    font-size: 10px;
-    font-weight: 700;
-    text-decoration: none;
-    text-transform: lowercase;
-    color: aliceblue;
-    padding: 10px;
-    transition: 0, 5s ease;
-}
-
-ul:hover li a {
-    color: #FFA52E;
-}
-
-ul :hover li a:not(:hover) {
-    color: aliceblue;
-    opacity: 0.3;
-    filter: blur(1px);
-}
-
-.red_social {
-    filter: invert(100%);
-}
 
 
 @media (min-width:1400px) {
