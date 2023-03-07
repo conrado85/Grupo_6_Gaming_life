@@ -27,13 +27,26 @@ let userController = {
         const errors = validationResult(req)
         if (!errors.isEmpty()){
           return res.render('login', { session: req.session, errors:errors.mapped() })
+        // } else {
+        //   let usersJSON = fs.readFileSync('userData.json', {encoding: 'utf-8'})
+        //   let users;
+        //   if (usersJSON == "") {
+        //     users= []
+        //   } else {
+        //     users = JSON.parse(usersJSON)
+        //   }
+        //   for (let i = 0; i < users.length; i++) {
+        //     if (users[i].username == req.body.username) {
+        //       if (users[i].password == req.body.password)
+        //   }
         }
-        const { username, password} = req.body
-        req.session.username = username
-        req.session.password = password
-        res.render('login', { session: req.session })
+        // const { username, password} = req.body
+        // req.session.username = username
+        // req.session.password = password
+        res.render('profile', { session: req.session })
+
+        }
     }
-}
 
     module.exports= userController
 
