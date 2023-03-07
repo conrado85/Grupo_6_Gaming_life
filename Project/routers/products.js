@@ -25,6 +25,10 @@ router.get('/crear' ,upload.single('imgF') ,productController.crear)
 
 router.post('/productoNuevo',productController.productoNuevo)
 
-router.get('/:id/editar',productController.editarProducto)
+router.get('/editar/:id',productController.editarProducto)
+
+router.put('/:id', productController.update)
+
+router.get('/imagen/:id', productController.imgUpdate)
 
 module.exports = router

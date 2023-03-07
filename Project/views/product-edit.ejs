@@ -1,6 +1,6 @@
 <%- include('partials/head') %>
     <title>
-        Crear producto
+        Editar producto
     </title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,11 +26,11 @@
                 </nav>
         </header>
         <main class="main-conteiner">
-            <h2>Estas editando <%=productToEdit.name%></h2>
-            <form action="/gaminglife/productos/productoNuevo" class="product-box" autocomplete="off" method="POST">
+            <h2 class="secTitle">Estas editando <%=productToEdit.name%></h2>
+            <form action="/gaminglife/productos/<%=productToEdit.id%>?_method=PUT" class="product-box" autocomplete="off" method="POST">
                 <div class="img-conteiner">
                     <img src="/images/imgProductos/default-image.png" class="product-img-detail" alt="">
-                    <p>La imagen la seleccionara mas adelante</p>
+                    <a href="/gaminglife/productos/imagen/<%=productToEdit.id%>">Editar</a>
                 </div>
 
                 <div class="create-form">
@@ -38,10 +38,10 @@
                     <input value="<%=productToEdit.name%>" type="text" name="name" placeholder="Ingrese el nombre" required>
                     
                     <label for="price">Precio del producto</label>
-                    <input value="<%=productToEdit.price%>" type="number" name="price" placeholder="Ingrese el precio" required>
+                    <input value="<%=productToEdit.price%>" type="text" name="price" placeholder="Ingrese el precio" required>
                     
                     <label for="description">Descripcion del producto</label>
-                    <textarea value="<%=productToEdit.description%>" name="description" cols="30" rows="10" required>Completar con la información del producto</textarea>
+                    <textarea name="description" cols="30" rows="10" required><%=productToEdit.description%></textarea>
                     
                     <select name="categoria" name="category" required>
                         <option selected>Selecciona la categoria</option>
@@ -50,59 +50,13 @@
                         <option value="Periferico">Periferico</option>
                     </select>
 
-                    <button type="submit">Enviar</button>
+                    <button type="submit">Actualizar</button>
                     <button>Eliminar</button>
                 </div>
             </form>
 
         </main>
-        <footer>
-            <div class="grupo_1">
-                <div class="box">
-                    <h2>Categoria</h2>
-
-                    <ul>
-
-                        <li><a href="#">Placas de video</a></li>
-                        <li><a href="#">Procesadores</a></li>
-                        <li><a href="#">Memoria</a></li>
-                        <li><a href="#">Almacenamiento</a></li>
-                        <li><a href="#">Refrigeracion</a></li>
-
-                    </ul>
-                </div>
-                <div class="box">
-
-                    <h2> Marcas</h2>
-                    <ul>
-                        <li><a href="#">Intel</a></li>
-                        <li><a href="#">Amd</a></li>
-                        <li><a href="#">Asus</a></li>
-                        <li><a href="#">Nvidia</a></li>
-                        <li><a href="#">Asrock</a></li>
-                    </ul>
-
-                </div>
-                <div class="box">
-                    <h2> Ayuda</h2>
-                    <ul>
-                        <li><a href="#">Whatsapp</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Botón de arrepentimiento</a></li>
-                    </ul>
-                </div>
-                <div class="box">
-                    <h2>Seguinos en nuestras redes</h2>
-                    <div class="red_social">
-                        <img src="images\iconos\bxl-instagram.svg" width="50" height="50" alt="instagram">
-                        <img src="images\iconos\bxl-whatsapp.svg" width="50" height="50" alt="whatsapp">
-                        <img src="images\iconos\bxl-facebook.svg" width="50" height="50" alt="facebook">
-
-                    </div>
-                </div>
-            </div>
-            <div class="grupo_2"></div>
-        </footer>
+        <%- include('partials/footer') %>
     </body>
 
     </html>

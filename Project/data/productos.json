@@ -21,10 +21,11 @@
   "id": 3,
   "name": "Motherboard Asrock A320M",
   "description": "Tarjeta madre A320M-HDV R4.0 Socket AMD AM4, 2 DIMMs, Soporta memoria DDR4 3200+(OC)* 1 PCIe 3.0 x16, 1 PCIe 2.0 x1",
-  "price": "$17064.68",
+  "price": "$17064.70",
   "payments": 12,
   "img": "motherboardAsrockA320M.png",
-  "category": "Componente"
+  "category": "Componente",
+  "categoria": "Componente"
  },
  {
   "id": 4,

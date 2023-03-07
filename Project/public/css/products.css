@@ -134,11 +134,18 @@ body {
 .img-conteiner{
     width: 100%;
 
-    display:block;
+    display:flex;
+    flex-direction: column;
     justify-content: center;
 }
 
 .img-conteiner p{
+    color: black;
+    text-shadow: 0 0 8px;
+    
+}
+
+.img-conteiner a{
     color: black;
     text-shadow: 0 0 8px;
     
@@ -246,6 +253,13 @@ body {
     font-style: italic;
 }
 /* Formulario de creacion*/
+
+.secTitle{
+    margin-top: 5%;
+    color: white;
+    background-color: black;
+    border: 2px black solid;
+}
 
 .create-form{
     display: flex;

@@ -11,6 +11,7 @@ const controller = {
     detalleProducto:(req,res) =>{
         const {id} = req.params
         const producto = listaProductos.find((producto)=>producto.id == id)
+        console.log("se esta renderizando el producto " + producto.name)
         res.render('detail',{producto})
     },
     crear:(req,res) =>{
@@ -40,11 +41,30 @@ const controller = {
     },
     editarProducto:(req,res)=>{
         const {id} = req.params
-        const productToEdit = listaProductos.find((producto) => {
-            producto.id == id
-        })
-        console.log(productToEdit)
+        console.log(id)
+        const productToEdit = listaProductos.find((producto) => producto.id == id)
+        console.log(productToEdit.name)
         res.render('product-edit', {productToEdit})
+    },
+    update:(req,res)=>{
+        const {id} = req.params
+        let productToUpdate = listaProductos.find((producto) => producto.id == id)
+        productToUpdate= {
+            ...productToUpdate,
+            ...req.body
+        } 
+        
+        const indexToEdit = listaProductos.findIndex((producto)=> producto.id == id)
+        listaProductos[indexToEdit] = productToUpdate
+
+        fs.writeFileSync(path.join(__dirname, '../data/productos.json'), JSON.stringify(listaProductos, null, ' '))
+
+        res.redirect('/gaminglife/productos/lista')
+    },
+    imgUpdate:(req,res) => {
+        const {id} = req.params
+        const producto = listaProductos.find((producto)=>producto.id == id)
+        res.render("product-edit-img",{producto})
     }
 }
 
