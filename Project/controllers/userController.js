@@ -1,6 +1,7 @@
 const { validationResult } = require('express-validator');
 const path = require('path');
 const fs = require ('fs')
+const bcrypt = require ('bcryptjs')
 
 const userFile = fs.readFileSync(path.join(__dirname,"../data/userData.json"),'utf-8')
 const userList = JSON.parse(userFile)
