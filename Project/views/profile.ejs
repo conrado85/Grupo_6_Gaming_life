@@ -1,0 +1,27 @@
+<%-include('partials/head') %>
+<link rel="stylesheet" href="/css/reglogstyle.css">
+<title>Perfil</title>
+<body>
+    <header>
+        <%-include ('partials/navbar') %>
+    </header>
+    <main>
+<div class="container-login">
+    <h1 class ="title">¡Que bueno verte de vuelta!</h1>
+    <div class="pfp">
+        <img src="/img/avatar1.jpg">
+        <i>Foto de perfil</i>
+        <label for="pfp-upload">Seleccionar nueva foto de perfil</label>
+        <input type="image" name="pfp-upload" alt="Modificar foto perfil" id="pfp-upload">
+    </div>
+        <h4 class="subtitle">Datos personales</h4>
+        <div class="user-data">Nombre y apellido</div>
+        <div>NOMBRE Y APELLIDO<button class="btn">Modificar</button></div>
+        <div class="user-data">Nombre de usuario
+        <div>USUARIOGENERICO123 <button class="btn">Modificar</button></div>
+        <div class="user-data">Pais
+        <div>Seleccionar Pais<button class="btn">Modificar</button></div>
+</div>
+    </main>
+</body>
+<%- include('partials/footer') %>

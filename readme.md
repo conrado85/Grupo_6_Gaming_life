@@ -20,7 +20,7 @@ nuestros servicios al mundo del Gaming. Teniendo productos de mayor calidad al m
 
 - Medina Maximiliano: Tengo 19 años, Vivo en San Miguel. Soy un Desarrollador FrontEnd junior que quiere aprender más sobre BackEnd y tener la posibilidad de poder hacer las dos
 
--Emiliano Rodriguez: (agregar descripcion)
+-Emiliano Rodriguez: Habitando San Miguel hace 6 años, ex "zonasureño". Con paciencia y constancia agregandole todos los dias un paso mas a mi meta de ser Fullstack developer y dedicarme a eso al 100% habiendo partido desde 0% de conocimientos.
 
 - Ruíz Pablo: Tengo 20 años, vivo en San Miguel, soy desarrollador junior que esta aprendiendo sobre el desarrollo web full stack y tengo muchas ganas de desarrollarme mas
 
