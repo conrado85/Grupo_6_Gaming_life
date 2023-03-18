@@ -28,9 +28,10 @@ let userController = {
             fullname: req.body.fullname,
             username: req.body.username,
             email: req.body.email,
-            password: req.body.password
+            birthday: req.body.birthday,
+            password: bcrypt.hashSync(req.body.password, 10),
+            img: req.body.img
         }
-
         userList.push(user)
 
         userListJSON = JSON.stringify(userList)
@@ -42,47 +43,22 @@ let userController = {
         const errors = validationResult(req)
         if (!errors.isEmpty()){
           return res.render('login', { session: req.session, errors:errors.mapped() })
-        // } else {
-        //   let usersJSON = fs.readFileSync('userData.json', {encoding: 'utf-8'})
-        //   let users;
-        //   if (usersJSON == "") {
-        //     users= []
-        //   } else {
-        //     users = JSON.parse(usersJSON)
-        //   }
-        //   for (let i = 0; i < users.length; i++) {
-        //     if (users[i].username == req.body.username) {
-        //       if (users[i].password == req.body.password)
-        //   }
-        }
-        // const { username, password} = req.body
-        // req.session.username = username
-        // req.session.password = password
+        } else {
+         let usersJSON = fs.readFileSync('userData.json', {encoding: 'utf-8'})
+         if (usersJSON == "") {
+          res.send("Usuario inexistente o datos ingresados incorrecto")
+          // return res.render("login", {
+          //   errors: { username: { msg: "No se encontró el usuario", olds: req.body } },
+          // });
+         } else {
+           users = JSON.parse(usersJSON)
+         }
+         for (let i = 0; i < users.length; i++) {
+           if (users[i].username == req.body.username && bcrypt.compareSync(req.body.password, users[i].password))
         res.render('profile', { session: req.session })
-
         }
+      }
     }
+  }
 
     module.exports= userController
-
-
-//FILE ORIGINAL //
-
-
-// const path = require('path')
-// const fs = require('fs')
-
-
-// //const menuFile = fs.readFileSync(path.join(__dirname, '../models/productos.json'),'utf-8')
-// //const listaProductos = JSON.parse(menuFile)
-
-// const usercontroller ={
-// login:(req,res)=>{
-//     res.render('login')
-// },
-// register:(req,res)=>{
-//     res.render('registro')
-// }
-// }
-
-// module.exports = usercontroller

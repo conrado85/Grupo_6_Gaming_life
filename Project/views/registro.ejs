@@ -11,11 +11,11 @@
         <h1 class="title">Registrar nueva cuenta</h1>
         <div class="form-checkbox">¿Ya estas registrado? <a href="/gaminglife/usuario/login">Ingresa a tu cuenta</a>
         </div>
-        <form action="/gaminglife/usuario/registro" autocomplete="off" method="post">
+        <form action="/gaminglife/usuario/registro" autocomplete="off" method="post" enctype="multipart/form-data">
             <div class="main-user-information">
             <div class="user-input-box">
                 <label for="fullName">Nombre y apellido</label>
-                <input type="text" name="fullname" id="fullname" placeholder="Ingrese nombre completo"/>
+                <input type="text" name="fullname" id="fullname" placeholder="Ingrese nombre completo" pattern="[a-zA-Z][a-zA-Z ]{4,}"/>
                 <% if (locals.errors?.fullname) { %>
                     <div class = "register-error-message"><%= errors.fullname.msg %></div>
                     <% } %>
@@ -29,7 +29,7 @@
             </div>
             <div class="user-input-box">
                 <label for="email">E-Mail</label>
-                <input type="text" name="email" id="email" placeholder="Ingrese su E-Mail"/>
+                <input type="text" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,}$" placeholder="Ingrese su E-Mail"/>
                 <% if (locals.errors?.email) { %>
                     <div class = "register-error-message"><%= errors.email.msg %></div>
                     <% } %>
@@ -40,26 +40,32 @@
                 <% if (locals.errors?.birthday) { %>
                     <div class = "register-error-message"><%= errors.birthday.msg %></div>
                     <% } %>
-            </div>
-            <div class="user-input-box">
-                <label for="password">Contraseña</label>
-                <input type="password" name="password" id="password" placeholder="Ingrese su contraseña"/>
-                <% if (locals.errors?.password) { %>
-                    <div class = "register-error-message"><%= errors.password.msg %></div>
-                    <% } %>
-            </div>
-            <div class="user-input-box">
-                <label for="confirmPassword">Confirmar contraseña</label>
-                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirme su contraseña"/>
-                <% if (locals.errors?.confirmPassword) { %>
-                    <div class = "register-error-message"><%= errors.confirmPassword.msg %></div>
-                    <% } %>
-            </div>
-        </div>
-        <div class="form-checkbox">
-            <input type="checkbox" name="notifications" id="notifications">
-            <label for="notifications">Deseo recibir novedades y ofertas por E-Mail</label>
-        </div>
+                    <div class="user-input-box">
+                        <label for="password">Contraseña</label>
+                        <input type="password" name="password" id="password" pattern=".{8,}" placeholder="Ingrese su contraseña"/>
+                        <% if (locals.errors?.password) { %>
+                            <div class = "register-error-message"><%= errors.password.msg %></div>
+                            <% } %>
+                        </div>
+                        <div class="user-input-box">
+                            <label for="confirmPassword">Confirmar contraseña</label>
+                            <input type="password" name="confirmPassword" id="confirmPassword" pattern=".{6,}" placeholder="Confirme su contraseña"/>
+                            <% if (locals.errors?.confirmPassword) { %>
+                                <div class = "register-error-message"><%= errors.confirmPassword.msg %></div>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-img-upload">
+                    <label for="img">Selecciona tu imagen de perfil:</label>
+                    <br>
+                    <input type="file"  id="img" name="img" accept="image/png, image/jpeg">
+                    </div>
+                    <br>
+                        <div class="form-checkbox">
+                            <input type="checkbox" name="notifications" id="notifications">
+                            <label for="notifications">Deseo recibir novedades y ofertas por E-Mail</label>
+                        </div>
         <div class="form-submit-button">
             <input type="submit" name="submit" value="Confirmar Registro" id="submit">
         </div>
