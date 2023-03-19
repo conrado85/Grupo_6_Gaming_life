@@ -23,7 +23,7 @@ const storage = multer.diskStorage({
 router.get('/login', userController.login);
 router.post('/login', loginValidator, userController.userLogin); 
 
-router.get('/registro',userController.register);
+router.get('/registro',upload.single('img'), userController.register);
 router.post('/registro', upload.single('img'), registerValidator, userController.userReg);
 
 
