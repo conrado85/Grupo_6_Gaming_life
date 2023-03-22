@@ -57,31 +57,34 @@
  },
  {
   "id": 7,
-  "name": "Mouse Griffin",
-  "description": "Mouse gamer de la marca Redragon, que puede ser adquirido en 2 colores, negro (clásico), o blanco",
-  "price": "$6700",
+  "name": "Monitor Asus",
+  "description": "Completar con la información del producto",
+  "price": "$54900",
   "payments": 12,
-  "img": "",
-  "category": "Periferico",
-  "categoria": "Selecciona la categoria"
+  "img": "monitorAsus.jpeg"
  },
  {
   "id": 8,
-  "name": "Memoria Ram Corsair 16GB",
-  "description": "Memoria ram de la marca Corsair, cuenta con rgb y 3200ghz de velocidad",
-  "price": "$20000",
+  "name": "Memoria Ram Corsair 16gb",
+  "description": "Completar con la información del producto",
+  "price": "$23780",
   "payments": 12,
-  "img": "default-image.png",
-  "category": "Componente",
-  "categoria": "Selecciona la categoria"
+  "img": "memCorsair16gb.jpeg"
  },
  {
   "id": 9,
-  "name": "asdasd",
+  "name": "Mouse Redragon Griffin",
   "description": "Completar con la información del producto",
-  "price": "$1231411",
+  "price": "$7800",
   "payments": 12,
-  "img": "default-image.png",
-  "categoria": "Selecciona la categoria"
+  "img": "mouseGriffin.png"
+ },
+ {
+  "id": 10,
+  "name": "Nvidia Gt 1030",
+  "description": "Completar con la información del producto",
+  "price": "$17000",
+  "payments": 12,
+  "img": "gt1030.png"
  }
 ]

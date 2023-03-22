@@ -30,10 +30,7 @@
             <form action="/gaminglife/productos/<%=productToEdit.id%>?_method=PUT" class="product-box" autocomplete="off" method="POST">
                 <div class="img-conteiner">
                     <img src="/images/imgProductos/<%=productToEdit.img%>" class="product-img-detail" alt="">
-                    <div action="/gaminglife/productos/imagen/<%=productToEdit.id%>?_method=PUT" method="POST">
-                        <input type="file"  id="img" name="img" accept="image/png, image/jpeg">
-                        <button type="submit">Actualizar Imagen</button>
-                    </div>
+                    
                 </div>
 
                 <div class="create-form">

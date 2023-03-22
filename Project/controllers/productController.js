@@ -30,7 +30,7 @@ const controller = {
             description: req.body.description,
             price: "$" + req.body.price,
             payments: 12,
-            img:"default-image.png",
+            img:req.body.img,
             category: req.body.category
         }
 

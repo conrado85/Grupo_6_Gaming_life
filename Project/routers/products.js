@@ -28,7 +28,4 @@ router.get('/editar/:id',productController.editarProducto)
 
 router.put('/:id', productController.update)
 
-router.post('/imagen/:id', productController.imgChange)
-
-
 module.exports = router
