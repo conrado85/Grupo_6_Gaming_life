@@ -12,10 +12,11 @@
   "id": 2,
   "name": "Motherboard Asus A320M",
   "description": "Tarjeta madre AMD AM4 uATX con iluminación LED, DDR4 3200MHz, 32Gb/s M.2, HDMI, SATA 6Gb/s, USB 3.0",
-  "price": "$21119.13",
+  "price": "$21120.15",
   "payments": 12,
   "img": "motherboardAsusA320M.png",
-  "category": "Componente"
+  "category": "Componente",
+  "categoria": "Selecciona la categoria"
  },
  {
   "id": 3,
@@ -70,6 +71,16 @@
   "price": "$20000",
   "payments": 12,
   "img": "default-image.png",
-  "category": "Componente"
+  "category": "Componente",
+  "categoria": "Selecciona la categoria"
+ },
+ {
+  "id": 9,
+  "name": "asdasd",
+  "description": "Completar con la información del producto",
+  "price": "$1231411",
+  "payments": 12,
+  "img": "default-image.png",
+  "categoria": "Selecciona la categoria"
  }
 ]

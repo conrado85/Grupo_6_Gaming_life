@@ -27,14 +27,14 @@
         </header>
         <main class="main-conteiner">
             <h2 class="secTitle">Estas editando <%=producto.name%></h2>
-            <form class="product-box" action="" method="POST" enctype="multipart/form/dat">
+            <form action="/gaminglife/productos/actualizado" class="product-box" method="POST" enctype="multipart/form/dat">
                 <div class="img-conteiner">
                     <img src="/images/imgProductos/<%=producto.img%>" class="product-img-detail" alt="">
                     <p>Imagen actual del producto</p>
                 </div>
                 <div>
                     <input type="file" name="img">
-                    <button type="submit">Actualizar</button
+                    <button type="submit">Actualizar Imagen</button
                 ></div>
             </form>
 
