@@ -61,8 +61,9 @@
   "description": "Mouse gamer de la marca Redragon, que puede ser adquirido en 2 colores, negro (clásico), o blanco",
   "price": "$6700",
   "payments": 12,
-  "img": "default-image.png",
-  "category": "Periferico"
+  "img": "",
+  "category": "Periferico",
+  "categoria": "Selecciona la categoria"
  },
  {
   "id": 8,

@@ -1,17 +1,6 @@
 const path = require('path')
 const fs = require('fs')
-const multer = require('multer')
 
-const storage = multer.diskStorage({
-    destination: function (req,res,cb){
-        cb(null, path.join(__dirname, '/public/images/imgProductos'))
-    },
-    filename: function(req,res,cb){
-        cb(null,file.fieldname + '-' + Date.now)
-    }
-})
-
-const upload = multer({storage:storage})
 
 const menuFile = fs.readFileSync(path.join(__dirname, '../data/productos.json'),'utf-8')
 const listaProductos = JSON.parse(menuFile)
@@ -74,12 +63,6 @@ const controller = {
         res.redirect('/gaminglife/productos/lista')
     },
     imgChange:(req,res) => {
-        const {id} = req.params
-        const producto = listaProductos.find((producto)=>producto.id == id)
-        res.render("product-edit-img",{producto})
-    },
-    imgUpdate:(req,res) =>{
-        upload.single('img')
         console.log(req.file)
         res.redirect('/gaminglife/productos/lista')
     }

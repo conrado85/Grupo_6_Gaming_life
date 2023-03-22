@@ -1,10 +1,20 @@
 const express = require('express')
 const router = express.Router()
-
+const multer = require('multer')
 
 const path = require('path')
 const productController = require('../controllers/productController')
 
+const storage = multer.diskStorage({
+    destination: function (req,res,cb){
+        cb(null, path.join(__dirname, '../public/images/imgProductos'))
+    },
+    filename: function(req,res,cb){
+        cb(null,file.fieldname + '-' + Date.now)
+    }
+})
+
+const upload = multer({storage:storage})
 
 router.get('/lista', productController.productos)
 
@@ -18,8 +28,7 @@ router.get('/editar/:id',productController.editarProducto)
 
 router.put('/:id', productController.update)
 
-router.get('/imagen/:id', productController.imgChange)
+router.post('/imagen/:id', productController.imgChange)
 
-router.post('/actualizado', productController.imgUpdate)
 
 module.exports = router
