@@ -21,11 +21,12 @@ app.use(express.json())
 const mainRouter = require('./routers/main')
 const userRouter = require('./routers/user')
 const productRouter = require('./routers/products')
+const carritoRouter = require('./routers/carrito')
 
 app.use('/gaminglife', mainRouter)
 app.use('/gaminglife/usuario', userRouter)
 app.use('/gaminglife/productos', productRouter)
-
+app.use('/gaminglife/', carritoRouter)
 
 //404
 app.use((req,res,next)=> {
