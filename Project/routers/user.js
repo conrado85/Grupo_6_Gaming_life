@@ -33,9 +33,12 @@ const upload = multer({ storage: storage });
 router.get("/login", redirectIfLogged, userController.login);
 router.post("/login", loginValidator, userController.userLogin);
 
-router.get("/registro", redirectIfLogged, userController.register);
-router.post("/registro", upload.single("img"), registerValidator, userController.userReg);
+router.get("/register", redirectIfLogged, userController.register);
+router.post("/register", upload.single("img"), registerValidator, userController.userReg);
 
 router.get("/profile", authMiddleware, userController.profile);
+
+router.get("/logout", userController.logout);
+router.post("/logout", userController.logout);
 
 module.exports = router;

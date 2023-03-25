@@ -8,9 +8,10 @@
         </header>
         <main>
             <div class="container-login">
-                <h1 class="title">¡Que bueno verte de vuelta!</h1>
+                <h1 class="title">¡Que bueno verte de vuelta <%= locals.user.username%>!</h1>
+                <a href="/gaminglife/usuario/logout" class="">Salir</a>
                 <div class="pfp">
-                    <img src="/public/images/userImg/">
+                    <img src=<%= locals.user.img%>>
                     <i>Foto de perfil</i>
                     <label for="pfp-upload">Seleccionar nueva foto de perfil</label>
                     <input type="image" name="pfp-upload" alt="Modificar foto perfil" id="pfp-upload">
@@ -18,14 +19,14 @@
                 <h4 class="subtitle">Datos personales</h4>
                 <div class="user-data">Nombre y apellido</div>
                 <div>
-                    Nombre y apellido <button class="btn">Modificar</button>
+                    <%= locals.user.fullname%> <button class="btn">Modificar</button>
                 </div>
                 <div class="user-data">Nombre de usuario
                     <div>
-                        Username <button class="btn">Modificar</button>
+                        <%= locals.user.username%> <button class="btn">Modificar</button>
                     </div>
-                    <div class="user-data">Pais
-                        <div>Seleccionar Pais<button class="btn">Modificar</button></div>
+                    <div class="user-data">Fecha de nacimiento
+                        <div> <%= locals.user.birthday%><button class="btn">Modificar</button></div>
                     </div>
         </main>
     </body>

@@ -18,7 +18,7 @@ function getUsers() {
 
 let userController = {
   register: function (req, res) {
-    return res.render('registro');
+    return res.render('register');
   },
   login: function (req, res) {
     return res.render('login')
@@ -30,7 +30,7 @@ let userController = {
     const userList = getUsers();
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.render('registro', { session: req.session, errors: errors.mapped() });
+      return res.render('register', { session: req.session, errors: errors.mapped() });
     };
     idCounter = 0;
     newUser = userList.forEach(user => {
@@ -73,13 +73,27 @@ let userController = {
     delete user.password;
     req.session.user = user;
     req.session.lastActitity = Date.now();
+
+    //Logica de guardado de datos en cookies al presionar "Recordar mi contraseña"
+
+    if (req.body.rememberMe) {
+      res.cookie("userId", user.username, user.password, { maxAge: 1000 * 60 * 5 });
+    }
     return res.redirect("/gaminglife/usuario/profile");
   },
 
-  //Logica profile
+  //Logout (destruccion de session y borrado de cookies, con redireccion al login)
+
+  logout: function (req, res) {
+    req.session.destroy();
+    res.clearCookie("userId");
+    return res.redirect("/gaminglife/usuario/login");
+  },
+
+  //Logica profile con session
 
   profile: (req, res) => {
-    res.render("profile");
+    res.render("profile", { user: req.session.user });
   }
 }
 module.exports = userController;
