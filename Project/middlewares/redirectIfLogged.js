@@ -4,7 +4,6 @@ redirectIfLogged = (req, res, next) => {
     if (req.session.user) {
       return res.redirect("/gaminglife/usuario/profile");
     }
-  
     next();
   };
   
