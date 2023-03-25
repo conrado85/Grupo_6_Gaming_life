@@ -49,7 +49,7 @@
                         </div>
                         <div class="user-input-box">
                             <label for="confirmPassword">Confirmar contraseña</label>
-                            <input type="password" name="confirmPassword" id="confirmPassword" pattern=".{6,}" placeholder="Confirme su contraseña"/>
+                            <input type="password" name="confirmPassword" id="confirmPassword" pattern=".{8,}" placeholder="Confirme su contraseña"/>
                             <% if (locals.errors?.confirmPassword) { %>
                                 <div class = "register-error-message"><%= errors.confirmPassword.msg %></div>
                                 <% } %>
