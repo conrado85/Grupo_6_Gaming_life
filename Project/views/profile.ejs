@@ -1,6 +1,6 @@
 <%-include('partials/head') %>
     <link rel="stylesheet" href="/css/reglogstyle.css">
-    <title>Perfil</title>
+    <title>Mi perfil</title>
 
     <body>
         <header>
@@ -8,26 +8,31 @@
         </header>
         <main>
             <div class="container-login">
-                <h1 class="title">¡Que bueno verte de vuelta <%= locals.user.username%>!</h1>
-                <a href="/gaminglife/usuario/logout" class="">Salir</a>
+                <h1 class="title">¡Que bueno verte de vuelta, <%= locals.user.fullname%>!</h1>
+                <a href="/gaminglife/usuario/logout" class="subtitle">Salir</a>
                 <div class="pfp">
-                    <img src=<%= locals.user.img%>>
-                    <i>Foto de perfil</i>
-                    <label for="pfp-upload">Seleccionar nueva foto de perfil</label>
-                    <input type="image" name="pfp-upload" alt="Modificar foto perfil" id="pfp-upload">
+                    <img src="/images/userImg/<%= locals.user.img%>" alt="Foto de perfil">
+                    <label for="pfp-upload">Cambiar foto de perfil</label>
+                    <input type="file" accept=".jpg,.png,.jpeg" name="pfp-upload" alt="Modificar foto perfil">
                 </div>
-                <h4 class="subtitle">Datos personales</h4>
+                <h3 class="subtitle">Datos personales</h4>
                 <div class="user-data">Nombre y apellido</div>
                 <div>
-                    <%= locals.user.fullname%> <button class="btn">Modificar</button>
+                    <%= locals.user.fullname%>
                 </div>
-                <div class="user-data">Nombre de usuario
+                <div class="user-data">Usuario
                     <div>
-                        <%= locals.user.username%> <button class="btn">Modificar</button>
+                        <%= locals.user.username%>
                     </div>
                     <div class="user-data">Fecha de nacimiento
-                        <div> <%= locals.user.birthday%><button class="btn">Modificar</button></div>
+                        <div>
+                            <%= locals.user.birthday%>
+                        </div>
                     </div>
+                    <div class="user-data">Casilla de mail
+                        <div>
+                            <%= locals.user.email%>
+                        </div>
         </main>
     </body>
     <%- include('partials/footer') %>
