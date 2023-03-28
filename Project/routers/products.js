@@ -1,20 +1,21 @@
-const express = require('express')
-const router = express.Router()
+  const express = require('express')
+  const router = express.Router()
 const multer = require('multer')
 
 const path = require('path')
 const productController = require('../controllers/productController')
 
 const storage = multer.diskStorage({
-    destination: function (req,res,cb){
-        cb(null, path.join(__dirname, '../public/images/imgProductos'))
+    destination: (req, file, cb) => {
+        const folder = path.join(__dirname,'../public/images/imgProductos')
+      cb(null, folder)
     },
-    filename: function(req,res,cb){
-        cb(null,file.fieldname + '-' + Date.now)
+    filename: function (req, file, cb) {
+      cb(null, file.originalname)
     }
-})
+  });
 
-const upload = multer({storage:storage})
+  const upload = multer({ storage: storage });
 
 router.get('/lista', productController.productos)
 
@@ -27,5 +28,7 @@ router.post('/productoNuevo',productController.productoNuevo)
 router.get('/editar/:id',productController.editarProducto)
 
 router.put('/:id', productController.update)
+
+router.delete('/ProductoEliminado/:id', productController.delete)
 
 module.exports = router

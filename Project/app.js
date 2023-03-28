@@ -5,6 +5,7 @@ const expressSession = require('express-session');
 const methodOverride = require('method-override');
 
 //configuracion del 'app'
+
 const app = express();
 app.use(methodOverride('_method'))
 app.use(express.static('public'));

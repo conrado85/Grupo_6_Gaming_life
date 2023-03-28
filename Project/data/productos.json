@@ -69,7 +69,8 @@
   "description": "Completar con la información del producto",
   "price": "$23780",
   "payments": 12,
-  "img": "memCorsair16gb.jpeg"
+  "img": "memCorsair16gb.jpeg",
+  "category": "Componente"
  },
  {
   "id": 9,
@@ -85,6 +86,7 @@
   "description": "Completar con la información del producto",
   "price": "$17000",
   "payments": 12,
-  "img": "gt1030.png"
+  "img": "gt1030.png",
+  "category": "Componente"
  }
 ]

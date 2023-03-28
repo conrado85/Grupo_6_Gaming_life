@@ -30,7 +30,7 @@ const controller = {
             description: req.body.description,
             price: "$" + req.body.price,
             payments: 12,
-            img:req.body.img,
+            img: req.body.name + this.id,
             category: req.body.category
         }
 
@@ -65,7 +65,19 @@ const controller = {
     imgChange:(req,res) => {
         console.log(req.file)
         res.redirect('/gaminglife/productos/lista')
+    },
+    delete:(req,res)=>{
+        const {id} = req.params
+        console.log(id)
+        const productToDelete = listaProductos.findIndex((producto) => producto.id == id)
+
+        listaProductos.splice(productToDelete,1)
+
+        fs.writeFileSync(path.join(__dirname, '../data/productos.json'), JSON.stringify(listaProductos, null, ' '))
+        res.redirect('/gaminglife/productos/lista')
     }
+
+    
 }
 
 module.exports = controller

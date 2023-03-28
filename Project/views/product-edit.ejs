@@ -51,8 +51,10 @@
                     </select>
 
                     <button type="submit">Actualizar</button>
-                    <button>Eliminar</button>
                 </div>
+            </form>
+            <form action="/gaminglife/productos/ProductoEliminado/<%= productToEdit.id %>?_method=DELETE" method="POST">
+                <button>Eliminar</button>
             </form>
 
         </main>
