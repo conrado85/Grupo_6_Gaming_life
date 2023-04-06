@@ -10,16 +10,16 @@ const app = express();
 app.use(methodOverride('_method'))
 app.use(express.static('public'));
 app.set("view engine", "ejs")
-app.set('views', path.join(__dirname, './views'))
+app.set('views', path.join(__dirname, './src/views'))
 app.use(express.urlencoded({ extended:false}))
 app.use(expressSession( {secret:'secret'} ))
 app.use(express.json())
 
 //Sistema de rutas
 
-const mainRouter = require('./routers/main')
-const userRouter = require('./routers/user')
-const productRouter = require('./routers/products')
+const mainRouter = require('./src/routers/main')
+const userRouter = require('./src/routers/user')
+const productRouter = require('./src/routers/products')
 
 app.use('/gaminglife', mainRouter)
 app.use('/gaminglife/usuario', userRouter)
