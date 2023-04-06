@@ -1,0 +1,7 @@
+Cambiar el sistema de rutas de "gaminglife/<ruta>/<subruta>" por algo mas sencillo y sin tanto prefijo.
+Estilizar la pagina de PROFILE con CSS.
+Definir un sistema de nomenclaturas, el proyecto esta en "spanglish". Preferentemente dejar todo en inglés.
+Implementar sequelize y hacer migraciones.
+Modificar la estructura de carpetas implementando "src" como contenedora principal.
+Corregir los estilos de modo que el sitio mantenga un esquema.
+Refactorizar codigos existentes, emprolijar la sintaxis.

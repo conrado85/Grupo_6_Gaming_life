@@ -1,33 +1,47 @@
-const express = require('express')
-const { check } = require('express-validator');
-const router = express.Router()
-const userController = require('../controllers/userController')
-const registerValidator = require('../middlewares/registerValidator')
-const loginValidator= require('../middlewares/loginValidator') 
+//Dependencias
 
-router.get('/login', userController.login);
-router.post('/login', loginValidator, userController.userLogin); 
+const express = require("express");
+const { check } = require("express-validator");
+const router = express.Router();
+const path = require("path");
+const multer = require("multer");
 
-router.get('/registro', userController.register);
-router.post('/registro', registerValidator, userController.userReg);
+// Controller
 
+const userController = require("../controllers/userController");
 
-module.exports = router
+// Middlewares
 
+const authMiddleware = require("../middlewares/authMiddleware");
+const redirectIfLogged = require("../middlewares/redirectIfLogged");
+const registerValidator = require("../middlewares/registerValidator");
+const loginValidator = require("../middlewares/loginValidator");
 
+//Logica Multer 
 
-//FILE ORIGINAL//
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    const folder = path.join(__dirname, "../public/images/userImg");
+    cb(null, folder);
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname);
+  }
+});
 
+const upload = multer({ storage });
 
-// const express = require('express')
+//Sistema de ruteo, metodos y middlewares
 
-// const router = express.Router()
+router.get("/login", redirectIfLogged, userController.login);
+router.post("/login", loginValidator, userController.userLogin);
 
-// const userController = require('../controllers/userController')
+router.get("/register", redirectIfLogged, userController.register);
+router.post("/register", upload.single("img"), registerValidator, userController.userReg);
 
+router.get("/profile", authMiddleware, userController.profile);
 
-// router.get('/login',userController.login)
+router.get("/logout", userController.logout);
+router.post("/logout", userController.logout);
 
-// router.get('/registro',userController.register)
-
-// module.exports = router
+module.exports = router;
