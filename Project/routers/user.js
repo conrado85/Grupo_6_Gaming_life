@@ -6,10 +6,13 @@ const router = express.Router();
 const path = require("path");
 const multer = require("multer");
 
-// Middlewares y controllers
+// Controller
+
+const userController = require("../controllers/userController");
+
+// Middlewares
 
 const authMiddleware = require("../middlewares/authMiddleware");
-const userController = require("../controllers/userController");
 const redirectIfLogged = require("../middlewares/redirectIfLogged");
 const registerValidator = require("../middlewares/registerValidator");
 const loginValidator = require("../middlewares/loginValidator");
@@ -26,7 +29,7 @@ const storage = multer.diskStorage({
   }
 });
 
-const upload = multer({ storage: storage });
+const upload = multer({ storage });
 
 //Sistema de ruteo, metodos y middlewares
 

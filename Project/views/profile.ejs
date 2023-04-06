@@ -11,7 +11,7 @@
                 <h1 class="title">¡Que bueno verte de vuelta, <%= locals.user.fullname%>!</h1>
                 <a href="/gaminglife/usuario/logout" class="subtitle">Salir</a>
                 <div class="pfp">
-                    <img src="/images/userImg/<%= locals.user.img%>" alt="Foto de perfil">
+                    <img src="/images/userImg/<%= locals.user.img%>" alt="Foto de perfil" height="100px">
                     <label for="pfp-upload">Cambiar foto de perfil</label>
                     <input type="file" accept=".jpg,.png,.jpeg" name="pfp-upload" alt="Modificar foto perfil">
                 </div>
