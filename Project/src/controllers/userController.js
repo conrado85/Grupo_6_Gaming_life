@@ -1,58 +1,99 @@
+//Requeridos para funcionamiento del Controller
+
 const { validationResult } = require('express-validator');
 const path = require('path');
-const fs = require ('fs')
+const fs = require('fs');
+const bcrypt = require('bcryptjs');
 
-let userController = {
-    register: function(req, res){
-        return res.render('registro')
-    },
-    login: function(req, res){
-        return res.render('login')
-    },
-    userReg: (req,res) => {
-        const errors = validationResult(req)
-        if (!errors.isEmpty()){
-          return res.render('registro', { session: req.session, errors:errors.mapped() })
-        }
-        const {username, email, password, confirmPassword} = req.body
-        req.session.username = username
-        req.session.email = email
-        req.session.password = password
-        req.session.confirmPassword = confirmPassword
-        res.render('registro', { session: req.session })
-      },
-      userLogin: (req,res) => {
-        const errors = validationResult(req)
-        if (!errors.isEmpty()){
-          return res.render('login', { session: req.session, errors:errors.mapped() })
-        }
-        const { username, password} = req.body
-        req.session.username = username
-        req.session.password = password
-        res.render('login', { session: req.session })
-    }
+//Logica de lista de usuarios
+
+const userFilePath = path.join(__dirname, "../data/userData.json");
+function getUsers() {
+  const userFile = fs.readFileSync(userFilePath, 'utf-8');
+  const userList = JSON.parse(userFile);
+  return userList;
 }
 
-    module.exports= userController
+//Renderizados de controlador de usuarios
 
+let userController = {
+  register: function (req, res) {
+    return res.render('register');
+  },
+  login: function (req, res) {
+    return res.render('login')
+  },
 
-//FILE ORIGINAL //
+  //Logica de Registro de nuevo usuario
 
+  userReg: (req, res) => {
+    const userList = getUsers();
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.render('register', { session: req.session, errors: errors.mapped() });
+    };
+    idCounter = 0;
+    newUser = userList.forEach(user => {
+      idCounter++
+    });
 
-// const path = require('path')
-// const fs = require('fs')
+    //Modelo de datos tomados de formulario para creacion en JSON
 
+    user = {
+      id: idCounter + 1,
+      fullname: req.body.fullname,
+      username: req.body.username,
+      email: req.body.email,
+      birthday: req.body.birthday,
+      password: bcrypt.hashSync(req.body.password, 10),
+      img: req.file?.filename || "avataruser.jpg"
+    };
+    userList.push(user);
 
-// //const menuFile = fs.readFileSync(path.join(__dirname, '../models/productos.json'),'utf-8')
-// //const listaProductos = JSON.parse(menuFile)
+    fs.writeFileSync(userFilePath, JSON.stringify(userList, null, 2));
 
-// const usercontroller ={
-// login:(req,res)=>{
-//     res.render('login')
-// },
-// register:(req,res)=>{
-//     res.render('registro')
-// }
-// }
+    res.redirect('/gaminglife/usuario/login');
+  },
 
-// module.exports = usercontroller
+  //Autenticador de usuario registrado
+
+  userLogin: (req, res) => {
+    const userList = getUsers();
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.render('login', { session: req.session, errors: errors.mapped() });
+    };
+
+    //Verificador de existencia y validez de credenciales insertadas en Login Form
+
+    const user = userList.find(element => element.username == req.body.username && bcrypt.compareSync(req.body.password, element.password));
+    if (!user) {
+      return res.render("login", { errors: { username: { msg: "Credenciales incorrectas" } } });
+    }
+    delete user.password;
+    req.session.user = user;
+    req.session.lastActitity = Date.now();
+
+    //Logica de guardado de datos en cookies al presionar "Recordar mi contraseña"
+
+    if (req.body.rememberMe) {
+      res.cookie("userId", user.username, user.password, { maxAge: 1000 * 60 * 5 });
+    }
+    return res.redirect("/gaminglife/usuario/profile");
+  },
+
+  //Logout (destruccion de session y borrado de cookies, con redireccion al login)
+
+  logout: function (req, res) {
+    req.session.destroy();
+    res.clearCookie("userId");
+    return res.redirect("/gaminglife/usuario/login");
+  },
+
+  //Logica profile con session
+
+  profile: (req, res) => {
+    res.render("profile", { user: req.session.user });
+  }
+}
+module.exports = userController;

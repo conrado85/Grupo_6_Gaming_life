@@ -5,78 +5,65 @@ const fs = require('fs')
 const menuFile = fs.readFileSync(path.join(__dirname, '../data/productos.json'),'utf-8')
 const listaProductos = JSON.parse(menuFile)
 
+
+const { error } = require('console');
+
+//Requiero los modelos
 const db = require('../database/models');
 
 const controller = {
-    productos: (req,res) =>{
-        res.render('productos',{listaProductos: listaProductos})
+
+    //renderiza la lista de productos
+    productos:async (req,res) =>{
+        try {
+            const product =await db.product.findAll()
+            res.render('products', {product})
+        } catch (error) {
+            
+        }
     },
+
+    //renderiza el detalle del producto
     detalleProducto:(req,res) =>{
         const {id} = req.params
         const producto = listaProductos.find((producto)=>producto.id == id)
-        console.log("se esta renderizando el producto " + producto.name)
-        res.render('detail',{producto})
+        res.render('detalleProducto',{producto})
     },
+
+    //renderiza el formulario de creacion de un producto
     crear:(req,res) =>{
         res.render('product-create')
     },
-    productoNuevo:(req,res) => {
-        idCounter = 0
-        cantidadProductos = listaProductos.forEach(producto => {
-            idCounter ++
-        });
 
-        producto={
-            id: idCounter + 1,
-            name: req.body.name,
-            description: req.body.description,
-            price: "$" + req.body.price,
-            payments: 12,
-            img: req.body.name + this.id,
-            category: req.body.category
+    //crea un nuevo producto
+    new: async(req,res) => {
+        try{
+            const product = {
+                name: req.body.name,
+                price: req.body.price,
+                description: req.body.description,
+                category: req.body.category,
+                img: req.file.filename? req.filename: 'default-image.png'
+            }
+            await db.product.new(product)
+            res.redirect('gaminglife/productos/lista')
+        }catch{
+            res.send(error)
         }
-
-        listaProductos.push(producto)
-
-        fs.writeFileSync(path.join(__dirname, '../data/productos.json'), JSON.stringify(listaProductos, null, ' '))
-
-        res.redirect('/gaminglife/productos/lista')
     },
-    editarProducto:(req,res)=>{
-        const {id} = req.params
-        console.log(id)
-        const productToEdit = listaProductos.find((producto) => producto.id == id)
-        console.log(productToEdit.name)
-        res.render('product-edit', {productToEdit})
+
+    //renderiza la vista de editar producto
+    edit:(req,res)=>{
+
     },
+
+    //actualiza un producto
     update:(req,res)=>{
-        const {id} = req.params
-        let productToUpdate = listaProductos.find((producto) => producto.id == id)
-        productToUpdate= {
-            ...productToUpdate,
-            ...req.body
-        } 
-        
-        const indexToEdit = listaProductos.findIndex((producto)=> producto.id == id)
-        listaProductos[indexToEdit] = productToUpdate
 
-        fs.writeFileSync(path.join(__dirname, '../data/productos.json'), JSON.stringify(listaProductos, null, ' '))
-
-        res.redirect('/gaminglife/productos/lista')
     },
-    imgChange:(req,res) => {
-        console.log(req.file)
-        res.redirect('/gaminglife/productos/lista')
-    },
+    //borra un producto
     delete:(req,res)=>{
-        const {id} = req.params
-        console.log(id)
-        const productToDelete = listaProductos.findIndex((producto) => producto.id == id)
-
-        listaProductos.splice(productToDelete,1)
-
-        fs.writeFileSync(path.join(__dirname, '../data/productos.json'), JSON.stringify(listaProductos, null, ' '))
-        res.redirect('/gaminglife/productos/lista')
+        
     }
 
     

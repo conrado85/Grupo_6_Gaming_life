@@ -27,7 +27,7 @@
         </header>
         <main class="main-conteiner">
 
-            <form action="/gaminglife/productos/productoNuevo" class="product-box" autocomplete="off" method="POST">
+            <form action="/gaminglife/productos/productoNuevo" class="product-box" autocomplete="off" method="POST" enctype="multipart/form-data">
                 <div class="img-conteiner">
                     <img src="/images/imgProductos/default-image.png" class="product-img-detail" alt="">
                     <div>
@@ -45,7 +45,7 @@
                     <label for="description">Descripcion del producto</label>
                     <textarea name="description" cols="30" rows="10" required>Completar con la información del producto</textarea>
                     
-                    <select name="categoria" name="category" required>
+                    <select name="category" required>
                         <option selected>Selecciona la categoria</option>
                         <option value="Componente">Componente</option>
                         <option value="Almacenamiento">Almacenamiento</option>

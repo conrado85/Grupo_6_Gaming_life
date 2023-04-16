@@ -1,0 +1,10 @@
+Github
+unificar todas las carpetas del proyecto en una (eliminar las sprint y dejar solo la carpeta de trabajo)
+implementar branches para trabajar
+
+
+-corregir sistema de ruteo (/gaminglife/)
+-corregir responsive navbar
+-unificar estilos de pagina
+-corregir los validators
+-json productos 

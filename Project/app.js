@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const expressSession = require('express-session');
 const methodOverride = require('method-override');
+const cookieParser = require("cookie-parser");
 
 //configuracion del 'app'
 
@@ -11,8 +12,9 @@ app.use(methodOverride('_method'))
 app.use(express.static('public'));
 app.set("view engine", "ejs")
 app.set('views', path.join(__dirname, './src/views'))
+app.use(cookieParser());
 app.use(express.urlencoded({ extended:false}))
-app.use(expressSession( {secret:'secret'} ))
+app.use(expressSession( {secret:'secret', resave: false, saveUninitialized: true } ))
 app.use(express.json())
 
 //Sistema de rutas
