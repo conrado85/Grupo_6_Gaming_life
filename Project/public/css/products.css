@@ -183,7 +183,7 @@ body {
     border-radius: 1%;
     box-shadow: 5px 5px 10px rgba(255, 140, 0, 0.5);
 
-    height: 150px;
+    height: auto;
     width: 80%;
     margin-bottom: 1%;
     padding: 20px;
@@ -196,7 +196,7 @@ body {
     border-radius: 1%;
     box-shadow: 5px 5px 10px rgba(255, 140, 0, 0.5);
 
-    height: 250px;
+    height: auto;
     width: 80%;
     margin-bottom: 5%;
     padding: 20px;

@@ -16,8 +16,8 @@ const controller = {
     //renderiza la lista de productos
     productos:async (req,res) =>{
         try {
-            const product =await db.product.findAll()
-            res.render('products', {product})
+            const products =await db.Products.findAll()
+            res.render('products', {products})
         } catch (error) {
             
         }
@@ -25,9 +25,10 @@ const controller = {
 
     //renderiza el detalle del producto
     detalleProducto:(req,res) =>{
-        const {id} = req.params
-        const producto = listaProductos.find((producto)=>producto.id == id)
-        res.render('detalleProducto',{producto})
+        db.Products.findByPk(req.params.id)
+            .then(producto => {
+                res.render('detail', {producto});
+            });
     },
 
     //renderiza el formulario de creacion de un producto
@@ -43,10 +44,10 @@ const controller = {
                 price: req.body.price,
                 description: req.body.description,
                 category: req.body.category,
-                img: req.file.filename? req.filename: 'default-image.png'
+                img: req.file? req.file.filename: 'default-image.png'
             }
-            await db.product.new(product)
-            res.redirect('gaminglife/productos/lista')
+            await db.Products.create(product)
+            res.redirect('/gaminglife/productos/lista')
         }catch{
             res.send(error)
         }
@@ -54,16 +55,33 @@ const controller = {
 
     //renderiza la vista de editar producto
     edit:(req,res)=>{
-
+        db.Products.findByPk(req.params.id)
+            .then(productToEdit => {
+                res.render('product-edit', {productToEdit});
+            });     
     },
 
     //actualiza un producto
     update:(req,res)=>{
-
+        let productId = req.params.id;
+        db.Products.update(
+            {
+                name: req.body.name,
+                price: req.body.price,
+                description: req.body.description,
+                category: req.body.category,
+            })
+        .then(()=> {
+            return res.redirect('/gaminglife/productos/lista')})            
+        .catch(error => res.send(error))
     },
     //borra un producto
     delete:(req,res)=>{
-        
+        let productId = req.params.id;
+        db.Products.destroy({where: {id: productId}, force: true}) // force: true es para asegurar que se ejecute la acción
+        .then(()=>{
+            return res.redirect('/gaminglife/productos/lista')})
+        .catch(error => res.send(error)) 
     }
 
     
