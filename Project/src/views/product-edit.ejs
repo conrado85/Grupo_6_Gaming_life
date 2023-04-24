@@ -1,0 +1,64 @@
+<%- include('partials/head') %>
+    <title>
+        Editar producto
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/nav-bar.css">
+    <link rel="stylesheet" href="/css/estilo-footer.css">
+    <link rel="stylesheet" href="/css/products.css">
+    </head>
+
+    <body>
+        <header>
+            <%- include('partials/navbar') %>
+                <!--Completar con los distintos items del navbar-->
+                <div class="nav-menu">
+                    <a href="/gaminglife/usuario/login" class="nav-item">Iniciar sesion</a>
+                    <a href="/gaminglife/productos/lista" class="nav-item">Lista de productos</a>
+                    <a href="" class="nav-item">Quienes somos</a>
+                    <a href="" class="nav-item">
+                        <img src="/images/iconos/bx-cart.svg" alt="Carrito">
+                    </a>
+                </div>
+                </div>
+                </nav>
+        </header>
+        <main class="main-conteiner">
+            <h2 class="secTitle">Estas editando <%=productToEdit.name%></h2>
+            <form action="/gaminglife/productos/<%=productToEdit.id%>?_method=PUT" class="product-box" autocomplete="off" method="POST">
+                <div class="img-conteiner">
+                    <img src="/images/imgProductos/<%=productToEdit.img%>" class="product-img-detail" alt="">
+                    
+                </div>
+
+                <div class="create-form">
+                    <label for="name">Nombre del producto</label>
+                    <input value="<%=productToEdit.name%>" type="text" name="name" placeholder="Ingrese el nombre" required>
+                    
+                    <label for="price">Precio del producto</label>
+                    <input value="<%=productToEdit.price%>" type="text" name="price" placeholder="Ingrese el precio" required>
+                    
+                    <label for="description">Descripcion del producto</label>
+                    <textarea name="description" cols="30" rows="10" required><%=productToEdit.description%></textarea>
+                    
+                    <select name="categoria" name="category" required>
+                        <option selected>Selecciona la categoria</option>
+                        <option value="Componente">Componente</option>
+                        <option value="Almacenamiento">Almacenamiento</option>
+                        <option value="Periferico">Periferico</option>
+                    </select>
+
+                    <button type="submit">Actualizar</button>
+                </div>
+            </form>
+            <form action="/gaminglife/productos/ProductoEliminado/<%= productToEdit.id %>?_method=DELETE" method="POST">
+                <button>Eliminar</button>
+            </form>
+
+        </main>
+        <%- include('partials/footer') %>
+    </body>
+
+    </html>
