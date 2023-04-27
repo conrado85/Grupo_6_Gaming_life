@@ -17,7 +17,7 @@ module.exports = {
         allowNull: false,
       },
       
-      fullname: {
+      name: {
         type: Sequelize.TEXT,
         allowNull: false,
       },
@@ -29,7 +29,7 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      img: {
+      avatar: {
         type: Sequelize.TEXT,
         allowNull: true,
       },
@@ -38,7 +38,11 @@ module.exports = {
          references:{
           model: 'roles',
           key:'id'
-         }
+        },
+      },
+      username: {
+        type: Sequelize.TEXT,
+        allowNull: false,
       }
     })
   },
