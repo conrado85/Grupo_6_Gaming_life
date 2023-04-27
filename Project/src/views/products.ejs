@@ -1,0 +1,41 @@
+<%- include('partials/head') %> 
+    <title>Lista de Productos</title>
+    <link rel="stylesheet" href="/css/products.css">
+    <link rel="stylesheet" href="/css/nav-bar.css">
+    <link rel="stylesheet" href="/css/estilo-footer.css">
+</head>
+
+<body>
+    <header>
+        <%- include('partials/navbar') %> 
+        <!--Completar con los distintos items del navbar-->
+        <div class="nav-menu">
+            <a href="/gaminglife/usuario/login" class="nav-item">Iniciar sesion</a>
+            <a href="/gaminglife/productos/crear" class="nav-item">Crear Producto</a>
+            <a href="" class="nav-item">Quienes somos</a>
+            <a href="" class="nav-item">
+                <img src="/images/iconos/bx-cart.svg" alt="Carrito"></a>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <main>
+
+        <section class="catalogo">
+            <div class="grid-layout" >
+                <% products.forEach((producto) => { %> 
+                <article class="producto">
+                    <img src="/images/imgProductos/<%= producto.img %>" alt="imagen producto" class="product-img">
+                    <div class="product-name"><%= producto.name%></div>
+                    <div class="product-prize"><%= producto.price%></div>
+                    <div class="product-payments">12 cuotas sin interes</div>
+                    <a href='/gaminglife/productos/detalle/<%= producto.id %> ' class="product-viewmore">ver más</a>
+                </article>
+                <% }) %>
+            </div>
+        </section>
+
+    </main>
+    <%- include('partials/footer') %> 
+</body>
