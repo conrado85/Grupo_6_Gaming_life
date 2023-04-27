@@ -43,11 +43,11 @@
                     <label for="description">Descripcion del producto</label>
                     <textarea name="description" cols="30" rows="10" required><%=productToEdit.description%></textarea>
                     
-                    <select name="categoria" name="category" required>
+                    <select name="category_id" required>
                         <option selected>Selecciona la categoria</option>
-                        <option value="Componente">Componente</option>
-                        <option value="Almacenamiento">Almacenamiento</option>
-                        <option value="Periferico">Periferico</option>
+                        <% categories.forEach(category => {%>
+                            <option value="<%= category.id %>"><%= category.name %></option>
+                        <%}); %>
                     </select>
 
                     <button type="submit">Actualizar</button>

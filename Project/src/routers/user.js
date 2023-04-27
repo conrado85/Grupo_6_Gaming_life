@@ -21,7 +21,7 @@ const loginValidator = require("../middlewares/loginValidator");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-      const folder = path.join(__dirname, '../public/img/user');
+      const folder = path.join(__dirname, '../../public/images/userImg');
       cb(null, folder);
   },
   filename: (req, file, cb) => {

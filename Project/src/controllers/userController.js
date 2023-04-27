@@ -57,7 +57,7 @@ let userController = {
 
     let user = {
       name: req.body.fullname,
-      username: request.body.username,
+      username: req.body.username,
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 10),
       avatar: req.file.filename ? req.file.filename : 'default-avatar.png'
