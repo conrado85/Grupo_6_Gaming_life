@@ -4,82 +4,105 @@ const { validationResult } = require('express-validator');
 const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
+const db = require('../database/models/User')
 
-//Logica de lista de usuarios
-
-const userFilePath = path.join(__dirname, "../data/userData.json");
-function getUsers() {
-  const userFile = fs.readFileSync(userFilePath, 'utf-8');
-  const userList = JSON.parse(userFile);
-  return userList;
-}
-
-//Renderizados de controlador de usuarios
+//Controller usuarios 
 
 let userController = {
+
+  //Logica de lista de usuarios
+  userList: async (req, res) => {
+    try {
+      const users = await db.User.findAll({
+        include: ['role'],
+        attributes: {
+          exclude: ['password', 'roles_id']
+        }
+      });
+      res.render('users', { users });
+    } catch (error) {
+      res.send(error);
+    }
+  },
+
+  //Render Registro
+
   register: function (req, res) {
     return res.render('register');
   },
+
+  //Render Login
+
   login: function (req, res) {
     return res.render('login')
   },
 
   //Logica de Registro de nuevo usuario
 
-  userReg: (req, res) => {
-    const userList = getUsers();
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.render('register', { session: req.session, errors: errors.mapped() });
-    };
-    idCounter = 0;
-    newUser = userList.forEach(user => {
-      idCounter++
-    });
+  userReg: async function (req, res) {
 
-    //Modelo de datos tomados de formulario para creacion en JSON
+    //Validacion de datos
 
-    user = {
-      id: idCounter + 1,
-      fullname: req.body.fullname,
-      username: req.body.username,
+    let errores = validationResult(req);
+
+    //En caso de haber errores, retornar a la vista con errores mappeados
+
+    if (!errores.isEmpty()) {
+      let errors = errores.mapped();
+      console.log(errors);
+      return res.render("register", { session: req.session, errors: errors.mapped() });
+    }
+
+    //Modelo de toma de datos para creacion de nuevo usuario
+
+    let user = {
+      name: req.body.fullname,
+      username: request.body.username,
       email: req.body.email,
-      birthday: req.body.birthday,
       password: bcrypt.hashSync(req.body.password, 10),
-      img: req.file?.filename || "avataruser.jpg"
+      avatar: req.file.filename ? req.file.filename : 'default-avatar.png'
     };
-    userList.push(user);
 
-    fs.writeFileSync(userFilePath, JSON.stringify(userList, null, 2));
+    //Guardado de nuevo usuario en base de datos
+
+    await db.User.create(user);
+
+    // Guardado en session
+    req.session.userLogged = newUser;
 
     res.redirect('/gaminglife/usuario/login');
   },
 
   //Autenticador de usuario registrado
 
-  userLogin: (req, res) => {
-    const userList = getUsers();
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.render('login', { session: req.session, errors: errors.mapped() });
-    };
-
-    //Verificador de existencia y validez de credenciales insertadas en Login Form
-
-    const user = userList.find(element => element.username == req.body.username && bcrypt.compareSync(req.body.password, element.password));
-    if (!user) {
-      return res.render("login", { errors: { username: { msg: "Credenciales incorrectas" } } });
+  userLogin: async (req, res) => {
+    try {
+      const user = await db.User.findOne({
+        include: ['role'],
+        where: {
+          username: req.body.username
+        }
+      });
+      if (!user) {
+        return res.render('login', { errors: { unauthorize: { msg: 'Credenciales incorrectas' } } });
+      }
+      if (!bcrypt.compareSync(req.body.password, user.password)) {
+        return res.render('login', { errors: { unauthorize: { msg: 'Credenciales incorrectas' } } });
+      }
+      req.session.user = {
+        id: user.id,
+        username: user.username,
+        role: user.role.name,
+        name: user.fullname,
+        avatar: user.avatar
+      };
+      if (req.body.rememberMe) {
+        res.cookie("userId", user.username, user.password, { maxAge: 1000 * 60 * 5 });
+      }
+      return res.redirect("/gaminglife/usuario/profile");
+    } catch (error) {
+      res.send(error);
     }
-    delete user.password;
-    req.session.user = user;
-    req.session.lastActitity = Date.now();
-
-    //Logica de guardado de datos en cookies al presionar "Recordar mi contraseña"
-
-    if (req.body.rememberMe) {
-      res.cookie("userId", user.username, user.password, { maxAge: 1000 * 60 * 5 });
-    }
-    return res.redirect("/gaminglife/usuario/profile");
   },
 
   //Logout (destruccion de session y borrado de cookies, con redireccion al login)
@@ -90,10 +113,18 @@ let userController = {
     return res.redirect("/gaminglife/usuario/login");
   },
 
-  //Logica profile con session
+  //Logica profile
 
-  profile: (req, res) => {
-    res.render("profile", { user: req.session.user });
+  profile: async (req, res) => {
+    try {
+      const user = await db.User.findByPk(req.session.user.id, {
+        attributes: { exclude: ['password'] },
+        include: ['role']
+      });
+      res.render('profile', { user: user.dataValues });
+    } catch (error) {
+
+    }
   }
 }
 module.exports = userController;

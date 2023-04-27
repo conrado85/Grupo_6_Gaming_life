@@ -18,7 +18,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.TEXT,
             allowNull: false
         },
-        name: {
+        username: {
             type: dataTypes.TEXT
         },
         avatar: {

@@ -21,15 +21,18 @@ const loginValidator = require("../middlewares/loginValidator");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    const folder = path.join(__dirname, "../public/images/userImg");
-    cb(null, folder);
+      const folder = path.join(__dirname, '../public/img/user');
+      cb(null, folder);
   },
-  filename: function (req, file, cb) {
-    cb(null, file.originalname);
+  filename: (req, file, cb) => {
+      const fileName = `${Date.now()}-user${path.extname(file.originalname)}`;
+      cb(null, fileName);
   }
 });
 
-const upload = multer({ storage });
+const upload = multer({
+  storage
+});
 
 //Sistema de ruteo, metodos y middlewares
 
