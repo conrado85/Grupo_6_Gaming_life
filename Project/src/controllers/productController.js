@@ -32,8 +32,9 @@ const controller = {
     },
 
     //renderiza el formulario de creacion de un producto
-    crear:(req,res) =>{
-        res.render('product-create')
+    crear:async(req,res) =>{
+        const categories = await db.Category.findAll()
+        res.render('product-create',{categories})
     },
 
     //crea un nuevo producto
@@ -54,10 +55,11 @@ const controller = {
     },
 
     //renderiza la vista de editar producto
-    edit:(req,res)=>{
+    edit:async(req,res)=>{
+        const categories = await db.Category.findAll()
         db.Products.findByPk(req.params.id)
             .then(productToEdit => {
-                res.render('product-edit', {productToEdit});
+                res.render('product-edit', {productToEdit, categories} );
             });     
     },
 
