@@ -107,14 +107,13 @@ header {
     height: 100%;
 }
 
-/* Login y Register */
+/*Profile*/
 
 .loginMain{
     display: flex;
     justify-content: center;
 }
-
-.container-login {
+.profile-container {
     width: 100%;
     max-width: 650px;
     background: rgba(172, 168, 168, 0.5);
@@ -124,7 +123,7 @@ header {
     box-shadow: inset -2px 2px 2px #00000040;
 }
 
-.container-login .title {
+.profile-container .title {
     font-size: 26px;
     font-weight: 600;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -135,103 +134,17 @@ header {
     border-bottom: solid 1px white;
 }
 
-.container-login .main-user-info {
+.profile-container .pfp-upload  {
+    font-size: 12px;
+    text-align: center;
+    
+}
+.profile-container .main-user-info {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px 0;
 }
-
-.user-input-box.user-input-password{
-    justify-content: end;
-}
-
-.form-submit-button {
-    margin-top: 40px;
-    border-radius: 30px;
-}
-
-.form-checkbox{
-    color: white;
-}
-
-.user-input-box {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 100%;
-    padding-bottom: 15px;
-}
-
-.user-input-box label {
-width: 95%;
-color: white;
-font-size: 20px;
-font-weight: 400;
-margin: 5px 0;
-}
-
-.user-input-box input {
-    height: 40px;
-    width: 95%;
-    border-radius: 7px;
-    outline: none;
-    border: 1px solid grey;
-    padding: 0 10px;
-}
-
-.form-submit-button input {
-    display: block;
-    width: 100%;
-    margin-top: 10px;
-    font-size: 20px;
-    padding: 10px;
-    border: none;
-    border-radius: 3px;
-    color: rgb(228, 221, 221);
-    background: rgba(7, 68, 224, 0.7)
-}
-.form-img-upload label{
-width: 95%;
-color: white;
-align-items: center;
-font-size: 20px;
-font-weight: 400;
-margin: 5px 0;
-}
-.form-submit-button input:hover {
-    background: rgb(207, 125, 2);
-    color: rgb(255, 255, 255);
-    transition: .6s;
- }
-.form-checkbox{
-    color: white;
-}
-
-.register-error-message {
-    border: 3px solid #ff0505;
-    margin-top: 3px;
-    padding: 5px 5px;
-    width: 95%;
-    background-color: #9c3f279a;
-    text-align: center;
-    font-size: 16px;
-    color: #ffffff;
-    border-radius: 50px;
-    animation: shake 0.2s 2;
-}
-@keyframes shake{
-    25% {
-        translate: 6px 0
-    }
-    50% {
-        translate:-6px 0
-    }
-    75%{
-        translate: 6px 0;
-    }
-}
-
 /*pie de pagina */
          
 footer {
