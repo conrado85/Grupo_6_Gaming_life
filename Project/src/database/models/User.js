@@ -21,10 +21,10 @@ module.exports = (sequelize, dataTypes) => {
         username: {
             type: dataTypes.TEXT
         },
-        avatar: {
+        img: {
             type: dataTypes.TEXT
         },
-        roles_id: {
+        role_id: {
             type: dataTypes.INTEGER
         }
     };
@@ -36,7 +36,7 @@ module.exports = (sequelize, dataTypes) => {
     User.associate = (models) => {
         User.belongsTo(models.Role, {
             as: 'role',
-            foreignKey: 'roles_id'
+            foreignKey: 'role_id'
         });
     }
 

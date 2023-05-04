@@ -1,6 +1,6 @@
 const { body } = require('express-validator')
 
-//Validador de registro con sanitizers
+//Validaciones de registro
 
 const registerValidator = [
     body('fullname')
@@ -37,7 +37,7 @@ const registerValidator = [
         .withMessage('Las contraseñas no coinciden')
         .notEmpty()
         .withMessage('Este campo es obligatorio')
-
+        
 ]
 
 module.exports = registerValidator

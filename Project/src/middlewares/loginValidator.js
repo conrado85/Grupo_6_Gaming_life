@@ -1,11 +1,11 @@
 const { body } = require('express-validator')
 
-//Validador de login y sanitizers
+//Validaciones de login 
 
 const loginValidator = [
     body('username')
         .notEmpty()
-        .withMessage('Por favor, ingrese su nombre de usuario'),
+        .withMessage('Ingresa tu nombre de usuario para continuar'),
 
     body('password')
         .notEmpty()
