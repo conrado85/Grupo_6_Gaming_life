@@ -55,6 +55,7 @@ let userController = {
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 10),
       avatar: req.file.filename ? req.file.filename : 'default-avatar.png',
+      role_id: 2
     };
     // Guardado de usuario en base de datos
     let newUser = await db.User.create(data);
@@ -63,7 +64,7 @@ let userController = {
     req.session.userLogged = newUser;
 
     // Redireccion a profile
-    return res.redirect(`/gaminglife/usuario/profile/`);
+    return res.redirect(`/gaminglife/usuario/profile`);
   },
 
   //Autenticador de usuario registrado
@@ -86,7 +87,7 @@ let userController = {
 
     // Busqueda de usuario
     if (user) {
-      let passOk = bcryptjs.compareSync(req.body.password, user.password);
+      let passOk = bcrypt.compareSync(req.body.password, user.password);
       if (passOk) {
         // Guardado de datos en session si el usuario es correcto
         req.session.userLogged = user;
@@ -97,7 +98,7 @@ let userController = {
           res.cookie("userId", user.id, { maxAge: 1000 * 60 * 5 });
         }
         // Redireccion a profile
-        return res.redirect("/profile");
+        return res.redirect("/gaminglife/usuario/profile");
       } else {
         // Prompt error username - password
         return res.render("login", {
@@ -128,13 +129,13 @@ let userController = {
 
   profile: async (req, res) => {
     try {
-      const user = await db.User.findByPk(req.session.user.id, {
+      const user = await db.User.findByPk(req.session.userLogged.id, {
         attributes: { exclude: ['password'] },
         include: ['role']
       });
       res.render('profile', { user: user.dataValues });
     } catch (error) {
-
+      console.log(error)
     }
   }
 }

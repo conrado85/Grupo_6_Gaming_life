@@ -36,12 +36,8 @@ const registerValidator = [
         .custom((value, { req }) => value === req.body.password)
         .withMessage('Las contraseñas no coinciden')
         .notEmpty()
-        .withMessage('Este campo es obligatorio'),
-
-    body('img')
-    .notEmpty()
-    .withMessage('Este campo es obligatorio, seleccione su foto de perfil')
-
+        .withMessage('Este campo es obligatorio')
+        
 ]
 
 module.exports = registerValidator
