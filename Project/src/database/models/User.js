@@ -21,10 +21,10 @@ module.exports = (sequelize, dataTypes) => {
         username: {
             type: dataTypes.TEXT
         },
-        avatar: {
+        img: {
             type: dataTypes.TEXT
         },
-        roles_id: {
+        role_id: {
             type: dataTypes.INTEGER
         }
     };

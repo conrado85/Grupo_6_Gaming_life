@@ -4,7 +4,7 @@ const { validationResult } = require('express-validator');
 const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
-const db = require('../database/models/User')
+const db = require('../database/models')
 
 //Controller usuarios 
 
@@ -40,68 +40,79 @@ let userController = {
   //Logica de Registro de nuevo usuario
 
   userReg: async function (req, res) {
-
-    //Validacion de datos
-
+    // Validacion de datos ingresados
     let errores = validationResult(req);
 
-    //En caso de haber errores, retornar a la vista con errores mappeados
-
+    // En caso de tener errores, retorna a la vista
     if (!errores.isEmpty()) {
       let errors = errores.mapped();
-      console.log(errors);
-      return res.render("register", { session: req.session, errors: errors.mapped() });
+      return res.render("register", { errors: errors, olds: req.body });
     }
 
-    //Modelo de toma de datos para creacion de nuevo usuario
-
-    let user = {
+    let data = {
       name: req.body.fullname,
-      username: request.body.username,
+      username: req.body.username,
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 10),
-      avatar: req.file.filename ? req.file.filename : 'default-avatar.png'
+      avatar: req.file.filename ? req.file.filename : 'default-avatar.png',
     };
+    // Guardado de usuario en base de datos
+    let newUser = await db.User.create(data);
 
-    //Guardado de nuevo usuario en base de datos
-
-    await db.User.create(user);
-
-    // Guardado en session
+    // Logueo en session
     req.session.userLogged = newUser;
 
-    res.redirect('/gaminglife/usuario/login');
+    // Redireccion a profile
+    return res.redirect(`/gaminglife/usuario/profile/`);
   },
 
   //Autenticador de usuario registrado
 
-  userLogin: async (req, res) => {
-    try {
-      const user = await db.User.findOne({
-        include: ['role'],
-        where: {
-          username: req.body.username
+  userLogin: async function (req, res) {
+    // Validacion de datos ingresados
+    let errores = validationResult(req);
+
+    // En caso de tener errores, retorna a la vista
+    if (!errores.isEmpty()) {
+      let errors = errores.mapped();
+      return res.render("login", { errors: errors, olds: req.body });
+    }
+
+    let user = await db.User.findOne({
+      where: {
+        username: req.body.username,
+      },
+    });
+
+    // Busqueda de usuario
+    if (user) {
+      let passOk = bcryptjs.compareSync(req.body.password, user.password);
+      if (passOk) {
+        // Guardado de datos en session si el usuario es correcto
+        req.session.userLogged = user;
+        req.session.lastActitity = Date.now();
+
+        // Guardado de datos en Cookie si el usuario selecciono "recordar"
+        if (req.body.rememberMe) {
+          res.cookie("userId", user.id, { maxAge: 1000 * 60 * 5 });
         }
+        // Redireccion a profile
+        return res.redirect("/profile");
+      } else {
+        // Prompt error username - password
+        return res.render("login", {
+          errors: {
+            password: {
+              msg: "Datos ingresados incorrectos.",
+            },
+          },
+          olds: req.body,
+        });
+      }
+    } else {
+      return res.render("login", {
+        errors: { username: { msg: "Datos ingresados incorrectos", olds: req.body } },
       });
-      if (!user) {
-        return res.render('login', { errors: { unauthorize: { msg: 'Credenciales incorrectas' } } });
-      }
-      if (!bcrypt.compareSync(req.body.password, user.password)) {
-        return res.render('login', { errors: { unauthorize: { msg: 'Credenciales incorrectas' } } });
-      }
-      req.session.user = {
-        id: user.id,
-        username: user.username,
-        role: user.role.name,
-        name: user.fullname,
-        avatar: user.avatar
-      };
-      if (req.body.rememberMe) {
-        res.cookie("userId", user.username, user.password, { maxAge: 1000 * 60 * 5 });
-      }
-      return res.redirect("/gaminglife/usuario/profile");
-    } catch (error) {
-      res.send(error);
     }
   },
 

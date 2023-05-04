@@ -1,6 +1,6 @@
 const { body } = require('express-validator')
 
-//Validador de registro con sanitizers
+//Validaciones de registro
 
 const registerValidator = [
     body('fullname')
@@ -36,7 +36,11 @@ const registerValidator = [
         .custom((value, { req }) => value === req.body.password)
         .withMessage('Las contraseñas no coinciden')
         .notEmpty()
-        .withMessage('Este campo es obligatorio')
+        .withMessage('Este campo es obligatorio'),
+
+    body('img')
+    .notEmpty()
+    .withMessage('Este campo es obligatorio, seleccione su foto de perfil')
 
 ]
 
