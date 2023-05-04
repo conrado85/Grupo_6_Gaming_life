@@ -20,6 +20,9 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `gaminglife_db`
 --
+CREATE SCHEMA gaminglife_db;
+
+USE gaminglife_db;
 
 -- --------------------------------------------------------
 
@@ -96,6 +99,7 @@ INSERT INTO `sequelizemeta` (`name`) VALUES
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
+  `name` text NOT NULL,
   `fullname` text NOT NULL,
   `email` text NOT NULL,
   `password` text NOT NULL,
