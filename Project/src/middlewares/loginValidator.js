@@ -5,7 +5,7 @@ const { body } = require('express-validator')
 const loginValidator = [
     body('username')
         .notEmpty()
-        .withMessage('Por favor, ingrese su nombre de usuario'),
+        .withMessage('Ingresa tu nombre de usuario para continuar'),
 
     body('password')
         .notEmpty()
