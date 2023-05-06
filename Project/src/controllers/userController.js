@@ -54,8 +54,7 @@ let userController = {
       username: req.body.username,
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 10),
-      avatar: req.file.filename ? req.file.filename : 'default-avatar.png',
-      role_id: 2
+      img: req.file.filename ? req.file.filename : 'default-avatar.png'
     };
     // Guardado de usuario en base de datos
     let newUser = await db.User.create(data);
@@ -70,6 +69,7 @@ let userController = {
   //Autenticador de usuario registrado
 
   userLogin: async function (req, res) {
+
     // Validacion de datos ingresados
     let errores = validationResult(req);
 

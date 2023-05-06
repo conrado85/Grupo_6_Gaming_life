@@ -8,6 +8,25 @@
                 <input type="text" placeholder="Buscar articulo" name="container-search">
                 <button type="submit"><img src="/images/iconos/product-assets/search.png" alt=""></button>
             </form>
+            <ul class="menu">
+                <li><a href="/gaminglife/inicio">Inicio</a></li>
+                <% if(!locals.session) {%>
+                    <li><a href="/gaminglife/usuario/login">Login</a></li>
+                    <li><a href="/gaminglife/usuario/register">Registro</a></li>
+                <%}%>
+                <% if(locals.session) {%>
+                    <li><a href="/gaminglife/usuario/profile">Perfil</a></li>
+                <%}%>
+            </ul>
+            <% if(locals.session) {%>
+                <div class="user-data">
+                    <h5><%= locals.session.name %></h5>
+                    <img class="user-avatar" src="/images/userImg/<%= user.img %>" alt="">
+                    <a href="/gaminglife/usuario/logout">
+                        <button>Salir</button>
+                    </a>
+                </div>
+            <%}%>
         </div>
         <!--<label for="menu" class="nav-label">
             <img src="/images/iconos/product-assets/menu.svg" alt="" class="nav-img">

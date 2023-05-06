@@ -189,7 +189,7 @@ margin: 5px 0;
     border: none;
     border-radius: 3px;
     color: rgb(228, 221, 221);
-    background: rgba(7, 68, 224, 0.7)
+    background: rgb(207, 125, 2);
 }
 .form-img-upload label{
 width: 95%;
@@ -200,7 +200,7 @@ font-weight: 400;
 margin: 5px 0;
 }
 .form-submit-button input:hover {
-    background: rgb(207, 125, 2);
+    background: rgb(255, 153, 0);
     color: rgb(255, 255, 255);
     transition: .6s;
  }
