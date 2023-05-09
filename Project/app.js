@@ -18,7 +18,7 @@ app.use(expressSession( {secret:'secret', resave: false, saveUninitialized: true
 app.use(express.json())
 
 //Sistema de rutas
-
+const userApiRouter = require('./src/routers/api/userRouter')
 const mainRouter = require('./src/routers/main')
 const userRouter = require('./src/routers/user')
 const productRouter = require('./src/routers/products')
@@ -28,6 +28,7 @@ app.use('/gaminglife', mainRouter)
 app.use('/gaminglife/usuario', userRouter)
 app.use('/gaminglife/productos', productRouter)
 app.use('/gaminglife/', carritoRouter)
+app.use('/api/user', userApiRouter)
 
 //404
 app.use((req,res,next)=> {
