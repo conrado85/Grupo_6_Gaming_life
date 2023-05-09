@@ -17,7 +17,7 @@ module.exports = {
         allowNull: false,
       },
       
-      fullname: {
+      name: {
         type: Sequelize.TEXT,
         allowNull: false,
       },
