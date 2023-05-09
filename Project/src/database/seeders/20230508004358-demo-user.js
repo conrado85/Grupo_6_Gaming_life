@@ -6,23 +6,18 @@ module.exports = {
     return queryInterface.bulkInsert('Users', [{
       name: 'Pablo',
       email: 'example@example.com',
-      password:'123456',
+      password:'12345678',
       username:'Pablo',
-      img:'',
-      role_id:'usuario',
-      createdAt: new Date(),
-      updatedAt: new Date()
+      img:'avatarUser',
+      role_id:'1',
     },
     { 
-      name: 'Maxi',
+    name: 'Maxi',
     email: 'example2@example2.com',
-    password:'123456',
+    password:'12345678',
     username:'Maxi',
-    img:'',
-    role_id:'Administrador',
-    createdAt: new Date(),
-    updatedAt: new Date()
-
+    img:'AvatarAdmin',
+    role_id:'2',
     }]);
   },
   down: (queryInterface, Sequelize) => {

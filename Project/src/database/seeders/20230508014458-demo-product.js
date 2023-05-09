@@ -8,27 +8,20 @@ module.exports = {
       description: 'disco de estado solido de 128gigas',
       price: '200',
       img:'',
-      category_id:'Almacenamiento',
-      createdAt: new Date(),
-      updatedAt: new Date()
+      category_id:'2',
     },
     {name: 'placa de video',
     description: 'placade video  de 128',
     price: '270',
     img:'',
-    category_id:'Componente',
-    createdAt: new Date(),
-    updatedAt: new Date()
-
+    category_id:'1',
     },
     {
       name: 'teclado',
       description: 'teclado retroiluminado rgb',
       price: '20',
       img:'',
-      category_id:'Perifericos',
-      createdAt: new Date(),
-      updatedAt: new Date()
+      category_id:'3',
     }]);
   },
   down: (queryInterface, Sequelize) => {
