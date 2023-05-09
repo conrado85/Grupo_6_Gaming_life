@@ -29,7 +29,7 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      avatar: {
+      img: {
         type: Sequelize.TEXT,
         allowNull: true,
       },
