@@ -232,6 +232,53 @@ margin: 5px 0;
     }
 }
 
+.is-invalid {
+    border: 3px solid #ff0505;
+    margin-top: 3px;
+    padding: 5px 5px;
+    width: 95%;
+    background-color: #9c3f279a;
+    text-align: center;
+    font-size: 16px;
+    color: #ffffff;
+    border-radius: 50px;
+    animation: shake 0.2s 2;
+}
+@keyframes shake{
+    25% {
+        translate: 6px 0
+    }
+    50% {
+        translate:-6px 0
+    }
+    75%{
+        translate: 6px 0;
+    }
+}
+
+.invalid {
+    border: solid 1px red;
+    box-shadow: 0 0 10px red;
+  }
+  
+.error {
+    color: red;
+    display: block;
+  }
+
+.register-error-message {
+    border: 3px solid #ff0505;
+    margin-top: 3px;
+    padding: 5px 5px;
+    width: 95%;
+    background-color: #9c3f279a;
+    text-align: center;
+    font-size: 16px;
+    color: #ffffff;
+    border-radius: 50px;
+}
+
+
 /*pie de pagina */
          
 footer {
