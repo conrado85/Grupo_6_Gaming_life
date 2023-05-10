@@ -1,5 +1,7 @@
 <%- include('partials/head') %>
-    <title><%= producto.name%></title>
+    <title>
+        <%= producto.name%>
+    </title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap" rel="stylesheet">
@@ -30,29 +32,43 @@
                 </div>
 
                 <div class="features">
-                    <h1 class="p-name"><%= producto.name%></h1>
-                    <h2 class="p-price">Precio: <%= producto.price%></h2>
+                    <h6>
+                    <% if (producto.category_id == 1){ %>
+                        Componentes
+                    <% }else if (producto.category_id == 2) {%>
+                        Almacenamiento
+                    <% }else{%>
+                        Periféricos
+                    <% } %>    
+                    </h6>
+                    <h1 class="p-name">
+                        <%= producto.name%>
+                    </h1>
+                    <h2 class="p-price">Precio: <%= producto.price%>
+                    </h2>
                     <div class="button-conteiner">
 
-                    <button class="buttonP" type="submit">Agregar al carrito</button>
-                    <a href="/gaminglife/productos/editar/<%= producto.id %>"><button class="buttonP" type="submit">Editar</button></a>
-                    
-                    <button class="buttonComprar" type="submit">Comprar</button>
+                        <button class="buttonP" type="submit">Agregar al carrito</button>
+                        <a href="/gaminglife/productos/editar/<%= producto.id %>"><button class="buttonP" type="submit">Editar</button></a>
+                        <button class="buttonComprar" type="submit">Comprar</button>
 
-                    </div>    
+                    </div>
                 </div>
             </section>
             <section class="description-box">
                 <h2>Descripcion del producto:</h2>
-                <p class="p-description"><%= producto.description%></p>
-                
+                <p class="p-description">
+                    <%= producto.description%>
+                </p>
+
             </section>
 
             <section class="relation-box">
                 <h2>Productos relacionados</h2>
             </section>
         </main>
-        
+
     </body>
     <%- include('partials/footer') %>
-    </html>
+
+        </html>

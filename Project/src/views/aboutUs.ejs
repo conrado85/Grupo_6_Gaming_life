@@ -20,13 +20,19 @@
     </header>
     <main>
         <div class="dev-catalogue">
+             <% info.forEach(dates => { %> 
+    
             <div class="dev-panel">
-                <img class="dev-img" src="" alt="">
-                <div>
-                    <h2 class="dev-name">Pablo Ruiz</h2>
-                    <p class="dev-info">Futuro desarrollador web full stack node, 21 años y estudiante de la Universidad Nacio Gral. Sarmiento.</p>    
+                <img class="dev-img" src="/images/<%= dates.img %>" alt="avatar">
+                <div class="dev-dates">
+                    <h6><%= dates.job %></h6>
+                    <h2 class="dev-name"><%= dates.name %></h2>
+                    <p class="dev-info"><%= dates.description %></p>    
                 </div>
             </div>
+
+            <%}); %> 
+
         </div>
     </main>
     <%- include('partials/footer') %> 
