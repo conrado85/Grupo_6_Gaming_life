@@ -266,6 +266,17 @@ margin: 5px 0;
     display: block;
   }
 
+  .success {
+    color: green;
+    display: block;
+  }
+
+  .valid {
+    border: solid 1px limegreen;
+    box-shadow: 0 0 10px limegreen;
+  }
+  
+
 .register-error-message {
     border: 3px solid #ff0505;
     margin-top: 3px;

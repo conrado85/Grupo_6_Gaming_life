@@ -8,11 +8,15 @@ const imgField = document.querySelector("[name=img]");
 const setErrors = (message, field, isError = true) => {
   if (isError) {
     field.classList.add("invalid");
-    field.nextElementSibling.classList.add("error");
+    field.nextElementSibling.classList.add("error")
+    field.nextElementSibling.classList.add("register-error-message");
     field.nextElementSibling.innerText = message;
   } else {
     field.classList.remove("invalid");
     field.nextElementSibling.classList.remove("error");
+    field.nextElementSibling.classList.remove("register-error-message");
+    field.classList.add("valid")
+    field.nextElementSibling.classList.add("success")
     field.nextElementSibling.innerText = "";
   }
 }

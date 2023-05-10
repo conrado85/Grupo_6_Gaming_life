@@ -61,6 +61,9 @@
                     <label for="img">Selecciona tu imagen de perfil:</label>
                     <br>
                     <input type="file"  id="img" name="img" accept="image/png, image/jpeg">
+                    <% if (locals.errors?.img) { %>
+                        <div class = "register-error-message"><%= errors.img.msg %></div>
+                        <% } %>
                     </div>
                     <br>
                         <div class="form-checkbox">
