@@ -1,4 +1,4 @@
--- phpMyAdmin SQL Dump
+-- phuserspMyAdmin SQL Dump
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
@@ -100,7 +100,6 @@ INSERT INTO `sequelizemeta` (`name`) VALUES
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `name` text NOT NULL,
-  `fullname` text NOT NULL,
   `email` text NOT NULL,
   `password` text NOT NULL,
   `img` text DEFAULT NULL,

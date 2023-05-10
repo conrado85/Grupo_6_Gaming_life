@@ -1,53 +1,44 @@
-<nav class="nav">
-    <div class="nav-container">
-        <a href="/gaminglife/inicio">
-        <img src="/images/logo game live SF.png" alt="logo" class="logo-img">
-        </a>
-        <div class="search-container">
-            <form action="https://www.google.com/search" method="get" class="search" autocomplete="off">
-                <input type="text" placeholder="Buscar articulo" name="container-search">
-                <button type="submit"><img src="/images/iconos/product-assets/search.png" alt=""></button>
-            </form>
-            <ul class="menu">
-                <li><a href="/gaminglife/inicio">Inicio</a></li>
-                <% if(!locals.session) {%>
-                    <li><a href="/gaminglife/usuario/login">Login</a></li>
-                    <li><a href="/gaminglife/usuario/register">Registro</a></li>
-                <%}%>
-                <% if(locals.session) {%>
-                    <li><a href="/gaminglife/usuario/profile">Perfil</a></li>
-                <%}%>
-            </ul>
-            <% if(locals.session) {%>
-                <div class="user-data">
-                    <h5><%= locals.session.name %></h5>
-                    <img class="user-avatar" src="/images/userImg/<%= user.img %>" alt="">
-                    <a href="/gaminglife/usuario/logout">
-                        <button>Salir</button>
+<header class="main-header">
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/gaminglife/inicio">
+                <img src="/images/logo game live SF.png" alt="logo" class="logo-img">
+            </a>
+            <div class="search-container">
+                <form action="https://www.google.com/search" method="get" class="search" autocomplete="off">
+                    <input type="text" placeholder="Buscar articulo" name="container-search">
+                    <button type="submit"><img src="/images/iconos/product-assets/search.png" alt=""></button>
+                </form>
+                <button class="menu-barras">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="nav-menu">
+
+                    <a href="/gaminglife/inicio">Inicio</a>
+                    <% if(!locals.session) {%>
+                        <a href="/gaminglife/usuario/login" class="nav-item">Ingresar</a>
+                        <a href="/gaminglife/usuario/register" class="nav-item">Registrarse</a>
+                        <%}%>
+                    <a href="/gaminglife/productos/lista" class="nav-item">Lista de productos</a>
+                    <a href="" class="nav-item">Quienes somos</a>
+                    <a href="/gaminglife/ventas" class="nav-item">
+                        <img src="/images/iconos/bx-cart.svg" alt="Carrito">
                     </a>
+                            <% if(locals.session) {%>
+                                <a href="/gaminglife/usuario/profile" class="nav-item">Perfil</a>
+                                <%}%>
+                                    <% if(locals.session) {%>
+                                        <div class="user-data">
+                                            <h5>
+                                                <%= locals.session.name %>
+                                            </h5>
+                                            <img class="user-avatar" src="/images/userImg/<%= session.img %>" height="30px">
+                                            <a href="/gaminglife/usuario/logout" class="nav-item">Cerrar Sesion
+                                            </a>
+                                        </div>
+                                        <%}%>
                 </div>
-            <%}%>
+            </div>
         </div>
-        <!--<label for="menu" class="nav-label">
-            <img src="/images/iconos/product-assets/menu.svg" alt="" class="nav-img">
-        </label> 
-
-        <input type="checkbox" id="menu" class="nav-input">
-        <a href="/views/home.ejs"><img src="/images/iconos/product-assets/menu.svg" alt="" class="nav-img"></a>
-
-
-         //FILE ORIGINAL -->
-<!-- <nav class="nav">
-    <div class="nav-container">
-        <img src="/images/logo game live SF.png" alt="logo" class="logo-img">
-        <div class="search-container">
-            <form action="https://www.google.com/search" method="get" class="search" autocomplete="off">
-                <input type="text" placeholder="Buscar articulo" name="q">
-                <button type="submit"><img src="/images/iconos/product-assets/search.png" alt=""></button>
-            </form>
-        </div>
-        <label for="menu" class="nav-label">
-            <img src="/images/iconos/product-assets/menu.svg" alt="" class="nav-img">
-        </label>
-
-        <input type="checkbox" id="menu" class="nav-input"> -->
+    </nav>
+</header>
