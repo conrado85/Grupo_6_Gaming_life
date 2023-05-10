@@ -42,10 +42,21 @@ const validateEmailFormat = e => {
   }
 }
 
+const validateConfirmPassword = e => {
+  const field = e.target;
+  const passwordValue = passwordField.value;
+  const confirmPasswordValue = confirmPasswordField.value;
+  if (passwordValue !== confirmPasswordValue) {
+    setErrors("Las contraseñas no coinciden", field);
+  } else {
+    setErrors("", field, false);
+  }
+}
+
 fullnameField.addEventListener("blur", (e) => validateEmptyField("El campo Nombre y apellido es obligatorio", e));
 usernameField.addEventListener("blur", (e) => validateEmptyField("El campo Usuario es obligatorio", e));
 passwordField.addEventListener("blur", (e) => validateEmptyField("El campo Contraseña es obligatorio", e));
-confirmPasswordField.addEventListener("blur", (e) => validateEmptyField("Confirme su contraseña", e));
+confirmPasswordField.addEventListener("focus", (e) => validateEmptyField("Confirme su contraseña", e));
 emailField.addEventListener("blur", (e) => validateEmptyField("Ingrese una casilla de mail valida", e));
 
 emailField.addEventListener("input", validateEmailFormat);

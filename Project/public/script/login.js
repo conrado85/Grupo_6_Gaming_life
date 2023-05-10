@@ -13,7 +13,6 @@ const setErrors = (message, field, isError = true) => {
     field.nextElementSibling.classList.remove("error");
     field.nextElementSibling.classList.remove("register-error-message");
     field.classList.add("valid")
-    field.nextElementSibling.classList.add("success")
     field.nextElementSibling.innerText = "";
   }
 }
