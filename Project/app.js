@@ -19,6 +19,7 @@ app.use(express.json())
 
 //Sistema de rutas
 const userApiRouter = require('./src/routers/api/userRouter')
+const productsApiRouter = require('./src/routers/api/productsRouter')
 const mainRouter = require('./src/routers/main')
 const userRouter = require('./src/routers/user')
 const productRouter = require('./src/routers/products')
@@ -29,6 +30,7 @@ app.use('/gaminglife/usuario', userRouter)
 app.use('/gaminglife/productos', productRouter)
 app.use('/gaminglife/', carritoRouter)
 app.use('/api/user', userApiRouter)
+app.use('/api/products', productsApiRouter)
 
 //404
 app.use((req,res,next)=> {
