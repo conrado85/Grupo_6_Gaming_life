@@ -16,6 +16,7 @@ const authMiddleware = require("../middlewares/authMiddleware");
 const redirectIfLogged = require("../middlewares/redirectIfLogged");
 const registerValidator = require("../middlewares/registerValidator");
 const loginValidator = require("../middlewares/loginValidator");
+const sessionMiddleware = require("../middlewares/sessionMiddleware");
 
 //Logica Multer 
 
@@ -36,13 +37,13 @@ const upload = multer({
 
 //Sistema de ruteo, metodos y middlewares
 
-router.get("/login", redirectIfLogged, userController.login);
-router.post("/login", loginValidator, userController.userLogin);
+router.get("/login", redirectIfLogged, sessionMiddleware, userController.login);
+router.post("/login", loginValidator, sessionMiddleware, userController.userLogin);
 
-router.get("/register", redirectIfLogged, userController.register);
-router.post("/register", upload.single("img"), registerValidator, userController.userReg);
+router.get("/register", redirectIfLogged,sessionMiddleware, userController.register);
+router.post("/register", upload.single("img"), registerValidator, sessionMiddleware, userController.userReg);
 
-router.get("/profile", authMiddleware, userController.profile);
+router.get("/profile", authMiddleware, sessionMiddleware, userController.profile);
 
 router.get("/logout", userController.logout);
 router.post("/logout", userController.logout);

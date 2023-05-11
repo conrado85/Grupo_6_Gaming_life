@@ -1,5 +1,6 @@
 <%-include('partials/head') %>
 <link rel="stylesheet" href="/css/reglogstyle.css">
+
 <title>Registro</title>
 <body>
     <header>
@@ -15,7 +16,8 @@
             <div class="main-user-information">
             <div class="user-input-box">
                 <label for="fullName">Nombre y apellido</label>
-                <input type="text" name="fullname" id="fullname" placeholder="Ingrese nombre completo" pattern="[a-zA-Z][a-zA-Z ]{4,}"/>
+                <input type="text" name="fullname" id="fullname" placeholder="Ingrese nombre completo"/>
+                <p class="error" id="error"></p>
                 <% if (locals.errors?.fullname) { %>
                     <div class = "register-error-message"><%= errors.fullname.msg %></div>
                     <% } %>
@@ -23,13 +25,15 @@
             <div class="user-input-box">
                 <label for="username">Usuario</label>
                 <input type="text" name="username" id="username" placeholder="Ingrese nombre de usuario deseado"/>
+                <p class="error" id="error"></p>
                 <% if (locals.errors?.username) { %>
                     <div class = "register-error-message"><%= errors.username.msg %></div>
                     <% } %>
             </div>
             <div class="user-input-box">
                 <label for="email">E-Mail</label>
-                <input type="text" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,}$" placeholder="Ingrese su E-Mail"/>
+                <input type="text" name="email" id="email"placeholder="Ingrese su E-Mail"/>
+                <p class="error" id="error"></p>
                 <% if (locals.errors?.email) { %>
                     <div class = "register-error-message"><%= errors.email.msg %></div>
                     <% } %>
@@ -42,14 +46,16 @@
                     <% } %>
                     <div class="user-input-box">
                         <label for="password">Contraseña</label>
-                        <input type="password" name="password" id="password" pattern=".{8,}" placeholder="Ingrese su contraseña"/>
+                        <input type="password" name="password" id="password" placeholder="Ingrese su contraseña"/>
+                        <p class="error" id="error"></p>
                         <% if (locals.errors?.password) { %>
                             <div class = "register-error-message"><%= errors.password.msg %></div>
                             <% } %>
                         </div>
                         <div class="user-input-box">
                             <label for="confirmPassword">Confirmar contraseña</label>
-                            <input type="password" name="confirmPassword" id="confirmPassword" pattern=".{8,}" placeholder="Confirme su contraseña"/>
+                            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirme su contraseña"/>
+                            <p class="error" id="error"></p>
                             <% if (locals.errors?.confirmPassword) { %>
                                 <div class = "register-error-message"><%= errors.confirmPassword.msg %></div>
                                 <% } %>
@@ -60,6 +66,10 @@
                     <label for="img">Selecciona tu imagen de perfil:</label>
                     <br>
                     <input type="file"  id="img" name="img" accept="image/png, image/jpeg">
+                    <p class="error" id="error"></p>
+                    <% if (locals.errors?.img) { %>
+                        <div class = "register-error-message"><%= errors.img.msg %></div>
+                        <% } %>
                     </div>
                     <br>
                         <div class="form-checkbox">
@@ -72,6 +82,7 @@
         </form>
     </div>
     <%- include('partials/footer') %>
+    <script src="/script/register.js"></script>
 </main>
 </body>
 </html>

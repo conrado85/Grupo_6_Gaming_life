@@ -1,5 +1,6 @@
 <%-include('partials/head') %>
 <link rel="stylesheet" href="/css/reglogstyle.css">
+
 <title>login</title>
 <header>
     <%-include('partials/navbar') %>
@@ -14,6 +15,7 @@
             <div class="user-input-box">
                 <label for="username">Usuario</label>
                 <input type="text" name="username" id="username" placeholder="Ingresa tu usuario"/>
+                <p class="error" id="error"></p>
                 <% if (locals.errors?.username) { %>
                     <div class = "register-error-message"><%= errors.username.msg %></div>
                     <% } %>
@@ -21,6 +23,7 @@
             <div class="user-input-box user-input-password">
                 <label for="password">Contraseña</label>
                 <input type="password" name="password" id="password" placeholder="Ingrese su contraseña"/>
+                <p class="error" id="error"></p>
                 <% if (locals.errors?.password) { %>
                     <div class = "register-error-message"><%= errors.password.msg %></div>
                     <% } %>
@@ -35,6 +38,7 @@
         </div>
     </form>
 </div>
+<script src="/script/login.js"></script>
 </main>
 </body>  
 <%- include('partials/footer') %>

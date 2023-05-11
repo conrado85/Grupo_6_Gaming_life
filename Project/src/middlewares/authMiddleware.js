@@ -3,7 +3,7 @@
 
 authMiddleware = (req, res, next) => {
   if (!req.session.userLogged) {
-    return res.redirect("login");
+    return res.redirect("/gaminglife/usuario/login");
   }
   next();
 };
