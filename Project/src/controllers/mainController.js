@@ -1,12 +1,26 @@
 const path = require('path')
 const fs = require('fs')
+const { error } = require('console');
 
-// const menuFile = fs.readFileSync(path.join(__dirname, '../models/productos.json'),'utf-8')
-// const listaProductos = JSON.parse(menuFile)
+//Requiero los modelos
+const db = require('../database/models');
 
 const controller = {
-    index: (req, res) =>{
-        res.render('home')
+    index:async (req, res) =>{
+        try{const products =await db.Products.findAll()
+        res.render('home',{products})
+    }catch(error){
+        console.log(error)
+        res.send(error)
+    }
+    },
+    aboutUs: async (req,res) =>{
+        try {
+            const info = await db.Aboutus.findAll()
+            res.render('AboutUs', {info})
+        } catch (error) {
+            res.send(error)
+        }
     }
 }
 

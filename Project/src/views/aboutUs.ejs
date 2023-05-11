@@ -1,0 +1,27 @@
+<%- include('partials/head') %> 
+    <title>Lista de Productos</title>
+    <link rel="stylesheet" href="/css/about-us.css">
+    <link rel="stylesheet" href="/css/nav-bar.css">
+    <link rel="stylesheet" href="/css/estilo-footer.css">
+</head>
+
+<body>
+    <%- include('partials/navbar') %> 
+    <main>
+        <div class="dev-catalogue">
+             <% info.forEach(dates => { %> 
+    
+            <div class="dev-panel">
+                <img class="dev-img" src="/images/<%= dates.img %>" alt="avatar">
+                <div class="dev-dates">
+                    <h6><%= dates.job %></h6>
+                    <h2 class="dev-name"><%= dates.name %></h2>
+                    <p class="dev-info"><%= dates.description %></p>    
+                </div>
+            </div>
+
+            <%}); %> 
+
+        </div>
+    </main>
+    <%- include('partials/footer') %> 

@@ -5,8 +5,8 @@ const expressSession = require('express-session');
 const methodOverride = require('method-override');
 const cookieParser = require("cookie-parser");
 const sessionMiddleware = require("../Project/src/middlewares/sessionMiddleware")
-//configuracion del 'app'
 
+//configuracion del 'app'
 const app = express();
 app.use(methodOverride('_method'))
 app.use(express.static('public'));
@@ -17,6 +17,7 @@ app.use(express.urlencoded({ extended:false}))
 app.use(expressSession( {secret:'secret', resave: false, saveUninitialized: true } ))
 app.use(express.json())
 app.use(sessionMiddleware)
+
 //Sistema de rutas
 const userApiRouter = require('./src/routers/api/userRouter')
 const productsApiRouter = require('./src/routers/api/productsRouter')
