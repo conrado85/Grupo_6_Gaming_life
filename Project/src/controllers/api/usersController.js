@@ -36,6 +36,8 @@ const controller = {
                     id: user.id,
                     name: user.name,
                     email: user.email,
+                    username: user.username,
+                    img: `http://localhost:3000/users/${user.id}`
                 };
                 res.json(response);
             }
