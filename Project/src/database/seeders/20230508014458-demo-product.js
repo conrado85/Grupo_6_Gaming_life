@@ -12,7 +12,8 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },
-    {name: 'placa de video',
+    {
+    name: 'placa de video',
     description: 'placade video  de 128',
     price: '270',
     img:'',
