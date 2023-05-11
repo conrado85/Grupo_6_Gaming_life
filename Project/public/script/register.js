@@ -56,9 +56,9 @@ const validateConfirmPassword = e => {
 fullnameField.addEventListener("blur", (e) => validateEmptyField("El campo Nombre y apellido es obligatorio", e));
 usernameField.addEventListener("blur", (e) => validateEmptyField("El campo Usuario es obligatorio", e));
 passwordField.addEventListener("blur", (e) => validateEmptyField("El campo Contraseña es obligatorio", e));
-confirmPasswordField.addEventListener("focus", (e) => validateEmptyField("Confirme su contraseña", e));
-confirmPasswordField.addEventListener("blur", (e) => validateConfirmPassword(e))
+confirmPasswordField.addEventListener("blur", (e) => validateEmptyField("Confirme su contraseña", e));
 emailField.addEventListener("blur", (e) => validateEmptyField("Ingrese una casilla de mail valida", e));
+confirmPasswordField.addEventListener("keydown", (e) => validateConfirmPassword(e))
 
 emailField.addEventListener("input", validateEmailFormat);
 
