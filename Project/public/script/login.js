@@ -1,5 +1,6 @@
 const usernameField = document.querySelector("[name=username]");
 const passwordField = document.querySelector("[name=password]");
+const errorMessage = document.querySelector(".register-error-message")
 
 
 const setErrors = (message, field, isError = true) => {
@@ -7,11 +8,12 @@ const setErrors = (message, field, isError = true) => {
     field.classList.add("invalid");
     field.nextElementSibling.classList.add("error")
     field.nextElementSibling.classList.add("register-error-message");
+    field.classList.remove("valid")
     field.nextElementSibling.innerText = message;
   } else {
     field.classList.remove("invalid");
-    field.nextElementSibling.classList.remove("error");
     field.nextElementSibling.classList.remove("register-error-message");
+    field.nextElementSibling.classList.remove("error");
     field.classList.add("valid")
     field.nextElementSibling.innerText = "";
   }
