@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(../images/background.png);
+    background-repeat: repeat;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+div.dev-catalogue{
+    height: auto;
+    width: 80%;
+    background: rgbA(4,20,36,0.7);
+    border: 2px black solid;
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+div.dev-catalogue div.dev-panel{
+    height: 280px;
+    width: 90%;
+    
+    background-color: rgba(189, 188, 255, 0.61);
+    border: 3px solid lightblue;
+   
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+
+    border-radius: 3px;
+}
+
+div.dev-catalogue div.dev-panel img.dev-img{
+    height: 140px;
+    width: 140px;
+    border: 2px black solid;
+    background-color: crimson;
+    margin-left: 3rem;
+    border-radius: 50%;
+}
+
+div.dev-catalogue div.dev-panel div.dev-dates{
+    margin-left: 3rem;
+    width: 45rem;
+}

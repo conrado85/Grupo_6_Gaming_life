@@ -9,21 +9,24 @@ nuestros servicios al mundo del Gaming. Teniendo productos de mayor calidad al m
  - Discos duros
  - Memoria Ram
  - fuente de poder
- - Gabinete
 
  ¿Como ajustaremos nuestra oferta al publico? Ofreciendo productos de calidad junto a un servicio tecnico capacitado en las ultimas tecnologias
 
  **Integrantes:**
-- González Conrado: Tengo 38 Años,Soy de San Miguel.Trabajo de Operario en una fabrica, y en mis tiempos libres me dedico a aprender a programar , me gustaria ser un desarrolador frontEnd
+- González Conrado
+- Lacourlig Candela (abandono)
+- Medina Maximiliano
+- Emiliano Rodriguez
+- Ruíz Pablo
 
-- Lacourlig Candela: Soy DJ y community manager con estudios en artes visuales, diseño gráfico, imagen y sonido aplicados.
-
-- Medina Maximiliano: Tengo 19 años, Vivo en San Miguel. Soy un Desarrollador FrontEnd junior que quiere aprender más sobre BackEnd y tener la posibilidad de poder hacer las dos
-
--Emiliano Rodriguez: Habitando San Miguel hace 6 años, ex "zonasureño". Con paciencia y constancia agregandole todos los dias un paso mas a mi meta de ser Fullstack developer y dedicarme a eso al 100% habiendo partido desde 0% de conocimientos.
-
-- Ruíz Pablo: Tengo 20 años, vivo en San Miguel, soy desarrollador junior que esta aprendiendo sobre el desarrollo web full stack y tengo muchas ganas de desarrollarme mas
-
+**Como realizar la correcta visualizacion del producto:**
+- Paso 1: Crear una nueva carpeta en cualquier directorio.
+- Paso 2: Una vez creado la carpeta abrir Visual Studio Code y cargar dicha carpeta.
+- Paso 3: Abrir una nueva terminal bash, y realizar el comando "cd Project/", para abrir la carpeta raiz del proyecto.
+- Paso 4: Dentro del explorador de archivos crear un nuevo archivo con el nombre ".env" y complatar los datos como muestra el archivo ".env.example" ubicado igualmente en la carpeta raiz del proyecto.
+- Paso 5: Lanzar XAMPP asegurandose de inicializar tanto "Apache" como "MySQL"
+- Paso 6: En la terminal ejecutar los siguientes comandos en el siguiente orden: 1- npm i 2-npm run migrate 3-npm run seeders 4-npm run dev
+- Paso 7: Luego de realizar el paso anterior en su consola (si todo salio bien) deberia aparecer el siguiente mensaje "Servidor iniciado en http://localhost:3030/gaminglife/inicio", como ultimo debera realizar "crtl + click izquierdo" sobre el link para abrir la pagina en su navegador predeterminado.
  **Tablero de Trello:**
 
     -https://trello.com/b/BHbIy5zK/sprint-2
@@ -35,7 +38,4 @@ nuestros servicios al mundo del Gaming. Teniendo productos de mayor calidad al m
 - https://www.fullh4rd.com.ar/  (la parte de destacados)
 - https://www.gezatek.com.ar/
 
-**Importante:**
-- En la carpeta Designs, se encuentra los modelos que seguimos en un principio a la hora de crear la pagina.
-- En la carpeta Project, se encuentra el proyecto en su version completamente funcional.
-- En la carpeta Sprints, se encuentran, las distintas estapas de desarrollo.
+

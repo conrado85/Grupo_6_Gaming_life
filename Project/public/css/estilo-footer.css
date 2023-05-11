@@ -1,21 +1,24 @@
 
 footer {
 
-    height:200px;
+    height:auto;
     width:100%;
     background-color: #F2CD5C;
 }
 
-footer .grupo_1 {
+footer p{
+    font-style: italic;
+    color: black;
+}
+
+footer .content-box {
     width: 100%;
     max-width: 1200px;
-    height: 400px;
+    height: auto;
     margin: auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
-    padding: 25px 0px;
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 footer h2 {

@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<%- include("partials/head") %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/estilohome.css">
     <link rel="stylesheet" href="/css/estilo-nav.css">
     <link rel="stylesheet" href="/css/estilo-footer.css">
-    <script src="https://kit.fontawesome.com/59856da62e.js" crossorigin="anonymous"></script> 
+    <script src="https://kit.fontawesome.com/59856da62e.js" crossorigin="anonymous"></script>
     <script src="/css/script/carrito.js" async></script>
     <script defer src="/script/menu.js"></script>
     <title>Gaming life </title>
@@ -16,234 +13,72 @@
 <body>
         <%- include('partials/navbar') %> 
         
-        <section class="section-header">
-          
-          <div class="contenedor-header">
-            <p class="nombre">Gaming Life</p>
-            <a href="/gaminglife/usuario/register">Crear Cuenta</a>
-            <a href="/gaminglife/usuario/login">Ingresar</a>
-          </div>
-        </section>
-    </div>
-      
-      <p class="div-categorias" >Productos mas vistos</p>
-
-      <section class="contenedor" id="productos-mas-vistos">
-          <!-- Contenedor de elementos -->
-          <div class="contenedor-items">
-              <div class="item">
-                 
-                  <span class="titulo-item">Memoria ram</span>
-                  <img src="/images/productos/memoria-1.jpg" alt="" class="img-item">
-                  <span class="nombre-item">nombre producto</span>
-                  <span class="detalle-item">breve descripcion del producto </span>
-                  <span class="precio-item">precio:$15.000</span>
-                 
-                  <button  class="boton-item"><a href="/carrito"  class="nav-menu-link nav-link">Comprar</a></button>
-              </div>
-              <div class="item">
-                  <span class="titulo-item">Mother</span>
-                  <img src="/images/productos/placa-madre-2.jpg" alt="" class="img-item">
-                  <span class="nombre-item">nombre producto</span>
-                  <span class="detalle-item">breve descripcion del producto </span>
-                  <span class="precio-item">precio:$15.000</span>
-                 
-                  <button  class="boton-item"><a href="/carrito"  class="nav-menu-link nav-link">Comprar</a></button>
-              </div>
-              <div class="item">
-                  <span class="titulo-item">Pc armada</span>
-                  <img src="/images/productos/gabinete1.jpg" alt="" class="img-item">
-                  <span class="nombre-item">nombre producto</span>
-                  <span class="detalle-item">breve descripcion del producto </span>
-                  <span class="precio-item">precio:$15.000</span>
-                 
-                  <button  class="boton-item"><a href="/carrito"  class="nav-menu-link nav-link">Comprar</a></button>
-              </div>
-              <div class="item">
-                  <span class="titulo-item">Placa de video </span>
-                  <img src="/images/productos/placa-video-1.jpg" alt="" class="img-item">
-                  <span class="nombre-item">nombre producto</span>
-                  <span class="detalle-item">breve descripcion del producto </span>
-                  <span class="precio-item">precio:$15.000</span>
-                  
-                  <button  class="boton-item"><a href="/carrito"  class="nav-menu-link nav-link">Comprar</a></button>
-              </div>
-              
-          </div>
-          
-          
-      </section>
-      <p class="div-categorias">Memorias de pc</p>
-  
-      <section class="contenedor">
-          <!-- Contenedor de elementos -->
-          <div class="contenedor-items">
-              <div class="item">
-                 
-                  <span class="titulo-item">Memoria ram</span>
-                  <img src="/images/productos/memoria.jpg" alt="" class="img-item">
-                  <span class="nombre-item">nombre producto</span>
-                  <span class="detalle-item">breve descripcion del producto </span>
-                  <span class="precio-item">precio:$15.000</span>
-                  <button  class="boton-item"><a href="/carrito"  class="nav-menu-link nav-link">Comprar</a></button>
-              </div>
-              <div class="item">
-                  <span class="titulo-item">Memoria ram</span>
-                  <img src="/images/productos/memoria-1.jpg" alt="" class="img-item">
-                  <span class="nombre-item">nombre producto</span>
-                  <span class="detalle-item">breve descripcion del producto </span>
-                  <span class="precio-item">precio:$15.000</span>
-                  <button  class="boton-item"><a href="/carrito"  class="nav-menu-link nav-link">Comprar</a></button>
-              </div>
-              <div class="item">
-                  <span class="titulo-item">Memoria ram</span>
-                  <img src="/images/productos/memoria-2.jpg" alt="" class="img-item">
-                  <span class="nombre-item">nombre producto</span>
-                  <span class="detalle-item">breve descripcion del producto </span>
-                  <span class="precio-item">precio:$15.000</span>
-                  <button  class="boton-item"><a href="/carrito"  class="nav-menu-link nav-link">Comprar</a></button>
-              </div>
-              <div class="item">
-                  <span class="titulo-item">Mamoria ram </span>
-                  <img src="/images/productos/memoria.jpg" alt="" class="img-item">
-                  <span class="nombre-item">nombre producto</span>
-                  <span class="detalle-item">breve descripcion del producto </span>
-                  <span class="precio-item">precio:$15.000</span>
-                  <button  class="boton-item"><a href="/carrito"  class="nav-menu-link nav-link">Comprar</a></button>
-              </div>
-              
-          </div>
-         
-          
-      </section>
-      <p class="div-categorias">Accesorios</p>
-
-      <section class="contenedor" id="acesorios">
-          <!-- Contenedor de elementos -->
-          <div class="contenedor-items">
-              <div class="item">
-                  <span class="titulo-item">Acesorios</span>
-                      <img src="/images/productos/auricular.jpg" alt="" class="img-item">
-                      <span class="nombre-item">nombre producto</span>
-                      <span class="detalle-item">breve descripcion del producto </span>
-                      <span class="precio-item">precio:$15.000</span>
-                      <button  class="boton-item"><a href="/carrito"  class="nav-menu-link nav-link">Comprar</a></button>
-                  </div>
-                  <div class="item">
-                      <span class="titulo-item">Acesorios</span>
-                      <img src="/images/productos/fuente.jpg" alt="" class="img-item">
-                      <span class="nombre-item">nombre producto</span>
-                      <span class="detalle-item">breve descripcion del producto </span>
-                      <span class="precio-item">precio:$15.000</span>
-                      <button  class="boton-item"><a href="/carrito"  class="nav-menu-link nav-link">Comprar</a></button>
-                  </div>
-                  <div class="item">
-                      <span class="titulo-item">Acesorios</span>
-                      <img src="/images/productos/mause.jpg" alt="" class="img-item">
-                      <span class="nombre-item">nombre producto</span>
-                      <span class="detalle-item">breve descripcion del producto </span>
-                      <span class="precio-item">precio:$15.000</span>
-                      <button  class="boton-item"><a href="/carrito"  class="nav-menu-link nav-link">Comprar</a></button>
-                  </div>
-                  <div class="item">
-                      <span class="titulo-item">Acesorios</span>
-                      <img src="/images/productos/teclado-1.jpg" alt="" class="img-item">
-                      <span class="nombre-item">nombre producto</span>
-                      <span class="detalle-item">breve descripcion del producto </span>
-                      <span class="precio-item">precio:$15.000</span>
-                      <button  class="boton-item"><a href="/carrito"  class="nav-menu-link nav-link">Comprar</a></button>
-                  </div>
-                 
-          </div>
-         
-      </section>
-      <p class="div-categorias">Pc armadas</p>
-  
-      <section class="contenedor" id="pc">
-          <!-- Contenedor de elementos -->
-          <div class="contenedor-items">
-              <div class="item">
-                  <span class="titulo-item">Pc armadas</span>
-                      <img src="/images/productos/gabinete3.jpg" alt="" class="img-item">
-                      <span class="nombre-item">nombre producto</span>
-                      <span class="detalle-item">breve descripcion del producto </span>
-                      <span class="precio-item">precio:$15.000</span>
-                      <button  class="boton-item"><a href="/carrito"  class="nav-menu-link nav-link">Comprar</a></button>
-                  </div>
-                  <div class="item">
-                      <span class="titulo-item">Pc armadas</span>
-                      <img src="/images/productos/gabinete2.jpg" alt="" class="img-item">
-                      <span class="nombre-item">nombre producto</span>
-                      <span class="detalle-item">breve descripcion del producto </span>
-                      <span class="precio-item">precio:$15.000</span>
-                      <button  class="boton-item"><a href="/carrito"  class="nav-menu-link nav-link">Comprar</a></button>
-                  </div>
-                  <div class="item">
-                      <span class="titulo-item">Pc armadas</span>
-                      <img src="/images/productos/gabinete1.jpg" alt="" class="img-item">
-                      <span class="nombre-item">nombre producto</span>
-                      <span class="detalle-item">breve descripcion del producto </span>
-                      <span class="precio-item">precio:$15.000</span>
-                      <button  class="boton-item"><a href="/carrito"  class="nav-menu-link nav-link">Comprar</a></button>
-                  </div>
-                  <div class="item">
-                      <span class="titulo-item">Pc armadas</span>
-                      <img src="/images/productos/gabinete3.jpg" alt="" class="img-item">
-                      <span class="nombre-item">nombre producto</span>
-                      <span class="detalle-item">breve descripcion del producto </span>
-                      <span class="precio-item">precio:$15.000</span>
-                      <button  class="boton-item"><a href="/carrito"  class="nav-menu-link nav-link">Comprar</a></button>
-                  </div>
-                 
-          </div>
-         
-      </section>
-      <footer>
-        <div class="grupo_1">
-            <div class="box">
-                <h2>Categoria</h2>
-
-                <ul>
-
-                    <li><a href="#">Placas de video</a></li>
-                    <li><a href="#">Procesadores</a></li>
-                    <li><a href="#">Memoria</a></li>
-                    <li><a href="#">Almacenamiento</a></li>
-                    <li><a href="#">Refrigeracion</a></li>
-                </ul>
-
-            </div>
-            <div class="box">
-                <h2> Marcas</h2>
-                <ul>
-                    <li><a href="#">Intel</a></li>
-                    <li><a href="#">Amd</a></li>
-                    <li><a href="#">Asus</a></li>
-                    <li><a href="#">Nvidia</a></li>
-                    <li><a href="#">Asrock</a></li>
-                </ul>
-
-            </div>
-            <div class="box">
-                <h2> Ayuda</h2>
-                <ul>
-                    <li><a href="#">Whatsapp</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Botón de arrepentimiento</a></li>
-                </ul>
-            </div>
-            <div class="box">
-                <h2>Seguinos en nuestras redes</h2>
-                <div class="red_social">
-                    <img src="/images/iconos/bxl-instagram.svg" width="50" height="50" alt="instagram">
-                    <img src="/images/iconos/bxl-whatsapp.svg" width="50" height="50" alt="whatsapp">
-                    <img src="/images/iconos/bxl-facebook.svg" width="50" height="50" alt="facebook">
-
+        <div>
+            <section class="section-header">
+                <div class="contenedor-header">
+                    <p class="nombre">Gaming Life</p>
+                    <a href="/gaminglife/usuario/register">Crear Cuenta</a>
+                    <a href="/gaminglife/usuario/login">Ingresar</a>
                 </div>
-            </div>
+            </section>
         </div>
-        <div class="grupo_2"></div>
-
-
-    </footer>
-</body>
+    
+        <main>
+    
+            <p class="div-categorias"> Componentes </p>
+            <section class="contenedor" id="productos-mas-vistos">
+                <% products.forEach(producto=> { if (producto.category_id == 1) { %>
+                    <div class="contenedor-items">
+                        <div class="item">
+                            <img src="/images/imgProductos/<%= producto.img %>" alt="" class="img-item">
+                            <span class="nombre-item">
+                                <%= producto.name %>
+                            </span>
+                            <span class="precio-item">precio: <%= producto.price %> </span>
+                            <button class="boton-item">
+                                <a href="/carrito" class="nav-menu-link nav-link">Comprar</a>
+                            </button>
+                        </div>
+                    </div>
+                    <% }}) %>
+            </section>
+        
+            <p class="div-categorias"> Almacenamiento </p>
+            <section class="contenedor" id="productos-mas-vistos">
+                <% products.forEach(producto=> { if (producto.category_id == 2) { %>
+                    <div class="contenedor-items">
+                        <div class="item">
+                            <img src="/images/imgProductos/<%= producto.img %>" alt="" class="img-item">
+                            <span class="nombre-item">
+                                <%= producto.name %>
+                            </span>
+                            <span class="precio-item">precio: <%= producto.price %> </span>
+                            <button class="boton-item">
+                                <a href="/carrito" class="nav-menu-link nav-link">Comprar</a>
+                            </button>
+                        </div>
+                    </div>
+                    <% }}) %>
+            </section>
+        
+            <p class="div-categorias"> Periféricos </p>
+            <section class="contenedor" id="productos-mas-vistos">
+                <% products.forEach(producto=> { if (producto.category_id == 3) { %>
+                    <div class="contenedor-items">
+                        <div class="item">
+                            <img src="/images/imgProductos/<%= producto.img %>" alt="" class="img-item">
+                            <span class="nombre-item">
+                                <%= producto.name %>
+                            </span>
+                            <span class="precio-item">precio: <%= producto.price %> </span>
+                            <button class="boton-item">
+                                <a href="/carrito" class="nav-menu-link nav-link">Comprar</a>
+                            </button>
+                        </div>
+                    </div>
+                    <% }}) %>
+            </section>
+        </main>
+    
+        <%- include('partials/footer') %>
+    </body>

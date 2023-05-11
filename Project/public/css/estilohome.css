@@ -10,13 +10,27 @@
     font-family: "Montserrat", sans-serif, Arial;
 }
 
+main{
+    width: 80%;
+    margin: 0 auto;
+    background: rgbA(4,20,36,0.7);
+    padding: 20px;
+}
  
  /*seccion de header*/
  .section-header {
-    background: url('/images/productos/pcarmadas23-mov.webp');
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    padding-bottom: 5px;
     height: 600px;
-    background-size: cover;
+
+    background-image: url(../images/banner.png);
     background-repeat: no-repeat;
+    background-size: cover;
+    
   }
   section[id]{
     scroll-margin-top: 120px;
@@ -63,7 +77,7 @@
     padding: 10px;
     margin: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     /* oculto lo que queda fuera del .contenedor */
     contain: paint;
 }
@@ -75,24 +89,58 @@
     grid-gap:30px;
     grid-row-gap: 30px;
     /* width: 60%; */
-    width: 100%;
+    width: auto;
     transition: .3s;
     /* Configuracion de las tarjetas*/
 }
 .contenedor .contenedor-items .item{
-    background:#f3f3f3;
-    max-width: 200px;
-    border: 5px solid #FFA52E;
-    border-radius: 30px;
-    padding: 20px;
-    transition: .3s;
+    background: white;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+    cursor: pointer;
+
+    margin-bottom: 20%;
+    padding-top: 10px;
+
+    border: 1px solid black;
+    border-radius: 1%;
+    height: 18em;
+    width: 15em;
+    box-shadow: 5px 5px 10px white;
 }
 .contenedor .contenedor-items .item .img-item{
-    width: 100%;
+    height: 130px;
+    max-width: auto;
+
+
+    border-radius: 5%;
+    margin: 3px;
 }
 .contenedor .contenedor-items .item:hover{
-    box-shadow: 0 0 10px #666;
-    scale: 1.05;
+    background: white;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+    cursor: pointer;
+
+    margin-bottom: 20%;
+    padding-top: 10px;
+
+    border: 1px solid black;
+    border-radius: 1%;
+    height: 18em;
+    width: 15em;
+    box-shadow: 5px 5px 10px darkorange;
+    transition: all 250ms ease-out;
 }
 .contenedor .contenedor-items .item .titulo-item{
     display: block;
@@ -133,6 +181,11 @@
     padding: 5px 15px;
     border-radius: 50px;
     cursor: pointer;
+}
+
+.contenedor .contenedor-items .item .boton-item a{
+    color: black;
+    text-decoration: none;
 }
 .boton-item{
     color: #000;
