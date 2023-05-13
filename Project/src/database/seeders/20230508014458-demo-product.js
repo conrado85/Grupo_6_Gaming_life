@@ -7,7 +7,7 @@ module.exports = {
       name: 'disco rigido',
       description: 'disco de estado solido de 128gigas',
       price: '200',
-      img:'',
+      img:'./src/public/images/imgProductos',
       category_id:'2',
     },
     {name: 'placa de video',
