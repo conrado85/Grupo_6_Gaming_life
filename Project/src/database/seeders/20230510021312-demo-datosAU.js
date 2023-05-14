@@ -4,7 +4,7 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
     return queryInterface.bulkInsert('Aboutus',[{
-      name:"Gonzales Conrado",
+      name:"Gonzalez Conrado",
       img:"avatarDefault.jpg",
       description:"Tengo 38 Años,Soy de San Miguel.Trabajo de Operario en una fabrica, y en mis tiempos libres me dedico a aprender a programar , me gustaria ser un desarrolador frontEnd.",
       job:"Developer"
