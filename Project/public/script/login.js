@@ -39,5 +39,5 @@ const validateEmptyField = (message, e) => {
 
 usernameField.addEventListener("blur", (e) => validateEmptyField("El campo Usuario es obligatorio", e));
 passwordField.addEventListener("blur", (e) => validateEmptyField("El campo Contraseña es obligatorio", e)); 
-errorMessage.addEventListener("keydown", (e) => removeErrorMessage(e));
-errorMessage.addEventListener("keydown", (e) => removeErrorMessage(e)); 
+usernameField.addEventListener("keydown", (e) => removeErrorMessage(e));
+passwordField.addEventListener("keydown", (e) => removeErrorMessage(e)); 
