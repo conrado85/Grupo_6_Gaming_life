@@ -1,6 +1,6 @@
 .nav {
     background: black;
-    height: 80px;
+    height: 100px;
     color: #fff;
 }
 
@@ -13,7 +13,7 @@
     display: flex;
     height: 100%;
     width: 90%;
-    margin: 0 auto;
+    margin: 0;
     justify-content: space-between;
     align-items: center;
 }
@@ -31,7 +31,7 @@
 
 .nav-item {
     position: relative;
-    left: 2em;
+    left: 1em;
     color: white;
     text-decoration: none;
     --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
@@ -56,36 +56,80 @@
 
 .search-container {
     display: flex;
-    width: 100%;
     justify-content: center;
-}
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
 
 .search {
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 3em;
+    height: 40px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .search input {
-    height: 60%;
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 0px 10px;
 }
 
 .search button {
-    height: 65%;
+    height: 100%;
+    border: none;
     background-color: darkorange;
-    border-radius: 5%;
+    cursor: pointer;
+    padding: 0px 10px;
 }
-
 .search button img {
     height: 100%;
 }
 
-.logo-img{
-    width: 5em;
+.logo-img-nav{
+    height: 100px;
+    width: 115px;
     position: relative;
-    right: 5%;
+    left: 0.5em;
 }
+
+.user-avatar-nav{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.logout-btn {
+    display: inline-block;
+    position: relative;
+}
+
+.button-logout{
+    display: block;
+    width: 120px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.button-logout:hover{
+    background-color: #cc0000;
+    cursor: pointer;
+}
+
 /*estilo del menu hamburguesa*/
 .menu-barras {
     color: white;

@@ -1,5 +1,8 @@
 <%- include('partials/head') %> 
     <title>Lista de Productos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/products.css">
     <link rel="stylesheet" href="/css/estilo-nav.css">
     <link rel="stylesheet" href="/css/estilo-footer.css">
@@ -21,7 +24,7 @@
                     <div class="product-name"><%= producto.name%></div>
                     <div class="product-prize"><%= producto.price%></div>
                     <div class="product-payments">12 cuotas sin interes</div>
-                    <a href='/gaminglife/productos/detalle/<%= producto.id %> ' class="product-viewmore">ver más</a>
+                    <a href='/gaminglife/productos/detalle/<%= producto.id %> ' class="product-viewmore">Ver más</a>
                 </article>
                 <% }) %>
 

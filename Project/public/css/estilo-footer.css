@@ -62,6 +62,7 @@
 .pie-pagina .grupo-2 small{
     font-size: 15px;
 }
+
 @media screen and (max-width:800px){
     .pie-pagina .grupo-1{
         width: 90%;
