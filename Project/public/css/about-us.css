@@ -18,7 +18,7 @@ main{
 div.dev-catalogue{
     height: auto;
     width: 80%;
-    background: rgbA(4,20,36,0.7);
+
     border: 2px black solid;
 
     margin-top: 15px;
@@ -34,8 +34,8 @@ div.dev-catalogue div.dev-panel{
     height: 280px;
     width: 90%;
     
-    background-color: rgba(189, 188, 255, 0.61);
-    border: 3px solid lightblue;
+    background-color: rgba(240, 233, 233, 0.878);
+    border: 5px solid darkorange;
    
     display: flex;
     flex-direction: row;
@@ -50,7 +50,7 @@ div.dev-catalogue div.dev-panel{
 div.dev-catalogue div.dev-panel img.dev-img{
     height: 140px;
     width: 140px;
-    border: 2px black solid;
+    border: 5px darkorange solid;
     background-color: crimson;
     margin-left: 3rem;
     border-radius: 50%;

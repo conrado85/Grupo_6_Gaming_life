@@ -6,13 +6,13 @@ module.exports = {
     return queryInterface.bulkInsert('Aboutus',[{
       name:"Gonzales Conrado",
       img:"avatarDefault.jpg",
-      description:"Tengo 38 Años,Soy de San Miguel.Trabajo de Operario en una fabrica, y en mis tiempos libres me dedico a aprender a programar , me gustaria ser un desarrolador frontEnd",
+      description:"Tengo 38 Años,Soy de San Miguel.Trabajo de Operario en una fabrica, y en mis tiempos libres me dedico a aprender a programar , me gustaria ser un desarrolador frontEnd.",
       job:"Developer"
     },
     {
       name:"Medina Maximiliano",
       img:"avatarDefault.jpg",
-      description:"Tengo 19 años, Vivo en San Miguel. Soy un Desarrollador FrontEnd junior que quiere aprender más sobre BackEnd y tener la posibilidad de poder hacer las dos",
+      description:"Tengo 19 años, Vivo en San Miguel. Soy un Desarrollador FrontEnd junior que quiere aprender más sobre BackEnd y tener la posibilidad de poder hacer las dos.",
       job:"Developer"
     },
     {
@@ -24,7 +24,7 @@ module.exports = {
     {
       name:"Ruiz Pablo",
       img:"avatarDefault.jpg",
-      description:"Tengo 21 años, actualmente me estoy formando como desarrollador web fullstack, mi meta es algun poder dedicarme a este rubro profesionalmente",
+      description:"Tengo 21 años, actualmente me estoy formando como desarrollador web fullstack, mi meta es algun poder dedicarme a este rubro profesionalmente.",
       job:"Developer"
     }
   ])
