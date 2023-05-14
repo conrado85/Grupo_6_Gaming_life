@@ -10,7 +10,8 @@ module.exports = {
       img:'',
       category_id:'2',
     },
-    {name: 'placa de video',
+    {
+    name: 'placa de video',
     description: 'placade video  de 128',
     price: '270',
     img:'',
