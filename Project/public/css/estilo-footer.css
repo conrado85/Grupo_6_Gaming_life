@@ -1,78 +1,75 @@
-
-footer {
-
-    height:auto;
-    width:100%;
-    background-color: #F2CD5C;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
-
-footer p{
-    font-style: italic;
-    color: black;
+/*:::::Pie de Pagina*/
+.pie-pagina{
+    width: 100%;
+    background-color: #000204;
 }
-
-footer .content-box {
+.pie-pagina .grupo-1{
     width: 100%;
     max-width: 1200px;
-    height: auto;
     margin: auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 45px 0px;
+}
+.pie-pagina .grupo-1 .box figure{
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
-
-footer h2 {
-    color: #400E32;
+.pie-pagina .grupo-1 .box figure img{
+    width: 250px;
+}
+.pie-pagina .grupo-1 .box h2{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+.pie-pagina .grupo-1 .box p{
+    color: #efefef;
+    margin-bottom: 10px;
+}
+.pie-pagina .grupo-1 .red-social a{
+    display: inline-block;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 22px;
-    padding-left: 10px;
-
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: darkorange;
+    text-align: center;
+    transition: all 300ms ease;
+}
+.pie-pagina .grupo-1 .red-social a:hover{
+    color: rgb(8, 1, 6);
+}
+.pie-pagina .grupo-2{
+    background-color: orange;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+.pie-pagina .grupo-2 small{
+    font-size: 15px;
 }
 
-.grupo_1 ul li {
-    list-style: none;
-
-}
-
-.grupo_1 ul li a {
-    font-size: 10px;
-    font-weight: 700;
-    text-decoration: none;
-    text-transform: lowercase;
-    color: #400E32;
-    padding: 10px;
-    transition: 0, 5s ease;
-}
-
-ul:hover li a {
-    color: white;
-}
-
-ul :hover li a:not(:hover) {
-    color: aliceblue;
-    opacity: 0.3;
-    filter: blur(1px);
-}
-
-.red_social {
-    filter: invert(0%);
-}
-@media(max-width: 768px) {
-
-    footer .grupo_1 {
-        width: 100%;
-        max-width: 770px;
-        margin: auto;
-        display: grid;
+@media screen and (max-width:800px){
+    .pie-pagina .grupo-1{
+        width: 90%;
         grid-template-columns: repeat(1, 1fr);
-        grid-gap: 3px;
-        padding: 25px 0px;
-    }
-    footer {
-
-        height:550px;
-        width:100%;
-        background-color: #F2CD5C;
+        grid-gap:30px;
+        padding: 35px 0px;
     }
 }
+
+

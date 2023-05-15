@@ -1,8 +1,12 @@
 <%- include('partials/head') %> 
     <title>Lista de Productos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/products.css">
-    <link rel="stylesheet" href="/css/nav-bar.css">
+    <link rel="stylesheet" href="/css/estilo-nav.css">
     <link rel="stylesheet" href="/css/estilo-footer.css">
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -18,9 +22,9 @@
                 <article class="producto">
                     <img src="/images/imgProductos/<%= producto.img %>" alt="imagen producto" class="product-img">
                     <div class="product-name"><%= producto.name%></div>
-                    <div class="product-prize"><%= producto.price%></div>
+                    <div class="product-prize">$<%= producto.price%></div>
                     <div class="product-payments">12 cuotas sin interes</div>
-                    <a href='/gaminglife/productos/detalle/<%= producto.id %> ' class="product-viewmore">ver más</a>
+                    <a href='/gaminglife/productos/detalle/<%= producto.id %> ' class="product-viewmore">Ver más</a>
                 </article>
                 <% }) %>
 

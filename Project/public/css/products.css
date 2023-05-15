@@ -284,7 +284,7 @@ body {
         width: 105%;
     }
 
-    .nav-container{
+    /*.nav-container{
       position: relative;
     }
 
@@ -315,15 +315,15 @@ body {
         clip-path: var(--navanim);
         transition: clip-path .8s;
         /* clip-path: circle(0 at center);
-        transition: clip-path 1s ease-in-out; */
+        transition: clip-path 1s ease-in-out; 
     }
-
-    .nav-input:checked+.nav-menu {
-        /*clip-path: circle(100% at center);*/
+    */
+   /* .nav-input:checked+.nav-menu {
+        /*clip-path: circle(100% at center);
         --navanim: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         border-radius: 1%;
     }
-
+    */
     .grid-layout{
         margin-top: 5%;
         

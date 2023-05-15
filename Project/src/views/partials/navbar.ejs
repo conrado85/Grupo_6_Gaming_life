@@ -2,13 +2,14 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="/gaminglife/inicio">
-                <img src="/images/logo game live SF.png" alt="logo" class="logo-img">
+                <img src="/images/logo game live SF.png" alt="logo" class="logo-img-nav">
             </a>
             <div class="search-container">
                 <form action="https://www.google.com/search" method="get" class="search" autocomplete="off">
                     <input type="text" placeholder="Buscar articulo" name="container-search">
                     <button type="submit"><img src="/images/iconos/product-assets/search.png" alt=""></button>
                 </form>
+            </div>    
                 <button class="menu-barras">
                     <i class="fa-solid fa-bars"></i>
                 </button>
@@ -27,16 +28,17 @@
                                 <%}%>
                                     <% if(locals.session) {%>
                                         <div class="user-data">
+                                            <img class="user-avatar-nav" src="/images/userImg/<%= session.img %>" height="30px">
                                             <h5>
                                                 <%= locals.session.name %>
                                             </h5>
-                                            <img class="user-avatar" src="/images/userImg/<%= session.img %>" height="30px">
-                                            <a href="/gaminglife/usuario/logout" class="nav-item">Cerrar Sesion
-                                            </a>
+                                        </div>
+                                        <div class="logout-btn">
+                                        <a href="/gaminglife/usuario/logout" class="button-logout">Cerrar Sesion
+                                        </a>
                                         </div>
                                         <%}%>
-                </div>
-            </div>
+                </div>  
         </div>
     </nav>
 </header>
