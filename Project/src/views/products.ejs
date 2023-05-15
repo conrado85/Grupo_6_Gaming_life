@@ -24,11 +24,13 @@
                 </article>
                 <% }) %>
 
-                <article class="producto">
+                <% if(locals.session && locals.session.id === 1){%>
+                    <article class="producto">
                     <img src="/images/default-image.png" alt="imagen producto" class="product-img">
                     <div class="product-name">Nuevo Producto</div>
                     <a href='/gaminglife/productos/crear' class="product-viewmore">Crear</a>
-                </article>
+                    </article>
+                    <%}%>
 
             </div>
         </section>
