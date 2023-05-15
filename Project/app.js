@@ -5,7 +5,6 @@ const expressSession = require('express-session');
 const methodOverride = require('method-override');
 const cookieParser = require("cookie-parser");
 const sessionMiddleware = require("../Project/src/middlewares/sessionMiddleware")
-const cors = require('cors')
 
 //configuracion del 'app'
 const app = express();
@@ -35,7 +34,6 @@ app.use('/api/user', userApiRouter)
 app.use('/api/products', productsApiRouter)
 
 // Activando cors - va a lograr a trapar cualquier ruta que impacte
-app.use(cors());
 
 
 //404

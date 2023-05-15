@@ -80,13 +80,12 @@ body {
 
 .grid-layout .producto .product-viewmore {
     background-color: darkorange;
-    color: black;
+    color: white;
     text-decoration: none;
-
     border-radius: 10%;
     padding: 2px;
     margin-top: 5%;
-
+    font-weight: 1000;
 
     
 }

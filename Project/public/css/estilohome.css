@@ -164,7 +164,7 @@ main{
     font-size: 8px;
 }
 .contenedor .contenedor-items .item .nombre-item{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Open Sans', sans-serif;
     display: block;
     text-align: center;
     font-weight: bold;
