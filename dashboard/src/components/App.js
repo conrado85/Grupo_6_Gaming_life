@@ -7,7 +7,6 @@ import LastMovieInDb from './LastMovieInDb';
 import ContentRowMovies from './ContentRowMovies';
 import NotFound from './NotFound';
 import SearchMovies from './SearchMovies';
-
 import SideBar from './SideBar';
 
 function App() {
