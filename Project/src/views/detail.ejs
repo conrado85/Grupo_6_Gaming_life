@@ -28,8 +28,9 @@
                     <div class="button-conteiner">
 
                     <button class="buttonP" type="submit">Agregar al carrito</button>
+                    <% if(locals.session && locals.session.id === 1){%>
                     <a href="/gaminglife/productos/editar/<%= producto.id %>"><button class="buttonP" type="submit">Editar</button></a>
-                    
+                    <%}%>
                     <button class="buttonComprar" type="submit">Comprar</button>
 
                     </div>    
