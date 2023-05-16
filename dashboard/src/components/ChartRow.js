@@ -1,17 +1,16 @@
-import React from 'react';
+import	React from "react"
 
 
-function ChartRow(props){
+function ChartRow(props) {
     return (
-                <tr>
-                    <td>{props.name}</td>
-                    <td>{props.description}</td>
-                    <td>{props.price}</td>
-                    <td>{props.Category}</td>
-                </tr>
-            )
-    }
-    
-        
-
-export default ChartRow;
+      <tr>
+        <td>{props.id}</td>
+        <td>{props.name}</td>
+        <td>{props.email}</td>
+        <td>{props.detail}</td>
+       
+      </tr>
+    );
+  }
+  
+  export default ChartRow;

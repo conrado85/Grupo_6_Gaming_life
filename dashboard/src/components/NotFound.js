@@ -1,15 +1,17 @@
-import React from 'react';
-import imagenFondo from '../assets/images/404.png';
+import React from 'react'
 
-function NotFound(){
-    return(
-        <div className="text-center">
-            <h1>404 Not Found</h1>
-            <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 30 +'rem'}} src={imagenFondo} alt=" Star Wars - Mandalorian "/>
-        </div>
-        
+function NotFound() {
+    return (
+        <React.Fragment>
+            <div>
+                <h1>Página no encontrada</h1>
+                <hr />
+                <h2>Revisá la sintaxis en la url</h2>
+                <hr />
+            </div>
+        </React.Fragment>
     )
+
 }
 
-
-export default NotFound;
+export default NotFound
