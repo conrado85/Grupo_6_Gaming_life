@@ -1,5 +1,7 @@
 <%- include('partials/head') %>
-    <title><%= producto.name%></title>
+    <title>
+        <%= producto.name%>
+    </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -9,6 +11,7 @@
     <link rel="stylesheet" href="/css/products.css">
     <link rel="stylesheet" href="/css/estilo-nav.css">
     <link rel="stylesheet" href="/css/estilo-footer.css">
+    <link rel="stylesheet" href="/css/relationship.css">
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
     </head>
 
@@ -23,29 +26,53 @@
                 </div>
 
                 <div class="features">
-                    <h1 class="p-name"><%= producto.name%></h1>
-                    <h2 class="p-price">Precio: $<%= producto.price%></h2>
+                    <h1 class="p-name">
+                        <%= producto.name%>
+                    </h1>
+                    <h2 class="p-price">Precio: $<%= producto.price%>
+                    </h2>
                     <div class="button-conteiner">
 
-                    <button class="buttonP" type="submit">Agregar al carrito</button>
-                    <% if(locals.session && locals.session.id === 1){%>
-                    <a href="/gaminglife/productos/editar/<%= producto.id %>"><button class="buttonP" type="submit">Editar</button></a>
-                    <%}%>
-                    <button class="buttonComprar" type="submit">Comprar</button>
+                        <button class="buttonP" type="submit">Agregar al carrito</button>
+                        <% if(locals.session && locals.session.id === 1){%>
+                            <a href="/gaminglife/productos/editar/<%= producto.id %>"><button class="buttonP"
+                                    type="submit">Editar</button></a>
+                            <%}%>
 
-                    </div>    
+                        <button class="buttonComprar" type="submit">Comprar</button>
+
+                    </div>
                 </div>
             </section>
             <section class="description-box">
                 <h2>Descripción del producto:</h2>
-                <p class="p-description"><%- producto.description.replace(/\n/g, '<br>') %></p>
-            </section>            
-            
+                <p class="p-description"><%- producto.description.replace(/\n/g, '<br>' ) %></p>
+            </section>
+
             <section class="relation-box">
-                <h2>Productos relacionados</h2>
+                <h2>Productos relacionados:</h2>
+                <div class="display-relation">
+                    <% listaProductos.forEach((productoR)=> {
+                        if (productoR.category_id == producto.category_id && productoR.name != producto.name) { %>
+                        <article class="producto">
+                            <img src="/images/imgProductos/<%= productoR.img %>" alt="imagen producto"
+                                class="product-img">
+                            <div class="product-name">
+                                <%= productoR.name%>
+                            </div>
+                            <div class="product-prize">$<%= productoR.price%>
+                            </div>
+                            <div class="product-payments">12 cuotas sin interes</div>
+                            <a href='/gaminglife/productos/detalle/<%= productoR.id %> ' class="product-viewmore">Ver
+                                más</a>
+                        </article>
+                        <% }}) %>
+                </div>
+
             </section>
         </main>
-        
+
     </body>
     <%- include('partials/footer') %>
-    </html>
+
+        </html>

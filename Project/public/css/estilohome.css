@@ -59,7 +59,7 @@ main{
   .contenedor-header a {
     color: white;
     text-decoration: none;
-    background: linear-gradient(90deg, #6f7da9 , #2c2e8b,#010243);
+    background: linear-gradient(90deg, #6f7da9 , rgb(4,20,36),#010243);
     padding: 4px 20px;
     border-radius: 30px;
     font-size: 30px;
