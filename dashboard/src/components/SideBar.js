@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Routes, Route } from 'react-router-dom'
-import image from '../assets/images/logo-DH.png';
+import image from '../assets/images/logo game live SF.png';
 import GenresInDb from './GenresInDb';
 import LastMovieInDb from './LastMovieInDb'
 import ContentRowMovies from './ContentRowMovies';
@@ -15,7 +15,7 @@ function SideBar() {
                 {/*<!-- Sidebar - Brand -->*/}
                 <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                     <div className="sidebar-brand-icon">
-                        <img className="w-100" src={image} alt="Digital House" />
+                        <img className="w-50" src={image} alt="Gaming Life" />
                     </div>
                 </a>
 
@@ -26,7 +26,7 @@ function SideBar() {
                 <li className="nav-item active">
                     <Link className="nav-link" to="/">
                         <i className="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard - DH movies</span>
+                        <span>Dashboard - Gaming life</span>
                     </Link>
                 </li>
 
