@@ -44,7 +44,7 @@ const controller = {
                 name: req.body.name,
                 price: req.body.price,
                 description: req.body.description,
-                category: req.body.category,
+                category_id: req.body.category,
                 img: req.file ? req.file.filename : 'default-image.png'
             }
             await db.Products.create(product)
@@ -66,12 +66,13 @@ const controller = {
     //actualiza un producto
     update: (req, res) => {
         let productId = req.params.id;
+
         db.Products.update(
             {
                 name: req.body.name,
                 price: req.body.price,
                 description: req.body.description,
-                category: req.body.category,
+                category_id: req.body.category_id,
             }, {
             where: {
                 id: productId

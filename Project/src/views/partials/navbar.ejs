@@ -9,36 +9,37 @@
                     <input type="text" placeholder="Buscar articulo" name="container-search">
                     <button type="submit"><img src="/images/iconos/product-assets/search.png" alt=""></button>
                 </form>
-            </div>    
-                <button class="menu-barras">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-                <div class="nav-menu">
-                    <% if(!locals.session) {%>
-                        <a href="/gaminglife/usuario/login" class="nav-item">Ingresar</a>
-                        <a href="/gaminglife/usuario/register" class="nav-item">Registrarse</a>
-                        <%}%>
-                    <a href="/gaminglife/productos/lista" class="nav-item">Lista de productos</a>
-                    <a href="/gaminglife/about-us" class="nav-item">Quienes somos</a>
-                    <a href="/gaminglife/ventas" class="nav-item">
-                        <img src="/images/iconos/bx-cart.svg" alt="Carrito">
-                    </a>
-                            <% if(locals.session) {%>
-                                <a href="/gaminglife/usuario/profile" class="nav-item">Perfil</a>
-                                <%}%>
-                                    <% if(locals.session) {%>
-                                        <div class="user-data">
-                                            <img class="user-avatar-nav" src="/images/userImg/<%= session.img %>" height="30px">
-                                            <h5>
-                                                <%= locals.session.name %>
-                                            </h5>
-                                        </div>
-                                        <div class="logout-btn">
+            </div>
+            <button class="menu-barras">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="nav-menu">
+                <% if(!locals.session) {%>
+                    <a href="/gaminglife/usuario/login" class="nav-item">Ingresar</a>
+                    <a href="/gaminglife/usuario/register" class="nav-item">Registrarse</a>
+                    <%}%>
+                        <a href="/gaminglife/productos/lista" class="nav-item">Lista de productos</a>
+                        <a href="/gaminglife/about-us" class="nav-item">Quienes somos</a>
+                        <a href="/gaminglife/ventas" class="nav-item">
+                            <img src="/images/iconos/bx-cart.svg" alt="Carrito">
+                        </a>
+                        <% if(locals.session) {%>
+                            <a href="/gaminglife/usuario/profile" class="nav-item">Perfil</a>
+                            <%}%>
+                                <% if(locals.session) {%>
+                                    <div class="user-data">
+                                        <img class="user-avatar-nav" src="/images/userImg/<%= session.img %>"
+                                            height="30px">
+                                        <h5>
+                                            <%= locals.session.name %>
+                                        </h5>
+                                    </div>
+                                    <div class="logout-btn">
                                         <a href="/gaminglife/usuario/logout" class="button-logout">Cerrar Sesion
                                         </a>
-                                        </div>
-                                        <%}%>
-                </div>  
+                                    </div>
+                                    <%}%>
+            </div>
         </div>
     </nav>
 </header>
