@@ -1,37 +1,57 @@
  Daily Grupo_6
 
- Sprint_1
+Sprints_2
 
-1. Comenzar a hacer: Las tareas designadas
+ 1. Que hizo ayer.Se dividieron los bocetos
 
-2. Hacer más: Trabajar en los diseño de los bocetos
+ 2. Si se encontro con algun impedimiento.No se reportan problemas 
 
-3. Continuar haciendo: En mejorar los bocetos para que sean mas amigables con el usuario
+ 3. Que va hacer hoy.Los bocetos pasarlos a codigo
 
-4. Hacer menos: Que nuestro trabajo se adapte a lo que podemos llegar a lograr
+ Sprints_3
 
-5. Dejar de hacer: En tratar que la paguina sea similar a otras
+ 1. Que hizo ayer.Ver que codigo se repite.
 
-Sprint_2
+ 2. Si se encontro con algun impedimiento.Se complico aplicar los template Engines
 
-1. Comenzar a hacer: Tener mas reuniones
+ 3. Que va hacer hoy.Encontrar la solucion
 
-2. Hacer más: Hacer nuestras tareas en tiempo y forma
+ Sprints_4
 
-3. Continuar haciendo: Terminar las tareas pendientes
+ 1. Que hizo ayer.trabajar con la vista de las usuarios
 
-4. Hacer menos: No comunicarnos bien
+ 2. Si se encontro con algun impedimiento.Definir los campos los cuales vamos a trabajar
 
-5. Dejar de hacer: Dejar de hacer todo a ultimo momento
+ 3. Que va hacer hoy.generar los archivos JSON
 
-Sprint_3
+ Sprints_5
 
-1. Comenzar a hacer.
+ 1. Que hizo ayer.terminar con lo que quedo del sprints anterior
 
-2. Hacer más.
+ 2. S i se encontro con algun impedimiento.LAa implementacion de rutas y controladores
 
-3. Continuar haciendo.
+ 3.Que va hacer hoy.Estudiar el playground
 
-4. Hacer menos.
+ Sprints_6
 
-5. Dejar de hacer.
+ 1. Que hizo ayer.Creacion de las tablas
+
+ 2. Si se encontro con algun impedimiento.Las migraciones
+
+ 3. Que va hacer hoy.terminar con lo que falta
+
+ Sprints_7
+
+ 1. Que hizo ayer.
+
+ 2. S i se encontro con algun impedimiento.
+
+ 3.Que va hacer hoy.
+
+ Sprints_8
+
+ 1. Que hizo ayer.
+
+ 2. S i se encontro con algun impedimiento.
+
+ 3.Que va hacer hoy.
