@@ -1,50 +1,55 @@
-import React from 'react';
+import React, { Component } from 'react';
 import SmallCard from './SmallCard';
 
-/*  Cada set de datos es un objeto literal */
+class ContentRowMovies extends Component {
+  constructor() {
+    super();
+    this.state = {
+      genres: [],
+      user: 0
+    };
+  }
 
-/* <!-- Movies in DB --> */
+  async componentDidMount() {
+    try {
+      const responseProducts = await fetch("/api/products");
+      const dataProducts = await responseProducts.json();
+      this.setState({ genres: dataProducts.count });
 
-let product = {
-    title: 'Total de Productos',
-    color: 'primary', 
-    cuantity: 6,
-    icon: 'fa-clipboard-list'
-}
+      const responseUsers = await fetch("/api/user");
+      const dataUsers = await responseUsers.json();
+      this.setState({ user: dataUsers.count });
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
-/* <!-- Total awards --> */
+  render() {
+    const { genres, user } = this.state;
 
-let user= {
-    title:' Total de Usuario', 
-    color:'success', 
-    cuantity: '2',
-    icon:'fa-user-check'
-}
-
-/* <!-- Actors quantity --> */
-
-let category = {
-    title:'Total de Categorias' ,
-    color:'warning',
-    cuantity:'3',
-    icon:'fa-user-check'
-}
-
-let cartProps = [product, user, category];
-
-function ContentRowMovies(){
     return (
-    
-        <div className="row">
-            
-            {cartProps.map( (movie, i) => {
-
-                return <SmallCard {...movie} key={i}/>
-            
-            })}
-
-        </div>
-    )
+      <div className="row">
+        <SmallCard
+          title="Total de productos"
+          color="primary"
+          cuantity={genres}
+          icon="fa-clipboard-list"
+        />
+        <SmallCard
+          title="Total de categorias"
+          color="primary"
+          cuantity="3"
+          icon="fa-award"
+        />
+        <SmallCard
+          title="Total de Clientes"
+          color="primary"
+          cuantity={user}
+          icon="fa-award"
+        />
+      </div>
+    );
+  }
 }
 
 export default ContentRowMovies;
